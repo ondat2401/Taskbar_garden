@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d52b0f7b13832498e66d306f971d16, type: 3}
+  m_Name: Carrot
+  m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.CropDefinition
+  id: carrot
+  displayName: Carrot
+  growSeconds: 20
+  waterPerSecond: 1
+  waterCapacity: 12
+  waterThreshold: 0.3
+  yield: 1
+  stages:
+  - {fileID: 21300000, guid: ececdc6b9fd03bf448dfd874b43dda95, type: 3}
+  - {fileID: 21300000, guid: a377398d0d8af4545b1456aa3a5239b1, type: 3}
+  - {fileID: 21300000, guid: b60be35ff8c290b458e248ae826162a4, type: 3}

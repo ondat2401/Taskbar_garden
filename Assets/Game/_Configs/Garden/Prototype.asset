@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe401511b729e02439795d477f8edba1, type: 3}
+  m_Name: Prototype
+  m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenProfile
+  worker: {fileID: 11400000, guid: 5650b8d520ab18843bbf9308cdb3ea60, type: 2}
+  plots:
+  - crop: {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
+    startingWater: 8
+  - crop: {fileID: 11400000, guid: d880e2d9d1f879c4483a59a53d5cdf1c, type: 2}
+    startingWater: 8
+  - crop: {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
+    startingWater: 8
+  - crop: {fileID: 11400000, guid: d880e2d9d1f879c4483a59a53d5cdf1c, type: 2}
+    startingWater: 8
+  plotSpacing: 1.6
+  wellDistance: 1.5
+  simulationSpeed: 1
+  soilSprite: {fileID: 21300000, guid: 0e39a9b830df5e04eab2790029314205, type: 3}
+  wellSprite: {fileID: 21300000, guid: 53599cbd1c8344745a09e4a2b20bfaf6, type: 3}
+  grassSprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  windowSize: {x: 1000, y: 340}
+  minimumWindowSize: {x: 560, y: 260}

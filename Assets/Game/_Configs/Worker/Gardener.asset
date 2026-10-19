@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7e109a7e058f94ba7c6ce78a17392a, type: 3}
+  m_Name: Gardener
+  m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.WorkerConfig
+  moveSpeed: 2
+  plantSeconds: 0.7
+  waterSeconds: 0.7
+  harvestSeconds: 0.8
+  refillSeconds: 1
+  tankCapacity: 24
+  waterPerAction: 10
+  idleFrames:
+  - {fileID: 21300000, guid: a2f60c3b3e210aa4586156fdd095ba80, type: 3}
+  walkFrames:
+  - {fileID: 21300000, guid: a2f60c3b3e210aa4586156fdd095ba80, type: 3}
+  - {fileID: 21300000, guid: 2f7717aa305b00247b29b800a759257d, type: 3}
+  workFrames:
+  - {fileID: 21300000, guid: d4558ac7b43a4a4408eab5219250943e, type: 3}
+  - {fileID: 21300000, guid: a2f60c3b3e210aa4586156fdd095ba80, type: 3}
+  animationFps: 5

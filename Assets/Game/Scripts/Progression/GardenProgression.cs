@@ -1,0 +1,125 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+
+namespace IdleGarden
+{
+    public sealed class GardenProgression
+    {
+        public readonly ProgressionConfig Config;
+        private readonly Dictionary<string, long> inventory = new Dictionary<string, long>();
+        private readonly Dictionary<string, int> levels = new Dictionary<string, int>();
+        public double Gold { get; private set; }
+        public double CycleGold { get; private set; }
+        public long Seeds { get; private set; }
+        public int Rebirths { get; private set; }
+        public bool AutoSell = true;
+        public double RebirthGoal => Config.rebirthBaseGoal * Math.Pow(Config.rebirthGoalGrowth, Rebirths);
+        public double GoldMultiplier => 1 + Seeds * (double)Config.goldBonusPerSeed;
+        public bool CanRebirth => Finite(RebirthGoal) && CycleGold >= RebirthGoal && Seeds < long.MaxValue && Rebirths < int.MaxValue;
+
+        public GardenProgression(ProgressionConfig config, GardenSaveData saved = null)
+        {
+            if (!config || !config.Validate(out _)) throw new ArgumentException("Invalid progression config.");
+            Config = config; Gold = config.startingGold;
+            if (saved != null)
+            {
+                Gold = saved.gold; CycleGold = saved.cycleGold; Seeds = saved.seeds; Rebirths = saved.rebirths; AutoSell = saved.autoSell;
+                foreach (var entry in saved.inventory) inventory[entry.id] = entry.count;
+                foreach (var entry in saved.upgrades) levels[entry.id] = entry.level;
+            }
+            foreach (var crop in config.crops) if (!inventory.ContainsKey(crop.id)) inventory.Add(crop.id, 0);
+            foreach (var upgrade in config.upgrades) if (!levels.ContainsKey(upgrade.id)) levels.Add(upgrade.id, 0);
+        }
+
+        public long Count(CropDefinition crop) => crop && inventory.TryGetValue(crop.id, out long count) ? count : 0;
+        public int Level(int index) => levels.TryGetValue(Config.upgrades[index].id, out int level) ? level : 0;
+        public double GoldCost(int index) => Config.upgrades[index].baseGoldCost * Math.Pow(Config.upgrades[index].costGrowth, Level(index));
+        public long MaterialCost(int index)
+        {
+            var upgrade = Config.upgrades[index];
+            return upgrade.material ? (long)upgrade.baseMaterialCost * (1 + Level(index) / Math.Max(1, upgrade.materialStepLevels)) : 0;
+        }
+
+        public float Multiplier(UpgradeStat stat, CropDefinition crop = null)
+        {
+            double multiplier = 1;
+            for (int i = 0; i < Config.upgrades.Length; i++)
+            {
+                var upgrade = Config.upgrades[i];
+                if (upgrade.stat == stat && (!upgrade.targetCrop || upgrade.targetCrop == crop))
+                    multiplier += Level(i) * (double)upgrade.bonusPerLevel;
+            }
+            return (float)Math.Min(1000000, multiplier);
+        }
+
+        public void AddHarvest(CropDefinition crop, int quantity)
+        {
+            if (quantity <= 0 || !inventory.TryGetValue(crop.id, out long count)) return;
+            inventory[crop.id] = count > long.MaxValue - quantity ? long.MaxValue : count + quantity;
+            if (AutoSell) Sell(crop, Math.Max(0, Count(crop) - Config.autoSellReserve));
+        }
+
+        public double Sell(CropDefinition crop, long quantity)
+        {
+            quantity = Math.Min(Math.Max(0, quantity), Count(crop));
+            double value = quantity * (double)crop.sellPrice * GoldMultiplier;
+            if (quantity == 0 || !Finite(value) || !Finite(Gold + value) || !Finite(CycleGold + value)) return 0;
+            inventory[crop.id] -= quantity; Gold += value; CycleGold += value; return value;
+        }
+
+        public double SellSurplus()
+        {
+            double total = 0;
+            foreach (var crop in Config.crops) total += Sell(crop, Math.Max(0, Count(crop) - Config.autoSellReserve));
+            return total;
+        }
+
+        public bool CanBuy(int index) => index >= 0 && index < Config.upgrades.Length && Finite(GoldCost(index)) &&
+            Level(index) < int.MaxValue && Gold >= GoldCost(index) && Count(Config.upgrades[index].material) >= MaterialCost(index);
+
+        public bool TryBuy(int index)
+        {
+            if (!CanBuy(index)) return false;
+            var upgrade = Config.upgrades[index];
+            Gold -= GoldCost(index);
+            if (upgrade.material) inventory[upgrade.material.id] -= MaterialCost(index);
+            levels[upgrade.id] = Level(index) + 1;
+            return true;
+        }
+
+        public bool TryRebirth()
+        {
+            if (!CanRebirth) return false;
+            Seeds++; Rebirths++; Gold = Config.startingGold; CycleGold = 0;
+            // Existing keys are retained so removed catalog entries survive config edits/save cycles.
+            var cropKeys = new List<string>(inventory.Keys);
+            foreach (string key in cropKeys) inventory[key] = 0;
+            var upgradeKeys = new List<string>(levels.Keys);
+            foreach (string key in upgradeKeys) levels[key] = 0;
+            return true;
+        }
+
+        public GardenSaveData Capture()
+        {
+            var saved = new GardenSaveData { gold = Gold, cycleGold = CycleGold, seeds = Seeds, rebirths = Rebirths, autoSell = AutoSell,
+                inventory = new InventorySave[inventory.Count], upgrades = new UpgradeSave[levels.Count] };
+            int index = 0;
+            foreach (var item in inventory) saved.inventory[index++] = new InventorySave { id = item.Key, count = item.Value };
+            index = 0;
+            foreach (var item in levels) saved.upgrades[index++] = new UpgradeSave { id = item.Key, level = item.Value };
+            return saved;
+        }
+
+        public static bool Finite(double value) => !double.IsNaN(value) && !double.IsInfinity(value);
+        public static string Number(double value)
+        {
+            if (!Finite(value)) return "Limit";
+            if (value >= 1e12) return value.ToString("0.##e+0", CultureInfo.InvariantCulture);
+            if (value >= 1e9) return (value / 1e9).ToString("0.#", CultureInfo.InvariantCulture) + "B";
+            if (value >= 1e6) return (value / 1e6).ToString("0.#", CultureInfo.InvariantCulture) + "M";
+            if (value >= 1e3) return (value / 1e3).ToString("0.#", CultureInfo.InvariantCulture) + "K";
+            return value.ToString("0", CultureInfo.InvariantCulture);
+        }
+    }
+}

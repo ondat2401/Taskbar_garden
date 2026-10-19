@@ -1,0 +1,3315 @@
+fileFormatVersion: 2
+guid: e8bc00fdff262c048a06352c8c986ff5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1986287278067614716
+    second: garden-icons-ai_0
+  - first:
+      213: 1863354190603175168
+    second: garden-icons-ai_1
+  - first:
+      213: -6014259003487979419
+    second: garden-icons-ai_2
+  - first:
+      213: 1621123871386158072
+    second: garden-icons-ai_3
+  - first:
+      213: -7826922350205087435
+    second: garden-icons-ai_4
+  - first:
+      213: -9180855325386025833
+    second: garden-icons-ai_5
+  - first:
+      213: -8630267074660995758
+    second: garden-icons-ai_6
+  - first:
+      213: 524420907979600095
+    second: garden-icons-ai_7
+  - first:
+      213: -5373507262400400675
+    second: garden-icons-ai_8
+  - first:
+      213: 6741956790068913195
+    second: garden-icons-ai_9
+  - first:
+      213: 5533907719036687798
+    second: garden-icons-ai_10
+  - first:
+      213: 1869454501485540154
+    second: garden-icons-ai_11
+  - first:
+      213: 7089479097372737604
+    second: garden-icons-ai_12
+  - first:
+      213: -970301037119164962
+    second: garden-icons-ai_13
+  - first:
+      213: 8451484034885337586
+    second: garden-icons-ai_14
+  - first:
+      213: -8351882836806267155
+    second: garden-icons-ai_15
+  - first:
+      213: -5389662294396455569
+    second: garden-icons-ai_16
+  - first:
+      213: -419799875679620177
+    second: garden-icons-ai_17
+  - first:
+      213: -4721379835781538529
+    second: garden-icons-ai_18
+  - first:
+      213: -3112030635949145403
+    second: garden-icons-ai_19
+  - first:
+      213: -64483252936308194
+    second: garden-icons-ai_20
+  - first:
+      213: 2602520199776019279
+    second: garden-icons-ai_21
+  - first:
+      213: -4003454165240567424
+    second: garden-icons-ai_22
+  - first:
+      213: -4598682934697755714
+    second: garden-icons-ai_23
+  - first:
+      213: -7031381364216137924
+    second: garden-icons-ai_24
+  - first:
+      213: 3734840395216633308
+    second: garden-icons-ai_25
+  - first:
+      213: 2346795456769853870
+    second: garden-icons-ai_26
+  - first:
+      213: -5415781451271981811
+    second: garden-icons-ai_27
+  - first:
+      213: 530960733036950854
+    second: garden-icons-ai_28
+  - first:
+      213: -5166282013272451144
+    second: garden-icons-ai_29
+  - first:
+      213: 4411260678004461090
+    second: garden-icons-ai_30
+  - first:
+      213: 5019335132156452821
+    second: garden-icons-ai_31
+  - first:
+      213: -1598725667698818261
+    second: garden-icons-ai_32
+  - first:
+      213: -2286895151825613438
+    second: garden-icons-ai_33
+  - first:
+      213: 2871175485837305662
+    second: garden-icons-ai_34
+  - first:
+      213: 3777775473232176577
+    second: garden-icons-ai_35
+  - first:
+      213: -6152348999084665486
+    second: garden-icons-ai_36
+  - first:
+      213: -3062466215968700825
+    second: garden-icons-ai_37
+  - first:
+      213: 2783897560580989097
+    second: garden-icons-ai_38
+  - first:
+      213: 3786266457119473298
+    second: garden-icons-ai_39
+  - first:
+      213: 7660309688367891635
+    second: garden-icons-ai_40
+  - first:
+      213: 8937142975216069056
+    second: garden-icons-ai_41
+  - first:
+      213: -6170093942077998701
+    second: garden-icons-ai_42
+  - first:
+      213: -6273489893444153828
+    second: garden-icons-ai_43
+  - first:
+      213: 2046722358498400601
+    second: garden-icons-ai_44
+  - first:
+      213: -3306736868208453218
+    second: garden-icons-ai_45
+  - first:
+      213: 5876882071942964709
+    second: garden-icons-ai_46
+  - first:
+      213: -26806104501921415
+    second: garden-icons-ai_47
+  - first:
+      213: -585367176985128960
+    second: garden-icons-ai_48
+  - first:
+      213: -8970860085758674068
+    second: garden-icons-ai_49
+  - first:
+      213: 5242122098773927317
+    second: garden-icons-ai_50
+  - first:
+      213: -3284142218527866917
+    second: garden-icons-ai_51
+  - first:
+      213: 9074603843507055400
+    second: garden-icons-ai_52
+  - first:
+      213: -7778639357834810984
+    second: garden-icons-ai_53
+  - first:
+      213: 5668609119635170126
+    second: garden-icons-ai_54
+  - first:
+      213: 3416993707036924338
+    second: garden-icons-ai_55
+  - first:
+      213: -5997893615216090075
+    second: garden-icons-ai_56
+  - first:
+      213: -7077862539776504063
+    second: garden-icons-ai_57
+  - first:
+      213: -4116914048106213006
+    second: garden-icons-ai_58
+  - first:
+      213: -6346954019685046623
+    second: garden-icons-ai_59
+  - first:
+      213: -6865484032342076883
+    second: garden-icons-ai_60
+  - first:
+      213: 4581067424136690627
+    second: garden-icons-ai_61
+  - first:
+      213: -5946152171592269070
+    second: garden-icons-ai_62
+  - first:
+      213: 1260968083983658678
+    second: garden-icons-ai_63
+  - first:
+      213: 6434139313074580145
+    second: garden-icons-ai_64
+  - first:
+      213: -3041687162123584790
+    second: garden-icons-ai_65
+  - first:
+      213: 1192579391951349891
+    second: garden-icons-ai_66
+  - first:
+      213: 4210899054901414598
+    second: garden-icons-ai_67
+  - first:
+      213: -3857862496204241681
+    second: garden-icons-ai_68
+  - first:
+      213: 776941377841873124
+    second: garden-icons-ai_69
+  - first:
+      213: 4137301570136243293
+    second: garden-icons-ai_70
+  - first:
+      213: 1170463616880218115
+    second: garden-icons-ai_71
+  - first:
+      213: -5721090982766937990
+    second: garden-icons-ai_72
+  - first:
+      213: -6544258897662376418
+    second: garden-icons-ai_73
+  - first:
+      213: -8417578518280230652
+    second: garden-icons-ai_74
+  - first:
+      213: -7634212732313685264
+    second: garden-icons-ai_75
+  - first:
+      213: 8752594742680904567
+    second: garden-icons-ai_76
+  - first:
+      213: -7062031607309440731
+    second: garden-icons-ai_77
+  - first:
+      213: 4438082679100155048
+    second: garden-icons-ai_78
+  - first:
+      213: -5962766405818645495
+    second: garden-icons-ai_79
+  - first:
+      213: -7041071128289385761
+    second: garden-icons-ai_80
+  - first:
+      213: 319222254679853452
+    second: garden-icons-ai_81
+  - first:
+      213: -328915049074074005
+    second: garden-icons-ai_82
+  - first:
+      213: 1624736728600996083
+    second: garden-icons-ai_83
+  - first:
+      213: 5188531789490415288
+    second: garden-icons-ai_84
+  - first:
+      213: -3319070414158089456
+    second: garden-icons-ai_85
+  - first:
+      213: 8687496478482792536
+    second: garden-icons-ai_86
+  - first:
+      213: 9217894998367702673
+    second: garden-icons-ai_87
+  - first:
+      213: -549799732916899136
+    second: garden-icons-ai_88
+  - first:
+      213: 6761132576756072518
+    second: garden-icons-ai_89
+  - first:
+      213: 8720036757033902984
+    second: garden-icons-ai_90
+  - first:
+      213: 3233311260879656879
+    second: garden-icons-ai_91
+  - first:
+      213: 7070744462120543410
+    second: garden-icons-ai_92
+  - first:
+      213: 4405060558798161047
+    second: garden-icons-ai_93
+  - first:
+      213: 2996130499790630757
+    second: garden-icons-ai_94
+  - first:
+      213: 1899086786971638577
+    second: garden-icons-ai_95
+  - first:
+      213: 912296891787190650
+    second: garden-icons-ai_96
+  - first:
+      213: 4632491670886430167
+    second: garden-icons-ai_97
+  - first:
+      213: -5836535300279350490
+    second: garden-icons-ai_98
+  - first:
+      213: 8697077486354315204
+    second: garden-icons-ai_99
+  - first:
+      213: 2594978812645017400
+    second: garden-icons-ai_100
+  - first:
+      213: -7939170936714766166
+    second: garden-icons-ai_101
+  - first:
+      213: 6233169474111792663
+    second: garden-icons-ai_102
+  - first:
+      213: 5693754159649848311
+    second: garden-icons-ai_103
+  - first:
+      213: 3155571192658683918
+    second: garden-icons-ai_104
+  - first:
+      213: -351953571592417730
+    second: garden-icons-ai_105
+  - first:
+      213: -1702108750581034991
+    second: garden-icons-ai_106
+  - first:
+      213: -1729988917937664186
+    second: garden-icons-ai_107
+  - first:
+      213: -1407753759167583641
+    second: garden-icons-ai_108
+  - first:
+      213: 6838961880720810425
+    second: garden-icons-ai_109
+  - first:
+      213: 3676900553735605529
+    second: garden-icons-ai_110
+  - first:
+      213: -8559093624787346083
+    second: garden-icons-ai_111
+  - first:
+      213: -3707451645392931558
+    second: garden-icons-ai_112
+  - first:
+      213: -7168673175709802366
+    second: garden-icons-ai_113
+  - first:
+      213: 5531313673724899164
+    second: garden-icons-ai_114
+  - first:
+      213: -3797025373368798053
+    second: garden-icons-ai_115
+  - first:
+      213: 3676492186261532173
+    second: garden-icons-ai_116
+  - first:
+      213: 1337834082449777394
+    second: garden-icons-ai_117
+  - first:
+      213: -1554297050120715991
+    second: garden-icons-ai_118
+  - first:
+      213: 8438915362486938688
+    second: garden-icons-ai_119
+  - first:
+      213: -123712545312992707
+    second: garden-icons-ai_120
+  - first:
+      213: 2622267461100734578
+    second: garden-icons-ai_121
+  - first:
+      213: 6534711168397532912
+    second: garden-icons-ai_122
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: garden-icons-ai_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 596
+        width: 680
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3091f61c5b09b10800000000000000
+      internalID: 1986287278067614716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_1
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1233
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00543ad83c6fbd910800000000000000
+      internalID: 1863354190603175168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_2
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1233
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56877ed1d4f098ca0800000000000000
+      internalID: -6014259003487979419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_3
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 1211
+        width: 75
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3c0ea62936f7610800000000000000
+      internalID: 1621123871386158072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_4
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1212
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531d57f579f216390800000000000000
+      internalID: -7826922350205087435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_5
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1203
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794dc1c49bc079080800000000000000
+      internalID: -9180855325386025833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1203
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25de41a12d12b3880800000000000000
+      internalID: -8630267074660995758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_7
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1209
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd079ec890e174700800000000000000
+      internalID: 524420907979600095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_8
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1173
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd274aa6d977d65b0800000000000000
+      internalID: -5373507262400400675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_9
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 531
+        width: 563
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24271beafd309d50800000000000000
+      internalID: 6741956790068913195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_10
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1203
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b559f420c36ccc40800000000000000
+      internalID: 5533907719036687798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_11
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1171
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33fcccd6f2a1f910800000000000000
+      internalID: 1869454501485540154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_12
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1193
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44085796da3e26260800000000000000
+      internalID: 7089479097372737604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_13
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1174
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edda15df85cc882f0800000000000000
+      internalID: -970301037119164962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_14
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1173
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f1c93ca3f3b94570800000000000000
+      internalID: 8451484034885337586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_15
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 1179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee0b726fc6281c80800000000000000
+      internalID: -8351882836806267155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_16
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1184
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65be2be2b21435b0800000000000000
+      internalID: -5389662294396455569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1162
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3fc5dbc329c2af0800000000000000
+      internalID: -419799875679620177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_18
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1158
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d9c86ed0a4a7eb0800000000000000
+      internalID: -4721379835781538529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_19
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1155
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c24e16ff98dfc4d0800000000000000
+      internalID: -3112030635949145403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_20
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1154
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a05c6b2d8ea1ff0800000000000000
+      internalID: -64483252936308194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_21
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1172
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43ad6c35520e1420800000000000000
+      internalID: 2602520199776019279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_22
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1086
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089274ed5afd078c0800000000000000
+      internalID: -4003454165240567424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_23
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1090
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb70ba5c323e20c0800000000000000
+      internalID: -4598682934697755714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_24
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1100
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37789137e38b6e90800000000000000
+      internalID: -7031381364216137924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_25
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1108
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cddbaa92d81d4d330800000000000000
+      internalID: 3734840395216633308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_26
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1108
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea98449b80e719020800000000000000
+      internalID: 2346795456769853870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_27
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 823
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05b8cfc67747d4b0800000000000000
+      internalID: -5415781451271981811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_28
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 772
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645395a39f95e5700800000000000000
+      internalID: 530960733036950854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_29
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 717
+        width: 37
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7d76d81edad48b0800000000000000
+      internalID: -5166282013272451144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_30
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 720
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22eca1cf632f73d30800000000000000
+      internalID: 4411260678004461090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_31
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 680
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfd2d885b248a540800000000000000
+      internalID: 5019335132156452821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_32
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 676
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b234383c97f20d9e0800000000000000
+      internalID: -1598725667698818261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_33
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 682
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d0fd4d9f05340e0800000000000000
+      internalID: -2286895151825613438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_34
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 674
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37642964e678d720800000000000000
+      internalID: 2871175485837305662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_35
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 662
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5ef2307ca5d6430800000000000000
+      internalID: 3777775473232176577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_36
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 650
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 275145f8e277e9aa0800000000000000
+      internalID: -6152348999084665486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_37
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 640
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7660d84c33fef75d0800000000000000
+      internalID: -3062466215968700825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_38
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 644
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0a185e41462a620800000000000000
+      internalID: 2783897560580989097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_39
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 644
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e359148458b8430800000000000000
+      internalID: 3786266457119473298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_40
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 648
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4c6a45313ee4a60800000000000000
+      internalID: 7660309688367891635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_41
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 600
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9a1a85f2c170c70800000000000000
+      internalID: 8937142975216069056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_42
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 612
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399b6af004c6f5aa0800000000000000
+      internalID: -6170093942077998701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_43
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 614
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e02472e2610f8a0800000000000000
+      internalID: -6273489893444153828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_44
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 624
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959952c142b676c10800000000000000
+      internalID: 2046722358498400601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_45
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 612
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e995fb4965c1c12d0800000000000000
+      internalID: -3306736868208453218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_46
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 602
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5a50d7b11ee8150800000000000000
+      internalID: 5876882071942964709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_47
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 600
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 979d95f6df3c0aff0800000000000000
+      internalID: -26806104501921415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_48
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 594
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000d0a867ab50e7f0800000000000000
+      internalID: -585367176985128960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 710
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bbf9a184a118380800000000000000
+      internalID: -8970860085758674068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_50
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 576
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59525ae5642cfb840800000000000000
+      internalID: 5242122098773927317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_51
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 586
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf78c86d026c62d0800000000000000
+      internalID: -3284142218527866917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_52
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 568
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82be1a9cd187fed70800000000000000
+      internalID: 9074603843507055400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_53
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 570
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899226097b8bc0490800000000000000
+      internalID: -7778639357834810984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_54
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 574
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43e462f5f1faae40800000000000000
+      internalID: 5668609119635170126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_55
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 582
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b95eab2ca99b6f20800000000000000
+      internalID: 3416993707036924338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_56
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 540
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5242670098333cca0800000000000000
+      internalID: -5997893615216090075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_57
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 564
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fc39b258166cd90800000000000000
+      internalID: -7077862539776504063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_58
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 550
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27150df4c78cdd6c0800000000000000
+      internalID: -4116914048106213006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_59
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 568
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a66fea52f61be7a0800000000000000
+      internalID: -6346954019685046623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_60
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 556
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d225221c5a6e8b0a0800000000000000
+      internalID: -6865484032342076883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_61
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 544
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbf7cbfc88339f30800000000000000
+      internalID: 4581067424136690627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_62
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 529
+        width: 26
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f243df9a160b7da0800000000000000
+      internalID: -5946152171592269070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_63
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 544
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be63fe9acbdf7110800000000000000
+      internalID: 1260968083983658678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_64
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 512
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1baaf2f9d97aa4950800000000000000
+      internalID: 6434139313074580145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_65
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 554
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeaf1cf34a1c9c5d0800000000000000
+      internalID: -3041687162123584790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_66
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 541
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38826bf63a4ec8010800000000000000
+      internalID: 1192579391951349891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_67
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 495
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca4d60516e107a30800000000000000
+      internalID: 4210899054901414598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_68
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 536
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4c171ef7e167ac0800000000000000
+      internalID: -3857862496204241681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_69
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 501
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e04195111048ca00800000000000000
+      internalID: 776941377841873124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_70
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 488
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5cf2a09bd5aa6930800000000000000
+      internalID: 4137301570136243293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_71
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 425
+        width: 23
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3001aaa45725e3010800000000000000
+      internalID: 1170463616880218115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_72
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 499
+        width: 38
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a787c74101a9a90b0800000000000000
+      internalID: -5721090982766937990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_73
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 0
+        width: 418
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1605ae943f1e25a0800000000000000
+      internalID: -6544258897662376418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_74
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 451
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409a2f49fe0ce2b80800000000000000
+      internalID: -8417578518280230652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_75
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 352
+        width: 62
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2bdaeb7f3dd0690800000000000000
+      internalID: -7634212732313685264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_76
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 429
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77362749b86777970800000000000000
+      internalID: 8752594742680904567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_77
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 401
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5296dbd5baf9efd90800000000000000
+      internalID: -7062031607309440731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_78
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 359
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a42493ceac379d30800000000000000
+      internalID: 4438082679100155048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_79
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 324
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9040c86cb8fff3da0800000000000000
+      internalID: -5962766405818645495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_80
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 253
+        width: 89
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd26d003d17194e90800000000000000
+      internalID: -7041071128289385761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_81
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 347
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89879603fa1e6400800000000000000
+      internalID: 319222254679853452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_82
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 262
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ed8aa61857f6bf0800000000000000
+      internalID: -328915049074074005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_83
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 164
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8eac942793c8610800000000000000
+      internalID: 1624736728600996083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_84
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 208
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6e56a2c2e510840800000000000000
+      internalID: 5188531789490415288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_85
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 168
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01339932b0b40f1d0800000000000000
+      internalID: -3319070414158089456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_86
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 115
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8508c63d400309870800000000000000
+      internalID: 8687496478482792536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_87
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 121
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e8e8a99aa8cef70800000000000000
+      internalID: 9217894998367702673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_88
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 109
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c232ed4e08be58f0800000000000000
+      internalID: -549799732916899136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_89
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 108
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6400edca14e54dd50800000000000000
+      internalID: 6761132576756072518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_90
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 109
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883ea53da3bc30970800000000000000
+      internalID: 8720036757033902984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_91
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 103
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7900106770fdc20800000000000000
+      internalID: 3233311260879656879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_92
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 111
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4614a30a4502260800000000000000
+      internalID: 7070744462120543410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_93
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 78
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7948f3d3d3be12d30800000000000000
+      internalID: 4405060558798161047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_94
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56febbcb0d4649920800000000000000
+      internalID: 2996130499790630757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_95
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 99
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b1517fe59ea5a10800000000000000
+      internalID: 1899086786971638577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_96
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 75
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a712ba4803129ac00800000000000000
+      internalID: 912296891787190650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_97
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 27
+        width: 63
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5342471aae94040800000000000000
+      internalID: 4632491670886430167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_98
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 57
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b42d35116700fa0800000000000000
+      internalID: -5836535300279350490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_99
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 85
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7323e05e932b870800000000000000
+      internalID: 8697077486354315204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_100
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 81
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8370f573b77330420800000000000000
+      internalID: 2594978812645017400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_101
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 51
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8d20ab81662d190800000000000000
+      internalID: -7939170936714766166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_102
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 55
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 716ed39ac9aa08650800000000000000
+      internalID: 6233169474111792663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_103
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 65
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbf45ccd37440f40800000000000000
+      internalID: 5693754159649848311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_104
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 75
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0860e1e747dacb20800000000000000
+      internalID: 3155571192658683918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_105
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 47
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ecdc3671c9d1bf0800000000000000
+      internalID: -351953571592417730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_106
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 57
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11098880c15e068e0800000000000000
+      internalID: -1702108750581034991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_107
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 43
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f86f8be38ddf7e0800000000000000
+      internalID: -1729988917937664186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_108
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 55
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a68952a67a67ce0800000000000000
+      internalID: -1407753759167583641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_109
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 57
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b12dcc989fd8ee50800000000000000
+      internalID: 6838961880720810425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_110
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 63
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d09d39299f60330800000000000000
+      internalID: 3676900553735605529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_111
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 31
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d5d3f32bdf73980800000000000000
+      internalID: -8559093624787346083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_112
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 53
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15ba661f5c7c8cc0800000000000000
+      internalID: -3707451645392931558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_113
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 47
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28022fa5ab1c38c90800000000000000
+      internalID: -7168673175709802366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_114
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 49
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f22a7ea7c23cc40800000000000000
+      internalID: 5531313673724899164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_115
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 51
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9435395a814e4bc0800000000000000
+      internalID: -3797025373368798053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_116
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 31
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e2e9d1a26850330800000000000000
+      internalID: 3676492186261532173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_117
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 21
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f264d48201f09210800000000000000
+      internalID: 1337834082449777394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_118
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 30
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9210e1461170e6ae0800000000000000
+      internalID: -1554297050120715991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_119
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 31
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cee969fcc0d1570800000000000000
+      internalID: 8438915362486938688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_120
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 39
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d321c52781c784ef0800000000000000
+      internalID: -123712545312992707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_121
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 23
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27889fccc5a246420800000000000000
+      internalID: 2622267461100734578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garden-icons-ai_122
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 0
+        width: 145
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fedc1e6f25ffaa50800000000000000
+      internalID: 6534711168397532912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      garden-icons-ai_0: 1986287278067614716
+      garden-icons-ai_1: 1863354190603175168
+      garden-icons-ai_10: 5533907719036687798
+      garden-icons-ai_100: 2594978812645017400
+      garden-icons-ai_101: -7939170936714766166
+      garden-icons-ai_102: 6233169474111792663
+      garden-icons-ai_103: 5693754159649848311
+      garden-icons-ai_104: 3155571192658683918
+      garden-icons-ai_105: -351953571592417730
+      garden-icons-ai_106: -1702108750581034991
+      garden-icons-ai_107: -1729988917937664186
+      garden-icons-ai_108: -1407753759167583641
+      garden-icons-ai_109: 6838961880720810425
+      garden-icons-ai_11: 1869454501485540154
+      garden-icons-ai_110: 3676900553735605529
+      garden-icons-ai_111: -8559093624787346083
+      garden-icons-ai_112: -3707451645392931558
+      garden-icons-ai_113: -7168673175709802366
+      garden-icons-ai_114: 5531313673724899164
+      garden-icons-ai_115: -3797025373368798053
+      garden-icons-ai_116: 3676492186261532173
+      garden-icons-ai_117: 1337834082449777394
+      garden-icons-ai_118: -1554297050120715991
+      garden-icons-ai_119: 8438915362486938688
+      garden-icons-ai_12: 7089479097372737604
+      garden-icons-ai_120: -123712545312992707
+      garden-icons-ai_121: 2622267461100734578
+      garden-icons-ai_122: 6534711168397532912
+      garden-icons-ai_13: -970301037119164962
+      garden-icons-ai_14: 8451484034885337586
+      garden-icons-ai_15: -8351882836806267155
+      garden-icons-ai_16: -5389662294396455569
+      garden-icons-ai_17: -419799875679620177
+      garden-icons-ai_18: -4721379835781538529
+      garden-icons-ai_19: -3112030635949145403
+      garden-icons-ai_2: -6014259003487979419
+      garden-icons-ai_20: -64483252936308194
+      garden-icons-ai_21: 2602520199776019279
+      garden-icons-ai_22: -4003454165240567424
+      garden-icons-ai_23: -4598682934697755714
+      garden-icons-ai_24: -7031381364216137924
+      garden-icons-ai_25: 3734840395216633308
+      garden-icons-ai_26: 2346795456769853870
+      garden-icons-ai_27: -5415781451271981811
+      garden-icons-ai_28: 530960733036950854
+      garden-icons-ai_29: -5166282013272451144
+      garden-icons-ai_3: 1621123871386158072
+      garden-icons-ai_30: 4411260678004461090
+      garden-icons-ai_31: 5019335132156452821
+      garden-icons-ai_32: -1598725667698818261
+      garden-icons-ai_33: -2286895151825613438
+      garden-icons-ai_34: 2871175485837305662
+      garden-icons-ai_35: 3777775473232176577
+      garden-icons-ai_36: -6152348999084665486
+      garden-icons-ai_37: -3062466215968700825
+      garden-icons-ai_38: 2783897560580989097
+      garden-icons-ai_39: 3786266457119473298
+      garden-icons-ai_4: -7826922350205087435
+      garden-icons-ai_40: 7660309688367891635
+      garden-icons-ai_41: 8937142975216069056
+      garden-icons-ai_42: -6170093942077998701
+      garden-icons-ai_43: -6273489893444153828
+      garden-icons-ai_44: 2046722358498400601
+      garden-icons-ai_45: -3306736868208453218
+      garden-icons-ai_46: 5876882071942964709
+      garden-icons-ai_47: -26806104501921415
+      garden-icons-ai_48: -585367176985128960
+      garden-icons-ai_49: -8970860085758674068
+      garden-icons-ai_5: -9180855325386025833
+      garden-icons-ai_50: 5242122098773927317
+      garden-icons-ai_51: -3284142218527866917
+      garden-icons-ai_52: 9074603843507055400
+      garden-icons-ai_53: -7778639357834810984
+      garden-icons-ai_54: 5668609119635170126
+      garden-icons-ai_55: 3416993707036924338
+      garden-icons-ai_56: -5997893615216090075
+      garden-icons-ai_57: -7077862539776504063
+      garden-icons-ai_58: -4116914048106213006
+      garden-icons-ai_59: -6346954019685046623
+      garden-icons-ai_6: -8630267074660995758
+      garden-icons-ai_60: -6865484032342076883
+      garden-icons-ai_61: 4581067424136690627
+      garden-icons-ai_62: -5946152171592269070
+      garden-icons-ai_63: 1260968083983658678
+      garden-icons-ai_64: 6434139313074580145
+      garden-icons-ai_65: -3041687162123584790
+      garden-icons-ai_66: 1192579391951349891
+      garden-icons-ai_67: 4210899054901414598
+      garden-icons-ai_68: -3857862496204241681
+      garden-icons-ai_69: 776941377841873124
+      garden-icons-ai_7: 524420907979600095
+      garden-icons-ai_70: 4137301570136243293
+      garden-icons-ai_71: 1170463616880218115
+      garden-icons-ai_72: -5721090982766937990
+      garden-icons-ai_73: -6544258897662376418
+      garden-icons-ai_74: -8417578518280230652
+      garden-icons-ai_75: -7634212732313685264
+      garden-icons-ai_76: 8752594742680904567
+      garden-icons-ai_77: -7062031607309440731
+      garden-icons-ai_78: 4438082679100155048
+      garden-icons-ai_79: -5962766405818645495
+      garden-icons-ai_8: -5373507262400400675
+      garden-icons-ai_80: -7041071128289385761
+      garden-icons-ai_81: 319222254679853452
+      garden-icons-ai_82: -328915049074074005
+      garden-icons-ai_83: 1624736728600996083
+      garden-icons-ai_84: 5188531789490415288
+      garden-icons-ai_85: -3319070414158089456
+      garden-icons-ai_86: 8687496478482792536
+      garden-icons-ai_87: 9217894998367702673
+      garden-icons-ai_88: -549799732916899136
+      garden-icons-ai_89: 6761132576756072518
+      garden-icons-ai_9: 6741956790068913195
+      garden-icons-ai_90: 8720036757033902984
+      garden-icons-ai_91: 3233311260879656879
+      garden-icons-ai_92: 7070744462120543410
+      garden-icons-ai_93: 4405060558798161047
+      garden-icons-ai_94: 2996130499790630757
+      garden-icons-ai_95: 1899086786971638577
+      garden-icons-ai_96: 912296891787190650
+      garden-icons-ai_97: 4632491670886430167
+      garden-icons-ai_98: -5836535300279350490
+      garden-icons-ai_99: 8697077486354315204
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
