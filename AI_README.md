@@ -1,75 +1,28 @@
 # AI handoff — Idle Garden
 
-## Checkpoint đang làm — đọc trước
+Đọc CHECKPOINT.md trước. Trạng thái F01/F02 đã chốt, F03 đang kiểm tra; thiết kế chuẩn docs/GAME_DESIGN.md, tiến độ docs/FEATURE_STATUS.md, hành trình docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng và ghi dev log + commit/tag. Không nối nhật ký dài vào file này.
 
-**F01 hoàn tất ngày 2026-10-19. Đọc `CHECKPOINT.md`, tiếp tục F02.** User yêu cầu commit/tag Git cho từng feature để quay video: repo https://github.com/ondat2401/Taskbar_garden; hướng dẫn `docs/GIT_CHECKPOINTS.md`.
+## Project
 
-Scene đã gắn `GardenEconomy.asset` (2 cây, gold30, reserve4, upgrades=[]); HUD cũ hiển thị GOLD, Runtime tab có thao tác bán và auto-sell. Compact shop/nâng cấp/save/tái sinh còn là bản nháp, **chưa build mới**. `GardenEconomyVerification.Run()` + regression simulation pass; Play Mode harvest→stock→gold, stockpile OFF và bán surplus pass. Không ghi save trong Editor.
+Unity 6000.3.10f1, URP17.3, InputSystem1.18, uGUI2; Windows desktop qua UniWindowController. Scene Assets/Game/Scenes/GardenPrototype.unity. Profile Assets/Game/_Configs/Garden/Prototype.asset → GardenEconomy.asset. Assets thuộc Assets/Game; scripts chia feature. Packages MCP của user giữ nguyên.
 
-F02 cần điền upgrade vào config hiện hữu, sửa early return trong setup theo phạm vi F02; không tạo config thứ hai hay ghi đè giá trị user đã chỉnh. Giữ các thay đổi tự sinh ngoài feature (NuGet importer meta/Recovery) nguyên trạng, không đưa lẫn vào commit F01.
+Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạch lặp lại. Đổi giữa vụ đợi cây cũ xong. Ba theme/bốn cây/sáu nâng cấp hiện có. Kho giữ reserve4 và tự bán dư, mở theme thưởng một rương. Rương timed/rarity affix chưa triển khai; save/rebirth còn cần hoàn thiện và kiểm tra. Multiplayer/Steam commerce chưa làm. Thiết kế IAP cosmetic, chưa có purchase thật.
 
-Thứ tự: F01 kho/vàng → F02 upgrade → F03 compact window/shop/art → F04 save I/O → F05 rebirth end-to-end → F06 build. Hoàn tất và ghi checkpoint từng feature, không coi toàn bộ bản nháp là đã kiểm chứng.
+## Code liên quan
 
-## Đọc trước
+- Garden/GardenSimulation.cs: state/job, chọn cây, Capture/Restore. GardenController.cs: tick, camera, HUD, autosave standalone; Editor không ghi save.
+- Progression/GardenProgression.cs: inventory/gold/rank/theme/chests/rebirth. ProgressionConfig.cs và UpgradeDefinition.cs: data. GardenSaveStore.cs: DTO/version1, I/O nháp chưa test đầy đủ.
+- Crops/CropDefinition.cs, GardenTheme.cs: cây và theme. Worker/WorkerConfig.cs: chỉ số gốc.
+- UI/GardenHud.cs: callback chậu/cây/theme/tab/shop. ShopUpgradeRow.cs: nâng cấp. Garden/PlotView.cs: sprite và click chậu.
+- Desktop/DesktopWindow.cs, WindowHandle.cs: native drag/resize/menu, Windows standalone.
+- Editor/GardenConfig/: GardenPrototypeBuilder, GardenProgressionSetup dựng scene/HUD; GardenContentSetup tạo catalog; GardenThemeArt nối atlas; GardenConfigWindow chỉnh data; GardenVerification/GardenEconomyVerification/GardenFeatureVerification kiểm tra.
 
-- Đây là bản nhớ hiện trạng, không phải lịch sử hội thoại. Cập nhật trực tiếp khi thêm/xóa/sửa; xóa thông tin đã lỗi thời.
-- User muốn prototype trồng cây 2D trên taskbar, cửa sổ kéo/resize được, data dễ chỉnh bằng Editor và tăng được số ô. Multiplayer hai vườn đồng bộ là hướng sau, chưa triển khai.
-- Unity 6000.3.10f1, URP 17.3.0, Input System 1.18.0, uGUI 2.0.0. Giữ package sẵn có của user.
-- Đã thêm Unity Pipeline 0.8.0-exp.1 để điều khiển Editor qua `unity command`, và UniWindowController qua UPM, pin commit `304f9ba2aa4a8fae7f3c71f38118c44722a2f6cc`.
+## Verification
 
-## Phạm vi và quyết định
+F01: 10k giao dịch, giới hạn số học, 1200s sim và Play Mode pass. F02: Pots() + economy + simulation regression pass, mua sáu upgrade không mutate base. Regression 4/8/12 ô từng chạy pass. F03: compile pass; ảnh workshop 920×540 đúng; callback chọn cây/chuyển chậu/tab/đóng pass trong Play mới. Native và build mới chưa verify; executable cũ chỉ có khung.
 
-- Một nhân vật đi ngang; 4 ô mặc định, danh sách profile không hardcode số ô.
-- Tự trồng/tưới/lấy nước/thu hoạch, hạt vô hạn; F01 đưa sản lượng vào kho và bán lấy vàng. Cây khô dừng lớn, không chết.
-- Mỗi việc chạy đến hết; ưu tiên Harvest > Water > Plant, chọn ô gần nhất trong cùng nhóm. Refill là bước khi thiếu nước.
-- Thông số số học / sprite đọc live. Số ô, gán loại cây, spacing đổi ngoài Play rồi Apply Layout.
-- Scene có economy F01; build executable cũ chưa có economy. Nâng cấp/compact shop/save mới là draft; atlas AI chưa slice. Multiplayer, Steam SDK và offline rewards chưa làm.
-- Chỉ Windows standalone mới điều khiển cửa sổ native. Tay nắm resize góc phải dưới; chưa resize mọi cạnh, chưa lưu vị trí qua lần chạy.
+## Workflow
 
-## Bản đồ code
+unity status --format json; unity command recompile_status --format json. Eval qua live Editor để thao tác asset/scene, không sửa YAML. GardenVerification.Run(), GardenEconomyVerification.Run(), GardenFeatureVerification.Pots() là entry test hiện có trong namespace IdleGarden.Editor. Nếu script mới không vào compile list, AssetDatabase MoveAsset sang tên tạm rồi về có thể đăng ký lại; không reset Library/package.
 
-| Đường dẫn dưới Assets/Game | Vai trò |
-|---|---|
-| Scripts/Crops/CropDefinition.cs | Asset định nghĩa cây |
-| Scripts/Worker/WorkerConfig.cs | Asset tốc độ, thao tác, animation |
-| Scripts/Garden/GardenProfile.cs | Profile tổng, danh sách ô, layout, validation |
-| Scripts/Garden/GardenSimulation.cs | State thuần và chọn/thực hiện công việc; mảng cấp phát lúc tạo simulation |
-| Scripts/Garden/GardenController.cs | Tick, animation, camera pan và HUD |
-| Scripts/Garden/PlotView.cs | Hiển thị sprite và bar từng ô |
-| Scripts/Desktop/DesktopWindow.cs | Native window, drag/resize/pin/lock, chỉ bật Windows build |
-| Scripts/Desktop/WindowHandle.cs | Pointer event cho vùng kéo/resize |
-| Scripts/Editor/GardenConfig/GardenConfigWindow.cs | Editor UI Toolkit, 4 tab, serialized fields và runtime monitor |
-| Scripts/Editor/GardenConfig/GardenPrototypeBuilder.cs | Tạo default asset/scene/prefab, Apply Layout, build Windows |
-| Scripts/Editor/GardenConfig/GardenPlaceholderArt.cs | Sinh PNG placeholder offline trong Editor |
-| Scripts/Editor/GardenConfig/GardenVerification.cs | Kiểm tra simulation bằng assert/exception, có menu chạy lại |
-
-## Asset và đường vào
-
-- Scene: `Assets/Game/Scenes/GardenPrototype.unity`; không sửa scene mẫu của user.
-- Config chính: `Assets/Game/_Configs/Garden/Prototype.asset` → worker + danh sách crop của từng ô.
-- Prefab ô: `Assets/Game/Prefabs/Garden/Plot.prefab`.
-- Material: `Assets/Game/Materials/PixelUnlit.mat`; art PNG ở Textures/{Crops,Worker,Environment}, Point/None, PPU 32 (pixel trắng cho bar có PPU 1).
-- Menu: `Tools > Idle Garden > Garden Config`, `Open or Create Prototype`, `Verify Simulation`, `Build Windows Prototype`.
-- Apply Layout thay nhánh `Idle Garden/Generated Layout` bằng Undo; không để custom object trong đó. Các asset đã tồn tại không bị Create Defaults ghi đè.
-- Build: `Builds/Windows/IdleGarden.exe`; build function đặt D3D11, windowed, resizable, background, tắt flip model/HDR, bật alpha URP nếu property có.
-
-## Verification hiện tại
-
-- 2026-10-18: Editor compile pass trên Unity 6000.3.10f1.
-- `GardenVerification.Run()` pass: 4/8/12 ô, mỗi ô thu hoạch nhiều vòng, có refill, nước/growth trong giới hạn, pause không mutate state, cây khô không lớn, chỉnh growSeconds áp dụng live.
-- Apply Layout trên scene thật: 8 → 12 → 4 ô pass; đã khôi phục 4 ô và simulationSpeed = 1, lưu asset/scene.
-- Kiểm tra tạo scene mới từ tool rồi lưu/mở lại: 4 ô và references còn nguyên. Đã xóa scene test và khôi phục scene gốc cùng GUID.
-- Play Mode thực tế đã chạy: tổng sản lượng 16, từng ô [3,6,3,4]; Console không warning/error trong lượt chạy sau khi sửa wiring. Đã xem ảnh Game View, sprite/bar/nhân vật hiển thị.
-- Lần compile đầu Unity bỏ sót một số source trong compilation list; refresh/reimport không đủ. MoveAsset `.cs` → tên tạm → tên cũ bằng AssetDatabase đăng ký lại script và compile đã pass. Đây là lỗi import phiên làm việc, không phải dependency code còn thiếu.
-- Build Windows x64 đã thành công; đã chạy exe, log xác nhận D3D11 và không có exception, process phản hồi bình thường. Đã tắt process test.
-- Chưa kiểm chứng thao tác chuột native drag/resize/click-through hoặc DPI/nhiều màn hình; không ghi các mục này là pass chỉ vì build thành công.
-- Pipeline bị tắt trong Player (không có RuntimePipelineConfig) là chủ ý; package chỉ phục vụ Editor. Build có warning tương ứng, không phải lỗi gameplay.
-- Runtime dùng integer pixel scale theo chiều cao và snap vị trí hiển thị 1/32 world unit; simulation vẫn giữ tọa độ float. HUD text cập nhật mỗi 0.25 giây ngoài Update.
-
-## Quy trình cho agent tiếp theo
-
-1. Đọc file này + AGENTS.md; xem task hiện tại thay vì khôi phục toàn bộ chat. Giới hạn tìm kiếm vào Assets/Game và Packages/manifest.json; không quét Library/Temp/Logs/Builds để lấy context.
-2. `unity status --format json`; dùng command discovery khi cần, luôn chọn đúng project.
-3. Sửa source rồi refresh/compile qua Editor; sửa scene/asset qua API Editor.
-4. Chạy Verify Simulation nếu đổi logic; Play Mode để xem wiring/hiển thị; build Windows nếu đổi desktop.
-5. Cập nhật file này: quyết định mới, file thêm/xóa/đổi vai trò, kiểm chứng và phần còn thiếu. Ghi kết quả ngắn, không lưu log thô.
+Giữ nguyên thay đổi NuGet meta/Assets/_Recovery ngoài feature. Assets/Temp chứa screenshot QA tạm, không stage. Không claim test chưa chạy. Build output Builds/Windows/IdleGarden.exe bị ignore; user muốn tag từng giai đoạn để quay video, không dời tag đã push.
