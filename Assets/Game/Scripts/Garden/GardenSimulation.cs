@@ -7,12 +7,15 @@ namespace IdleGarden
 
     public sealed class PlotState
     {
-        public readonly CropDefinition Crop;
+        public CropDefinition Crop { get; private set; }
+        public CropDefinition SelectedCrop { get; private set; }
         public bool Planted;
         public float Growth;
         public float Water;
         public int Harvested;
-        public PlotState(PlotConfig config) { Crop = config.crop; Water = Mathf.Clamp(config.startingWater, 0, Crop.waterCapacity); }
+        public PlotState(PlotConfig config) { Crop = SelectedCrop = config.crop; Water = Mathf.Clamp(config.startingWater, 0, Crop.waterCapacity); }
+        public void Select(CropDefinition crop) { SelectedCrop = crop; if (!Planted) BeginNextCrop(); }
+        public void BeginNextCrop() { Crop = SelectedCrop; Water = Mathf.Min(Water, Crop.waterCapacity); }
         public bool Ready => Planted && Growth >= 1;
     }
 
@@ -102,7 +105,7 @@ namespace IdleGarden
                         plot.Harvested = (int)Math.Min(int.MaxValue, (long)plot.Harvested + amountHarvested);
                         HarvestCount = (int)Math.Min(int.MaxValue, (long)HarvestCount + amountHarvested);
                         progression?.AddHarvest(plot.Crop, amountHarvested);
-                        plot.Planted = false; plot.Growth = 0; break;
+                        plot.Planted = false; plot.Growth = 0; plot.BeginNextCrop(); break;
                 }
             }
             Job = GardenJob.Idle; Target = -1; actionElapsed = 0; ActionProgress = 0;
@@ -137,7 +140,7 @@ namespace IdleGarden
             saved.plots = new PlotSave[Plots.Length];
             for (int i = 0; i < Plots.Length; i++)
             {
-                var p = Plots[i]; saved.plots[i] = new PlotSave { cropId = p.Crop.id, planted = p.Planted, growth = p.Growth, water = p.Water, harvested = p.Harvested };
+                var p = Plots[i]; saved.plots[i] = new PlotSave { cropId = p.Crop.id, nextCropId = p.SelectedCrop.id, planted = p.Planted, growth = p.Growth, water = p.Water, harvested = p.Harvested };
             }
             saved.workerX = WorkerX; saved.workerWater = Water; saved.harvested = HarvestCount;
         }
@@ -147,10 +150,20 @@ namespace IdleGarden
             for (int i = 0; i < Math.Min(Plots.Length, saved.plots.Length); i++)
             {
                 var p = saved.plots[i]; var target = Plots[i];
-                if (p.cropId != target.Crop.id) continue;
+                var current = progression?.Config.FindCrop(p.cropId) ?? (p.cropId == target.Crop.id ? target.Crop : null);
+                var selected = progression?.Config.FindCrop(p.nextCropId) ?? current;
+                if (!current || (progression != null && (!progression.CropUnlocked(current) || !progression.CropUnlocked(selected)))) continue;
+                target.Select(current);
                 target.Planted = p.planted; target.Growth = p.growth; target.Water = Mathf.Min(target.Crop.waterCapacity, p.water); target.Harvested = p.harvested;
+                target.Select(selected);
             }
             WorkerX = Mathf.Clamp(saved.workerX, WellX, RightEdge); Water = Mathf.Min(saved.workerWater, TankCapacity); HarvestCount = saved.harvested;
+        }
+        public bool SelectCrop(int index, CropDefinition crop)
+        {
+            if (index < 0 || index >= Plots.Length || !crop || (progression != null && !progression.CropUnlocked(crop))) return false;
+            if (progression == null && crop != Profile.plots[index].crop) return false;
+            Plots[index].Select(crop); return true;
         }
     }
 }

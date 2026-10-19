@@ -1,0 +1,1573 @@
+fileFormatVersion: 2
+guid: 6fae97e06c5a29149b447739e104fad2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6133057298985085204
+    second: theme-growth-ai_0
+  - first:
+      213: -7083908507232777543
+    second: theme-growth-ai_1
+  - first:
+      213: -7928594829744077158
+    second: theme-growth-ai_2
+  - first:
+      213: 8747223800273267679
+    second: theme-growth-ai_3
+  - first:
+      213: -9035574027338606263
+    second: theme-growth-ai_4
+  - first:
+      213: 8267498006406419384
+    second: theme-growth-ai_5
+  - first:
+      213: 4359882682842582693
+    second: theme-growth-ai_6
+  - first:
+      213: 7256907282545260525
+    second: theme-growth-ai_7
+  - first:
+      213: 1442316993888983078
+    second: theme-growth-ai_8
+  - first:
+      213: -3643769387539260679
+    second: theme-growth-ai_9
+  - first:
+      213: -3451365220806778438
+    second: theme-growth-ai_10
+  - first:
+      213: -7542140057400090893
+    second: theme-growth-ai_11
+  - first:
+      213: 6168319176765279623
+    second: theme-growth-ai_12
+  - first:
+      213: -9220021145823627209
+    second: theme-growth-ai_13
+  - first:
+      213: 9102829546911848714
+    second: theme-growth-ai_14
+  - first:
+      213: -210677018997994125
+    second: theme-growth-ai_15
+  - first:
+      213: -6114568390784233661
+    second: theme-growth-ai_16
+  - first:
+      213: -1790936589431731083
+    second: theme-growth-ai_17
+  - first:
+      213: -8030531786316898647
+    second: theme-growth-ai_18
+  - first:
+      213: 7174363575368687011
+    second: theme-growth-ai_19
+  - first:
+      213: 2691071187754626865
+    second: theme-growth-ai_20
+  - first:
+      213: 4629516192970256531
+    second: theme-growth-ai_21
+  - first:
+      213: 6429639450037009753
+    second: theme-growth-ai_22
+  - first:
+      213: 4233694459744055925
+    second: theme-growth-ai_23
+  - first:
+      213: 8192274591094772422
+    second: theme-growth-ai_24
+  - first:
+      213: -4151683002002768514
+    second: theme-growth-ai_25
+  - first:
+      213: 1579231050077058832
+    second: theme-growth-ai_26
+  - first:
+      213: -7639249270161630097
+    second: theme-growth-ai_27
+  - first:
+      213: 7955388204662762291
+    second: theme-growth-ai_28
+  - first:
+      213: 6658417367258246542
+    second: theme-growth-ai_29
+  - first:
+      213: 7279149208858309333
+    second: theme-growth-ai_30
+  - first:
+      213: 6804367331628388899
+    second: theme-growth-ai_31
+  - first:
+      213: 6786709386179200683
+    second: theme-growth-ai_32
+  - first:
+      213: 3654441422336706152
+    second: theme-growth-ai_33
+  - first:
+      213: -1740317739144318922
+    second: theme-growth-ai_34
+  - first:
+      213: 4312996887804714210
+    second: theme-growth-ai_35
+  - first:
+      213: 8954213506318235177
+    second: theme-growth-ai_36
+  - first:
+      213: -9012368408948292754
+    second: theme-growth-ai_37
+  - first:
+      213: -6701286756349855051
+    second: theme-growth-ai_38
+  - first:
+      213: -3552961143079285280
+    second: theme-growth-ai_39
+  - first:
+      213: 6425696566933497677
+    second: theme-growth-ai_40
+  - first:
+      213: 4036275483985074030
+    second: theme-growth-ai_41
+  - first:
+      213: -706742538206357208
+    second: theme-growth-ai_42
+  - first:
+      213: 1601958355235309562
+    second: theme-growth-ai_43
+  - first:
+      213: -1180606509957640439
+    second: theme-growth-ai_44
+  - first:
+      213: -2331018418714585127
+    second: theme-growth-ai_45
+  - first:
+      213: 1440957461251925239
+    second: theme-growth-ai_46
+  - first:
+      213: 2598190231711969018
+    second: theme-growth-ai_47
+  - first:
+      213: 6052175832917952489
+    second: theme-growth-ai_48
+  - first:
+      213: 2011180391701954713
+    second: theme-growth-ai_49
+  - first:
+      213: 676918341659486066
+    second: theme-growth-ai_50
+  - first:
+      213: -8035413194912675742
+    second: theme-growth-ai_51
+  - first:
+      213: 8345418593024888811
+    second: theme-growth-ai_52
+  - first:
+      213: -183024252792391529
+    second: theme-growth-ai_53
+  - first:
+      213: 8637570190575779756
+    second: theme-growth-ai_54
+  - first:
+      213: 6066725646971734768
+    second: theme-growth-ai_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: theme-growth-ai_0
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 823
+        width: 267
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4196f1d7e1ffc1550800000000000000
+      internalID: 6133057298985085204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_1
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 533
+        width: 523
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bac50daeb6e0bd90800000000000000
+      internalID: -7083908507232777543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_2
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 979
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a960b158209f7f190800000000000000
+      internalID: -7928594829744077158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_3
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 977
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb612a93b1646970800000000000000
+      internalID: 8747223800273267679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_4
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 927
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9499cbe6b413b9280800000000000000
+      internalID: -9035574027338606263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_5
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 946
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3da1d32ad0cb270800000000000000
+      internalID: 8267498006406419384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_6
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 915
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae853d433a618c30800000000000000
+      internalID: 4359882682842582693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 703
+        width: 221
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de73e0889b6b5b460800000000000000
+      internalID: 7256907282545260525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_8
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 911
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628134a0aa3240410800000000000000
+      internalID: 1442316993888983078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_9
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 907
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa974c2c0bbe6dc0800000000000000
+      internalID: -3643769387539260679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_10
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 829
+        width: 55
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1aca72e994a10d0800000000000000
+      internalID: -3451365220806778438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 835
+        width: 39
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe5c68e39fe45790800000000000000
+      internalID: -7542140057400090893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_12
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 823
+        width: 29
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d03503c954a9550800000000000000
+      internalID: 6168319176765279623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_13
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 887
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 738b79d1e97eb0080800000000000000
+      internalID: -9220021145823627209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_14
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 863
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a095c9a7e3fb35e70800000000000000
+      internalID: 9102829546911848714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_15
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 869
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d49401e56831df0800000000000000
+      internalID: -210677018997994125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_16
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 857
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f4978e170b42ba0800000000000000
+      internalID: -6114568390784233661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_17
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 795
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c0ca329a05527e0800000000000000
+      internalID: -1790936589431731083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 799
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae191f43e1dd8090800000000000000
+      internalID: -8030531786316898647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_19
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 711
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad1a5f09a5709360800000000000000
+      internalID: 7174363575368687011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_20
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 423
+        width: 429
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f2763ccfa985520800000000000000
+      internalID: 2691071187754626865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 583
+        width: 159
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39039e303785f3040800000000000000
+      internalID: 4629516192970256531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_22
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 725
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d3b4d930baa3950800000000000000
+      internalID: 6429639450037009753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_23
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 723
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57275981eaa11ca30800000000000000
+      internalID: 4233694459744055925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_24
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 745
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c299a8065ec0b170800000000000000
+      internalID: 8192274591094772422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_25
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 717
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7df8956e424266c0800000000000000
+      internalID: -4151683002002768514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_26
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 698
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0173c1ed54e8ae510800000000000000
+      internalID: 1579231050077058832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_27
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 737
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c9a55634febf590800000000000000
+      internalID: -7639249270161630097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_28
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 405
+        width: 245
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ba1453c67376e60800000000000000
+      internalID: 7955388204662762291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_29
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 687
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d28b55153776c50800000000000000
+      internalID: 6658417367258246542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_30
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 651
+        width: 69
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2b01d83abb40560800000000000000
+      internalID: 7279149208858309333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_31
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 555
+        width: 39
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3229bfa7908fd6e50800000000000000
+      internalID: 6804367331628388899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_32
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 611
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6450daa3c3f2e50800000000000000
+      internalID: 6786709386179200683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_33
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 607
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8664ade8c1f27b230800000000000000
+      internalID: 3654441422336706152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_34
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 551
+        width: 69
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630fdf1ac3629d7e0800000000000000
+      internalID: -1740317739144318922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_35
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 603
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec17f671d7dadb30800000000000000
+      internalID: 4312996887804714210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 551
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9267a171eb1c34c70800000000000000
+      internalID: 8954213506318235177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_37
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 501
+        width: 31
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e634faf7ea2ade280800000000000000
+      internalID: -9012368408948292754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_38
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 531
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5babcb5333f3003a0800000000000000
+      internalID: -6701286756349855051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_39
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 517
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed4efd2aa851bec0800000000000000
+      internalID: -3552961143079285280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_40
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 517
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47a48a9bf8ac2950800000000000000
+      internalID: 6425696566933497677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_41
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 551
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e675c86ea2bb30830800000000000000
+      internalID: 4036275483985074030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_42
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 511
+        width: 55
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8295d8ee7652136f0800000000000000
+      internalID: -706742538206357208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_43
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 466
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af705c4f2ac4b3610800000000000000
+      internalID: 1601958355235309562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_44
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 0
+        width: 342
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f067262a4ad9fe0800000000000000
+      internalID: -1180606509957640439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_45
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 453
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7df93391f86afd0800000000000000
+      internalID: -2331018418714585127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_46
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 406
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4ae5e2d2f4ff310800000000000000
+      internalID: 1440957461251925239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_47
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 383
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afee41cff30ae0420800000000000000
+      internalID: 2598190231711969018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_48
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 389
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7474faad5adf350800000000000000
+      internalID: 6052175832917952489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_49
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 61
+        width: 403
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99040aa19e529eb10800000000000000
+      internalID: 2011180391701954713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 367
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2776f8035a5e46900800000000000000
+      internalID: 676918341659486066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_51
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 311
+        width: 76
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2684ebdc54a7c7090800000000000000
+      internalID: -8035413194912675742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_52
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 307
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef40339ef1e0d370800000000000000
+      internalID: 8345418593024888811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_53
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 87
+        width: 101
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798370b6964c57df0800000000000000
+      internalID: -183024252792391529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_54
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 63
+        width: 335
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cafb5c31350ded770800000000000000
+      internalID: 8637570190575779756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: theme-growth-ai_55
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 135
+        width: 31
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa808145d6513450800000000000000
+      internalID: 6066725646971734768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      theme-growth-ai_0: 6133057298985085204
+      theme-growth-ai_1: -7083908507232777543
+      theme-growth-ai_10: -3451365220806778438
+      theme-growth-ai_11: -7542140057400090893
+      theme-growth-ai_12: 6168319176765279623
+      theme-growth-ai_13: -9220021145823627209
+      theme-growth-ai_14: 9102829546911848714
+      theme-growth-ai_15: -210677018997994125
+      theme-growth-ai_16: -6114568390784233661
+      theme-growth-ai_17: -1790936589431731083
+      theme-growth-ai_18: -8030531786316898647
+      theme-growth-ai_19: 7174363575368687011
+      theme-growth-ai_2: -7928594829744077158
+      theme-growth-ai_20: 2691071187754626865
+      theme-growth-ai_21: 4629516192970256531
+      theme-growth-ai_22: 6429639450037009753
+      theme-growth-ai_23: 4233694459744055925
+      theme-growth-ai_24: 8192274591094772422
+      theme-growth-ai_25: -4151683002002768514
+      theme-growth-ai_26: 1579231050077058832
+      theme-growth-ai_27: -7639249270161630097
+      theme-growth-ai_28: 7955388204662762291
+      theme-growth-ai_29: 6658417367258246542
+      theme-growth-ai_3: 8747223800273267679
+      theme-growth-ai_30: 7279149208858309333
+      theme-growth-ai_31: 6804367331628388899
+      theme-growth-ai_32: 6786709386179200683
+      theme-growth-ai_33: 3654441422336706152
+      theme-growth-ai_34: -1740317739144318922
+      theme-growth-ai_35: 4312996887804714210
+      theme-growth-ai_36: 8954213506318235177
+      theme-growth-ai_37: -9012368408948292754
+      theme-growth-ai_38: -6701286756349855051
+      theme-growth-ai_39: -3552961143079285280
+      theme-growth-ai_4: -9035574027338606263
+      theme-growth-ai_40: 6425696566933497677
+      theme-growth-ai_41: 4036275483985074030
+      theme-growth-ai_42: -706742538206357208
+      theme-growth-ai_43: 1601958355235309562
+      theme-growth-ai_44: -1180606509957640439
+      theme-growth-ai_45: -2331018418714585127
+      theme-growth-ai_46: 1440957461251925239
+      theme-growth-ai_47: 2598190231711969018
+      theme-growth-ai_48: 6052175832917952489
+      theme-growth-ai_49: 2011180391701954713
+      theme-growth-ai_5: 8267498006406419384
+      theme-growth-ai_50: 676918341659486066
+      theme-growth-ai_51: -8035413194912675742
+      theme-growth-ai_52: 8345418593024888811
+      theme-growth-ai_53: -183024252792391529
+      theme-growth-ai_54: 8637570190575779756
+      theme-growth-ai_55: 6066725646971734768
+      theme-growth-ai_6: 4359882682842582693
+      theme-growth-ai_7: 7256907282545260525
+      theme-growth-ai_8: 1442316993888983078
+      theme-growth-ai_9: -3643769387539260679
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

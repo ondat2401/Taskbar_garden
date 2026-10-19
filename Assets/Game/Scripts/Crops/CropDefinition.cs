@@ -7,6 +7,7 @@ namespace IdleGarden
     {
         public string id = "carrot";
         public string displayName = "Carrot";
+        public GardenTheme theme;
         [Min(1)] public float growSeconds = 20;
         [Min(0)] public float waterPerSecond = 1;
         [Min(1)] public float waterCapacity = 12;

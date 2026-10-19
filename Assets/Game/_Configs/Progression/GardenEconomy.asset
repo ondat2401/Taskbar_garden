@@ -15,7 +15,19 @@ MonoBehaviour:
   crops:
   - {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
   - {fileID: 11400000, guid: d880e2d9d1f879c4483a59a53d5cdf1c, type: 2}
-  upgrades: []
+  - {fileID: 11400000, guid: 0d6abe00e1319d046b0a37e3f3bcae96, type: 2}
+  - {fileID: 11400000, guid: 70c0c21b68e2850459b1a6b2c7aa2b25, type: 2}
+  upgrades:
+  - {fileID: 11400000, guid: 52e8c62e0f8001c4e9de25606ea27102, type: 2}
+  - {fileID: 11400000, guid: 09e31599eba7d26479ceba5c3c9031fd, type: 2}
+  - {fileID: 11400000, guid: 1012227ac4bb1e8438c181f46a689a02, type: 2}
+  - {fileID: 11400000, guid: d4763f88097844d40a7300a8e24fec9f, type: 2}
+  - {fileID: 11400000, guid: 1a8f3a61b653cb64790c7c285823bb28, type: 2}
+  - {fileID: 11400000, guid: c83496ae306f1484599c3bc8815a0d08, type: 2}
+  themes:
+  - {fileID: 11400000, guid: 5077b80d10b37134c86bc2a396e88c2d, type: 2}
+  - {fileID: 11400000, guid: f235516254f00844585dc5dbc95a7f99, type: 2}
+  - {fileID: 11400000, guid: 78779faddc48f4843abe6eb817743fc4, type: 2}
   startingGold: 30
   autoSellReserve: 4
   rebirthBaseGoal: 1000

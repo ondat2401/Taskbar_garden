@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898c9be8d3957f14b87a5a0d1e8b1b2a, type: 3}
+  m_Name: carrot-growth
+  m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.UpgradeDefinition
+  id: carrot-growth
+  displayName: Seed selection
+  description: Carrot growth speed +25% of base per rank.
+  icon: {fileID: -609968656, guid: e8bc00fdff262c048a06352c8c986ff5, type: 3}
+  stat: 0
+  targetCrop: {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
+  bonusPerLevel: 0.25
+  baseGoldCost: 30
+  costGrowth: 1.45
+  material: {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
+  baseMaterialCost: 1
+  materialStepLevels: 5

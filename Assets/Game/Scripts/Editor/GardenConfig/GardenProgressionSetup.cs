@@ -38,32 +38,23 @@ namespace IdleGarden.Editor
 
         public static void EnsureConfig(GardenProfile profile)
         {
-            if (profile.progression) return;
-            Directory.CreateDirectory("Assets/Game/_Configs/Progression");
+            GardenEconomySetup.EnsureConfig(profile);
+            var config = profile.progression;
+            if (config.upgrades.Length > 0) return;
             Directory.CreateDirectory("Assets/Game/_Configs/Upgrades"); AssetDatabase.Refresh();
-            var config = AssetDatabase.LoadAssetAtPath<ProgressionConfig>("Assets/Game/_Configs/Progression/GardenEconomy.asset");
-            if (!config)
+            var icons = ImportIcons();
+            var carrot = config.crops[0]; var radish = config.crops.Length > 1 ? config.crops[1] : carrot;
+            config.upgrades = new[]
             {
-                var icons = ImportIcons();
-                var crops = new List<CropDefinition>();
-                foreach (var plot in profile.plots) if (plot.crop && !crops.Contains(plot.crop)) crops.Add(plot.crop);
-                if (crops.Count == 0) throw new System.InvalidOperationException("Assign crops before setting up progression.");
-                config = ScriptableObject.CreateInstance<ProgressionConfig>(); config.crops = crops.ToArray();
-                CropDefinition carrot = crops[0], radish = crops.Count > 1 ? crops[1] : crops[0];
-                config.upgrades = new[]
-                {
-                    Upgrade("carrot-growth", "Seed selection", "Carrot growth speed +25% of base per rank.", UpgradeStat.GrowSpeed, .25f, 30, carrot, carrot, Icon(icons,"seeds")),
-                    Upgrade("harvest-yield", "Abundant harvest", "Harvest yield +100% of base per rank.", UpgradeStat.CropYield, 1, 50, radish, null, Icon(icons,"harvest")),
-                    Upgrade("watering-can", "Larger watering can", "Water capacity +35% of base per rank.", UpgradeStat.TankCapacity, .35f, 35, radish, null, Icon(icons,"watering")),
-                    Upgrade("walking", "Garden boots", "Walking speed +20% of base per rank.", UpgradeStat.MoveSpeed, .2f, 40, carrot, null, Icon(icons,"seeds")),
-                    Upgrade("tools", "Better tools", "All action speeds +20% of base per rank.", UpgradeStat.ActionSpeed, .2f, 55, radish, null, Icon(icons,"watering")),
-                    Upgrade("mulch", "Water-saving mulch", "Water efficiency +20% of base per rank.", UpgradeStat.WaterEfficiency, .2f, 45, carrot, null, Icon(icons,"harvest"))
-                };
-                AssetDatabase.CreateAsset(config, "Assets/Game/_Configs/Progression/GardenEconomy.asset");
-            }
-            profile.progression = config; EditorUtility.SetDirty(profile);
+                Upgrade("carrot-growth", "Seed selection", "Carrot growth speed +25% of base per rank.", UpgradeStat.GrowSpeed,.25f,30,carrot,carrot,Icon(icons,"seeds")),
+                Upgrade("harvest-yield", "Abundant harvest", "Harvest yield +100% of base per rank.", UpgradeStat.CropYield,1,50,radish,null,Icon(icons,"harvest")),
+                Upgrade("watering-can", "Larger watering can", "Water capacity +35% of base per rank.", UpgradeStat.TankCapacity,.35f,35,radish,null,Icon(icons,"watering")),
+                Upgrade("walking", "Garden boots", "Walking speed +20% of base per rank.", UpgradeStat.MoveSpeed,.2f,40,carrot,null,Icon(icons,"seeds")),
+                Upgrade("tools", "Better tools", "All action speeds +20% of base per rank.", UpgradeStat.ActionSpeed,.2f,55,radish,null,Icon(icons,"watering")),
+                Upgrade("mulch", "Water-saving mulch", "Water efficiency +20% of base per rank.", UpgradeStat.WaterEfficiency,.2f,45,carrot,null,Icon(icons,"harvest"))
+            };
+            EditorUtility.SetDirty(config); AssetDatabase.SaveAssetIfDirty(config);
         }
-
         private static UpgradeDefinition Upgrade(string id, string title, string detail, UpgradeStat stat, float bonus, double cost, CropDefinition material, CropDefinition target, Sprite icon)
         {
             string path = "Assets/Game/_Configs/Upgrades/" + id + ".asset";

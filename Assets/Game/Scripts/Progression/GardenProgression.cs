@@ -9,6 +9,9 @@ namespace IdleGarden
         public readonly ProgressionConfig Config;
         private readonly Dictionary<string, long> inventory = new Dictionary<string, long>();
         private readonly Dictionary<string, int> levels = new Dictionary<string, int>();
+        private readonly HashSet<string> unlockedThemes = new HashSet<string>();
+        public int Chests { get; private set; }
+        private bool firstHarvestReward;
         public double Gold { get; private set; }
         public double CycleGold { get; private set; }
         public long Seeds { get; private set; }
@@ -27,18 +30,28 @@ namespace IdleGarden
                 Gold = saved.gold; CycleGold = saved.cycleGold; Seeds = saved.seeds; Rebirths = saved.rebirths; AutoSell = saved.autoSell;
                 foreach (var entry in saved.inventory) inventory[entry.id] = entry.count;
                 foreach (var entry in saved.upgrades) levels[entry.id] = entry.level;
+                if (saved.themes != null) foreach (string id in saved.themes) unlockedThemes.Add(id);
+                Chests = saved.chests; firstHarvestReward = saved.firstHarvestReward;
             }
             foreach (var crop in config.crops) if (!inventory.ContainsKey(crop.id)) inventory.Add(crop.id, 0);
             foreach (var upgrade in config.upgrades) if (!levels.ContainsKey(upgrade.id)) levels.Add(upgrade.id, 0);
         }
 
         public long Count(CropDefinition crop) => crop && inventory.TryGetValue(crop.id, out long count) ? count : 0;
+        public bool ThemeUnlocked(GardenTheme theme) => !theme || theme.unlockGold == 0 || unlockedThemes.Contains(theme.id);
+        public bool CropUnlocked(CropDefinition crop) => crop && Config.Contains(crop) && ThemeUnlocked(crop.theme);
+        public bool UnlockTheme(GardenTheme theme)
+        {
+            if (!theme || !Config.ContainsTheme(theme) || ThemeUnlocked(theme) || Gold < theme.unlockGold || !Finite(theme.unlockGold) || theme.unlockGold <= 0) return false;
+            Gold -= theme.unlockGold; unlockedThemes.Add(theme.id); GrantChest(); return true;
+        }
+        public void GrantChest() { if (Chests < int.MaxValue) Chests++; }
         public int Level(int index) => levels.TryGetValue(Config.upgrades[index].id, out int level) ? level : 0;
         public double GoldCost(int index) => Config.upgrades[index].baseGoldCost * Math.Pow(Config.upgrades[index].costGrowth, Level(index));
         public long MaterialCost(int index)
         {
             var upgrade = Config.upgrades[index];
-            return upgrade.material ? (long)upgrade.baseMaterialCost * (1 + Level(index) / Math.Max(1, upgrade.materialStepLevels)) : 0;
+            return upgrade.material ? (long)upgrade.baseMaterialCost * (1L + Level(index) / Math.Max(1, upgrade.materialStepLevels)) : 0;
         }
 
         public float Multiplier(UpgradeStat stat, CropDefinition crop = null)
@@ -57,6 +70,7 @@ namespace IdleGarden
         {
             if (!crop || !Config.Contains(crop) || quantity <= 0 || !inventory.TryGetValue(crop.id, out long count) || count > long.MaxValue - quantity) return;
             inventory[crop.id] = count + quantity;
+            if (!firstHarvestReward) { firstHarvestReward = true; GrantChest(); }
             if (AutoSell) Sell(crop, Math.Max(0, Count(crop) - Math.Max(0, Config.autoSellReserve)));
         }
 
@@ -106,7 +120,8 @@ namespace IdleGarden
         public GardenSaveData Capture()
         {
             var saved = new GardenSaveData { gold = Gold, cycleGold = CycleGold, seeds = Seeds, rebirths = Rebirths, autoSell = AutoSell,
-                inventory = new InventorySave[inventory.Count], upgrades = new UpgradeSave[levels.Count] };
+                inventory = new InventorySave[inventory.Count], upgrades = new UpgradeSave[levels.Count], themes = new string[unlockedThemes.Count], chests = Chests, firstHarvestReward = firstHarvestReward };
+            unlockedThemes.CopyTo(saved.themes);
             int index = 0;
             foreach (var item in inventory) saved.inventory[index++] = new InventorySave { id = item.Key, count = item.Value };
             index = 0;

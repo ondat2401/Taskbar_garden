@@ -8,7 +8,7 @@ namespace IdleGarden
 {
     [Serializable] public sealed class InventorySave { public string id; public long count; }
     [Serializable] public sealed class UpgradeSave { public string id; public int level; }
-    [Serializable] public sealed class PlotSave { public string cropId; public bool planted; public float growth, water; public int harvested; }
+    [Serializable] public sealed class PlotSave { public string cropId, nextCropId; public bool planted; public float growth, water; public int harvested; }
     [Serializable]
     public sealed class GardenSaveData
     {
@@ -22,6 +22,9 @@ namespace IdleGarden
         public PlotSave[] plots = Array.Empty<PlotSave>();
         public float workerX, workerWater;
         public int harvested;
+        public string[] themes = Array.Empty<string>();
+        public int chests;
+        public bool firstHarvestReward;
     }
 
     public sealed class GardenSaveStore
