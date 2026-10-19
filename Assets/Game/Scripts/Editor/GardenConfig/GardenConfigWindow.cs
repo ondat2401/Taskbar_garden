@@ -108,6 +108,18 @@ namespace IdleGarden.Editor
                 foreach (float speed in new[] { 1f, 2f, 5f })
                     row.Add(new Button(() => { Undo.RecordObject(profile, "Simulation speed"); profile.simulationSpeed = speed; EditorUtility.SetDirty(profile); }) { text = $"×{speed}" });
                 fields.Add(row);
+                var running = EditorApplication.isPlaying ? FindFirstObjectByType<GardenController>() : null;
+                if (running && running.Progression != null)
+                {
+                    var progress = running.Progression;
+                    fields.Add(new Button(() => { progress.AutoSell = !progress.AutoSell; RefreshRuntime(); }) { text = "Toggle Auto-sell" });
+                    fields.Add(new Button(() => { progress.SellSurplus(); RefreshRuntime(); }) { text = "Sell surplus (keep reserves)" });
+                    foreach (var crop in progress.Config.crops)
+                    {
+                        var selectedCrop = crop;
+                        fields.Add(new Button(() => { progress.Sell(selectedCrop, 1); RefreshRuntime(); }) { text = "Sell 1 " + crop.displayName });
+                    }
+                }
                 runtime = new Label(); runtime.style.whiteSpace = WhiteSpace.Normal; runtime.style.fontSize = 13; fields.Add(runtime);
                 RefreshRuntime();
             }
@@ -115,7 +127,7 @@ namespace IdleGarden.Editor
             {
                 if (!profile.progression)
                 {
-                    fields.Add(new Button(() => { GardenProgressionSetup.EnsureConfig(profile); DrawFields(); }) { text = "Create Progression Config" });
+                    fields.Add(new Button(() => { GardenEconomySetup.EnsureConfig(profile); DrawFields(); }) { text = "Create Economy Config (F01)" });
                     return;
                 }
                 fields.Add(new HelpBox("Stable IDs are save keys. Do not rename IDs on shipped content. After changing the upgrade list, exit Play and Apply Compact Garden and Progression to rebuild shop rows.", HelpBoxMessageType.Info));
@@ -150,6 +162,13 @@ namespace IdleGarden.Editor
             var sim = controller ? controller.Simulation : null;
             if (sim == null) { runtime.text = "No running garden in this scene."; return; }
             var text = new System.Text.StringBuilder();
+            var progress = controller.Progression;
+            if (progress != null)
+            {
+                text.AppendLine($"Gold: {GardenProgression.Number(progress.Gold)} | Earned: {GardenProgression.Number(progress.CycleGold)} | Auto-sell: {progress.AutoSell} | Reserve: {progress.Config.autoSellReserve}");
+                foreach (var crop in progress.Config.crops) text.AppendLine($"Stock {crop.displayName}: {progress.Count(crop)} | Price: {crop.sellPrice}");
+                text.AppendLine();
+            }
             text.AppendLine($"Job: {sim.Job}  |  Moving: {sim.Moving}  |  Target: {sim.Target + 1}");
             text.AppendLine($"Water: {sim.Water:0.0}  |  Harvest: {sim.HarvestCount}  |  X: {sim.WorkerX:0.00}\n");
             for (int i = 0; i < sim.Plots.Length; i++)

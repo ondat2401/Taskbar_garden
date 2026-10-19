@@ -2,7 +2,11 @@
 
 ## Checkpoint đang làm — đọc trước
 
-**Đọc `CHECKPOINT.md` để tiếp tục feature mới.** User yêu cầu chia feature và checkpoint vì chuyển context. Đã viết bản nháp tiền/kho/nâng cấp/tái sinh/save và compact HUD, compile + smoke test in-memory pass; **chưa apply setup vào scene và chưa build mới**. Scene/build cũ vẫn là baseline bên dưới.
+**F01 hoàn tất ngày 2026-10-19. Đọc `CHECKPOINT.md`, tiếp tục F02.** User yêu cầu commit/tag Git cho từng feature để quay video: repo https://github.com/ondat2401/Taskbar_garden; hướng dẫn `docs/GIT_CHECKPOINTS.md`.
+
+Scene đã gắn `GardenEconomy.asset` (2 cây, gold30, reserve4, upgrades=[]); HUD cũ hiển thị GOLD, Runtime tab có thao tác bán và auto-sell. Compact shop/nâng cấp/save/tái sinh còn là bản nháp, **chưa build mới**. `GardenEconomyVerification.Run()` + regression simulation pass; Play Mode harvest→stock→gold, stockpile OFF và bán surplus pass. Không ghi save trong Editor.
+
+F02 cần điền upgrade vào config hiện hữu, sửa early return trong setup theo phạm vi F02; không tạo config thứ hai hay ghi đè giá trị user đã chỉnh. Giữ các thay đổi tự sinh ngoài feature (NuGet importer meta/Recovery) nguyên trạng, không đưa lẫn vào commit F01.
 
 Thứ tự: F01 kho/vàng → F02 upgrade → F03 compact window/shop/art → F04 save I/O → F05 rebirth end-to-end → F06 build. Hoàn tất và ghi checkpoint từng feature, không coi toàn bộ bản nháp là đã kiểm chứng.
 
@@ -16,10 +20,10 @@ Thứ tự: F01 kho/vàng → F02 upgrade → F03 compact window/shop/art → F0
 ## Phạm vi và quyết định
 
 - Một nhân vật đi ngang; 4 ô mặc định, danh sách profile không hardcode số ô.
-- Tự trồng/tưới/lấy nước/thu hoạch, hạt vô hạn, chỉ đếm sản lượng. Cây khô dừng lớn, không chết.
+- Tự trồng/tưới/lấy nước/thu hoạch, hạt vô hạn; F01 đưa sản lượng vào kho và bán lấy vàng. Cây khô dừng lớn, không chết.
 - Mỗi việc chạy đến hết; ưu tiên Harvest > Water > Plant, chọn ô gần nhất trong cùng nhóm. Refill là bước khi thiếu nước.
 - Thông số số học / sprite đọc live. Số ô, gán loại cây, spacing đổi ngoài Play rồi Apply Layout.
-- Baseline scene/build chưa có kinh tế/nâng cấp/save. Source mới và atlas AI đã được thêm nhưng chưa apply vào scene; chi tiết nằm trong CHECKPOINT.md. Multiplayer, Steam SDK và offline rewards chưa làm.
+- Scene có economy F01; build executable cũ chưa có economy. Nâng cấp/compact shop/save mới là draft; atlas AI chưa slice. Multiplayer, Steam SDK và offline rewards chưa làm.
 - Chỉ Windows standalone mới điều khiển cửa sổ native. Tay nắm resize góc phải dưới; chưa resize mọi cạnh, chưa lưu vị trí qua lần chạy.
 
 ## Bản đồ code

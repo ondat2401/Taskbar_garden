@@ -7,7 +7,7 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | Tag | Nội dung | Trạng thái |
 |---|---|---|
 | `checkpoint/00-import-wip` | Nhập project Unity hiện có, gồm bản nháp F01–F05 và art AI | Lưu nguyên trạng; không phải bản hoàn thiện các feature |
-| `checkpoint/f01-economy` | Kho, vàng, bán tay/tự động; nối thu hoạch trong scene | Chỉ tạo sau khi F01 kiểm tra pass |
+| `checkpoint/f01-economy` | Kho, vàng, bán tay/tự động; nối thu hoạch trong scene | Hoàn tất 2026-10-19; compile, self-check và Play Mode pass; chưa có standalone build mới |
 
 Các tag `checkpoint/f02-upgrades`, `checkpoint/f03-compact-shop`, `checkpoint/f04-save`, `checkpoint/f05-rebirth`, `checkpoint/f06-build` chỉ được tạo khi feature tương ứng hoàn tất. Xem `CHECKPOINT.md` để biết phần nào đã tích hợp và kiểm chứng.
 
@@ -30,3 +30,14 @@ Tag import chứa source nháp của các feature sau nhưng chưa kích hoạt 
 4. Push commit và đúng tag đó lên origin. Không force-push hay dời tag.
 
 Không commit Library, Temp, Logs, Builds, UserSettings, file kết nối MCP, credential hoặc dữ liệu save cá nhân. Build executable không nằm trong tag; khi cần quay standalone hãy build từ đúng worktree/tag, đọc hạn chế trong checkpoint trước.
+
+## Gợi ý cảnh quay F01
+
+1. Mở scene GardenPrototype, mở `Tools > Idle Garden > Garden Config`, chọn tab Runtime sau khi Play.
+2. Cho chạy ×5 để quay nhanh; chỉ chỉnh runtime cho buổi quay, không commit speed đã tăng.
+3. Quay nhân vật tự chăm cây; kho giữ 4 mỗi loại, GOLD trên HUD tăng khi bán phần dư.
+4. Bấm Toggle Auto-sell: quay hàng tăng trong kho, vàng không tăng.
+5. Bấm Sell 1 để bán một cây hoặc Sell surplus để bán dư và giữ dự trữ. Quay thay đổi kho/vàng.
+6. Dừng Play. F01 không có UI shop/upgrade; chúng thuộc checkpoint sau. Không dùng exe cũ để quay minh họa F01.
+
+Project được đưa vào Git từ source nháp đang có (tag import). Các package MCP/NuGet đã có trong project được giữ lại; thay đổi tự sinh khi Unity import/recovery không thuộc commit feature nếu không cần cho feature đó.

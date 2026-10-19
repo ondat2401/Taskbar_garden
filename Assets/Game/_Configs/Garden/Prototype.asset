@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Prototype
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenProfile
   worker: {fileID: 11400000, guid: 5650b8d520ab18843bbf9308cdb3ea60, type: 2}
+  progression: {fileID: 11400000, guid: 2438da14906c52341bf55a1485f2ac7e, type: 2}
+  showPlotMeters: 0
   plots:
   - crop: {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
     startingWater: 8

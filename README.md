@@ -1,6 +1,8 @@
 # Idle Garden — prototype
 
-Game trồng cây pixel art nằm trên desktop, phía trên taskbar. Nhân vật tự trồng, tưới, lấy nước và thu hoạch. Chưa có kinh tế, nâng cấp, save game hoặc multiplayer.
+Game trồng cây pixel art nằm trên desktop, phía trên taskbar. Nhân vật tự trồng, tưới, lấy nước và thu hoạch. **F01 đã có kho, vàng và bán nông sản trong scene Unity**; nâng cấp/shop/save vẫn đang ở giai đoạn nháp. File exe hiện có là build trước F01.
+
+Repo: [ondat2401/Taskbar_garden](https://github.com/ondat2401/Taskbar_garden). Xem [checkpoint Git và hướng dẫn quay video](docs/GIT_CHECKPOINTS.md).
 
 ## Chạy trong Unity
 
@@ -8,6 +10,7 @@ Game trồng cây pixel art nằm trên desktop, phía trên taskbar. Nhân vậ
 2. Mở `Tools > Idle Garden > Garden Config`.
 3. Bấm **Open / Create Prototype**, sau đó Play.
 4. Tab **Runtime** hiển thị công việc, nước, sản lượng và từng ô; có Pause/Resume và ×1/×2/×5.
+5. F01: Runtime có **Toggle Auto-sell**, **Sell surplus** và **Sell 1** từng loại cây. Auto-sell mặc định giữ 4 mỗi loại, bán phần dư; tắt để tích trữ. HUD cũ hiển thị vàng.
 
 ## Chỉnh data
 
@@ -22,6 +25,8 @@ Game trồng cây pixel art nằm trên desktop, phía trên taskbar. Nhân vậ
 ## Gameplay
 
 Ưu tiên thu hoạch → tưới → trồng. Trong cùng mức ưu tiên chọn ô gần nhất; hoàn tất việc rồi mới chọn việc khác. Bình không đủ cho lần tưới thì về bồn. Cây thiếu nước dừng lớn, không chết. Hạt không giới hạn; thu hoạch cộng bộ đếm, sau đó tự trồng lại.
+
+Nông sản đồng thời vào kho theo crop ID. Giá bán ở `CropDefinition.sellPrice`; vàng ban đầu và mức dự trữ ở `Assets/Game/_Configs/Progression/GardenEconomy.asset`, được tham chiếu trực tiếp từ GardenProfile. Config F01 chưa có upgrade. Chỉnh các giá trị ở tab **Crops / Progression**; không đổi ID khi đang chơi. Bán tay có thể bán cả phần dự trữ, còn Sell surplus chỉ bán phần vượt dự trữ.
 
 Vườn dài có thể cuộn bằng bánh xe chuột hoặc nút `<` / `>`. UI và pixel placeholder có thể thay độc lập với simulation.
 
@@ -39,6 +44,8 @@ Chọn `Tools > Idle Garden > Build Windows Prototype`. File chạy: `Builds/Win
 ## Kiểm tra
 
 `Tools > Idle Garden > Verify Simulation` chạy kiểm tra trạng thái cho 4/8/12 ô, nhiều vòng thu hoạch, lấy nước, pause, cây khô và chỉnh số học khi chạy. Kết quả verification thực tế xem `AI_README.md`.
+
+`Tools > Idle Garden > Verify Economy F01` kiểm tra kho/vàng, dự trữ, bán tay/tự động, giao dịch không hợp lệ, giới hạn số học, 10.000 giao dịch và 1.200 giây simulation có economy. Editor Play không ghi save; mỗi lần Play bắt đầu lại để dễ quay demo. Save standalone là phần F04 chưa được kiểm chứng.
 
 ## Dành cho AI agent
 

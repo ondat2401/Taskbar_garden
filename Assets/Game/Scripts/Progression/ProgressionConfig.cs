@@ -15,8 +15,9 @@ namespace IdleGarden
 
         public bool Validate(out string error)
         {
-            if (crops == null || crops.Length == 0 || upgrades == null || upgrades.Length == 0)
-            { error = "Progression needs crops and upgrades."; return false; }
+            if (crops == null || crops.Length == 0 || upgrades == null)
+            { error = "Progression needs a crop catalog and an upgrade list (which may be empty)."; return false; }
+            if (autoSellReserve < 0) { error = "Auto-sell reserve cannot be negative."; return false; }
             if (!GardenProgression.Finite(startingGold) || startingGold < 0 || !GardenProgression.Finite(rebirthBaseGoal) || rebirthBaseGoal <= 0 || rebirthGoalGrowth < 1 || goldBonusPerSeed <= 0)
             { error = "Invalid gold / rebirth settings."; return false; }
             for (int i = 0; i < crops.Length; i++)

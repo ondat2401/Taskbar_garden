@@ -55,23 +55,26 @@ namespace IdleGarden
 
         public void AddHarvest(CropDefinition crop, int quantity)
         {
-            if (quantity <= 0 || !inventory.TryGetValue(crop.id, out long count)) return;
-            inventory[crop.id] = count > long.MaxValue - quantity ? long.MaxValue : count + quantity;
-            if (AutoSell) Sell(crop, Math.Max(0, Count(crop) - Config.autoSellReserve));
+            if (!crop || !Config.Contains(crop) || quantity <= 0 || !inventory.TryGetValue(crop.id, out long count) || count > long.MaxValue - quantity) return;
+            inventory[crop.id] = count + quantity;
+            if (AutoSell) Sell(crop, Math.Max(0, Count(crop) - Math.Max(0, Config.autoSellReserve)));
         }
 
         public double Sell(CropDefinition crop, long quantity)
         {
-            quantity = Math.Min(Math.Max(0, quantity), Count(crop));
+            if (!crop || !Config.Contains(crop) || crop.sellPrice <= 0 || quantity <= 0) return 0;
+            quantity = Math.Min(quantity, Count(crop));
             double value = quantity * (double)crop.sellPrice * GoldMultiplier;
-            if (quantity == 0 || !Finite(value) || !Finite(Gold + value) || !Finite(CycleGold + value)) return 0;
-            inventory[crop.id] -= quantity; Gold += value; CycleGold += value; return value;
+            double nextGold = Gold + value, nextCycleGold = CycleGold + value;
+            // Reject the whole sale when a double can no longer represent its credit.
+            if (quantity == 0 || value <= 0 || !Finite(value) || !Finite(nextGold) || !Finite(nextCycleGold) || nextGold <= Gold || nextCycleGold <= CycleGold) return 0;
+            inventory[crop.id] -= quantity; Gold = nextGold; CycleGold = nextCycleGold; return value;
         }
 
         public double SellSurplus()
         {
             double total = 0;
-            foreach (var crop in Config.crops) total += Sell(crop, Math.Max(0, Count(crop) - Config.autoSellReserve));
+            foreach (var crop in Config.crops) total += Sell(crop, Math.Max(0, Count(crop) - Math.Max(0, Config.autoSellReserve)));
             return total;
         }
 

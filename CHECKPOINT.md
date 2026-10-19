@@ -1,14 +1,15 @@
 # Checkpoint — progression + compact window
 
-Ngày: 2026-10-18. Dừng theo yêu cầu user để chia feature và chuyển context.
+Cập nhật: 2026-10-19. **F01 hoàn tất**; checkpoint kế tiếp là F02. Chốt feature bằng Git commit + annotated tag theo yêu cầu user để có thể quay video.
 
 ## Trạng thái chính xác
 
 - Source hiện tại **compile pass** trong Unity 6000.3.10f1.
-- Scene vẫn là prototype cũ, **chưa gọi** `GardenProgressionSetup.Apply()`; chưa tạo các upgrade/config asset mặc định, chưa thay HUD scene.
+- Scene đã nối **economy F01** qua `Prototype.asset → GardenEconomy.asset`, catalog 2 cây, starting gold30, reserve4, upgrades rỗng. Chưa gọi `GardenProgressionSetup.Apply()`, chưa thay HUD thành compact shop.
+- HUD cũ hiển thị GOLD; tab Runtime trong Garden Config có stock/gold/earned, Toggle Auto-sell, Sell surplus và Sell 1 từng cây.
 - `Builds/Windows/IdleGarden.exe` vẫn là **build cũ**. Không mô tả build này đã có shop/nâng cấp.
 - Unity đã thoát Play Mode để compile. Không có process game test mới.
-- Repo chưa có Git; checkpoint này là bản ghi trạng thái, **không phải commit**.
+- Đã nối Git với https://github.com/ondat2401/Taskbar_garden, giữ lịch sử remote cũ. Tag `checkpoint/00-import-wip` lưu nguyên trạng source nháp trước khi hoàn tất F01; tag `checkpoint/f01-economy` chốt F01. Quy trình/shot list: `docs/GIT_CHECKPOINTS.md`.
 
 ## Yêu cầu đã được user chốt
 
@@ -22,14 +23,14 @@ Ngày: 2026-10-18. Dừng theo yêu cầu user để chia feature và chuyển c
 
 | ID | Phần việc | Hiện trạng | Điều kiện checkpoint hoàn thành |
 |---|---|---|---|
-| F01 | Kho, vàng, bán nông sản | Đã có code + smoke test | Thêm kiểm tra lâu dài cho auto-sell giữ dự trữ, bán tay, không âm/overflow; test harvest nối progression trong scene |
+| F01 | Kho, vàng, bán nông sản | **Hoàn tất, có kiểm tra lặp lại + Play Mode** | 10.000 giao dịch, giới hạn số học, 1.200 giây sim, thu hoạch/bán/tích trữ trong scene pass |
 | F02 | Nâng cấp cây/công cụ bằng vàng + nông sản | Đã có code + smoke test | Tạo config/6 upgrade asset, kiểm tra mua thành công/thất bại, hiệu ứng lên simulation, không sửa base asset |
 | F03 | Cửa sổ gọn + shop + icon | Đã có code và PNG; chưa apply scene | Slice/import 4 sprite, áp dụng HUD, chụp/kiểm tra UI ở 920×180 và shop mở 920×460; sửa layout; test kéo/resize/pin/lock/menu |
 | F04 | Lưu tiến trình | Đã có code; chưa test I/O | Test file round-trip, backup, file hỏng/newer version, thoát/mở app; không ghi vào save user khi test |
 | F05 | Tái sinh lặp lại | Đã có code + smoke test | Xác nhận reset/giữ đúng, bấm xác nhận hai bước, reward không nhận hai lần, chu kỳ 2 tiếp tục và bonus còn sau reload |
 | F06 | Bàn giao build mới | Chưa làm | Regression 4/8/12 ô + Play Mode + Windows build + cập nhật README/AI_README |
 
-**Bước tiếp theo:** hoàn tất F01 và F02, ghi checkpoint; sau đó F03. F04/F05 đã có bản nháp vì code đang nối chung nhưng chưa được tính là feature hoàn tất.
+**Bước tiếp theo:** F02. Config economy đã tồn tại với `upgrades = []`; `GardenProgressionSetup.EnsureConfig` hiện return sớm khi profile có config, nên F02 cần thêm các upgrade vào config hiện hữu mà không ghi đè giá trị user chỉnh. Sau F02 ghi commit/tag riêng, rồi F03. F04/F05 chỉ mới là bản nháp.
 
 ## Code đã viết
 
@@ -41,6 +42,8 @@ Các đường dẫn dưới `Assets/Game/Scripts/`:
 - `Progression/GardenSaveStore.cs`: DTO version 1, JSON, temp+flush+File.Replace/backup; giữ file hỏng và chặn overwrite file từ version mới.
 - `UI/GardenHud.cs`, `UI/ShopUpgradeRow.cs`: UI callbacks và refresh mỗi 0.25s qua controller, không tạo object runtime.
 - `Editor/GardenConfig/GardenProgressionSetup.cs`: EnsureConfig, slice atlas, dựng HUD/shop bằng Editor, menu Apply Compact Garden and Progression.
+- `Editor/GardenConfig/GardenEconomySetup.cs`: gắn/tạo config chỉ kho–vàng F01, không dựng lại HUD/scene hay tạo upgrade.
+- `Editor/GardenConfig/GardenEconomyVerification.cs`: menu Verify Economy F01, self-check có cleanup asset tạm, chạy lại được.
 
 Đã chỉnh:
 
@@ -77,7 +80,10 @@ Các đường dẫn dưới `Assets/Game/Scripts/`:
   - Mua upgrade giá10 + 1 cây → gold40, stock3, rank1.
   - Tái sinh đủ goal20 → seed1, rank0, stock0, bonus vàng>1.
   - Capture → GardenSaveStore.Valid → tạo progression từ DTO: seed/gold khớp.
-- **Chưa test file I/O, simulation có upgrade trong scene, shop UI, native window mới hoặc build mới.**
+- F01 hoàn tất 2026-10-19: compile pass; menu Verify Economy F01 và Verify Simulation pass. Kiểm tra null/ngoài catalog, bán số âm/quá số lượng/stock trống, reserve0 và reserve âm, 10.000 giao dịch, long.MaxValue stock và double.MaxValue gold. Giao dịch không biểu diễn được khoản cộng vàng bị từ chối nguyên vẹn, không trừ hàng.
+- Simulation nối economy chạy 24.000 tick × .05s = 1.200 giây, bảo toàn lượng nông sản và doanh thu pass.
+- Play Mode scene thật tại ×5: snapshot harvest16, gold94, earned64, stock[4,4], upgrades0; bán tay pass; tắt auto-sell rồi thu hoạch thêm giữ nguyên gold; bán phần tích trữ11 cây nhận88 vàng pass. Cuối lượt harvest38/gold270. Console không error trong lượt kiểm tra. Đã thoát Play và khôi phục speed ban đầu; không tạo save hay debug object trong scene.
+- **Chưa test file I/O, simulation có upgrade trong scene, shop UI, native window mới hoặc build mới.** File exe cũ chưa có F01.
 
 ## Điểm cần rà soát trước khi coi là hoàn tất
 
@@ -94,6 +100,7 @@ Các đường dẫn dưới `Assets/Game/Scripts/`:
 unity status --format json
 unity command recompile_status --format json
 unity command eval 'IdleGarden.Editor.GardenVerification.Run(); return "PASS";' --format json
+unity command eval 'IdleGarden.Editor.GardenEconomyVerification.Run(); return "PASS F01";' --format json
 # Chỉ gọi sau khi đã kiểm tra scene/profile và muốn áp dụng F03:
 unity command eval 'IdleGarden.Editor.GardenProgressionSetup.Apply(); return "applied";' --format json
 ```

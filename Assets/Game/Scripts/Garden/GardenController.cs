@@ -79,7 +79,7 @@ namespace IdleGarden
             if (Simulation == null) return;
             if (hud) { hud.Refresh(); return; }
             statusLabel.text = $"{(Simulation.Paused ? "Paused" : Simulation.Moving ? "Walking" : JobLabels[(int)Simulation.Job])}  |  Water {Simulation.Water:0}/{profile.worker.tankCapacity:0}";
-            harvestLabel.text = $"HARVEST  {Simulation.HarvestCount:000}";
+            harvestLabel.text = Progression != null ? "GOLD " + GardenProgression.Number(Progression.Gold) : $"HARVEST  {Simulation.HarvestCount:000}";
         }
 
         public void TogglePause() { if (Simulation != null) Simulation.Paused = !Simulation.Paused; }
