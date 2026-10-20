@@ -11,8 +11,10 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f02-pot-themes` | Chọn cây riêng từng chậu, theme, sáu nâng cấp | `7d50e26`; kiểm tra logic và regression pass; UI chọn cây tiếp tục ở F03 |
 | `checkpoint/f03-compact-shop` | Cửa sổ compact, workshop và tương tác chậu | `4e16846`; click thật, Shop resize, drag/pin/lock và regression Play Mode pass |
 | `checkpoint/f04-chests-gear` | Rương theo thời gian, pity, gear và inventory nổi | Seeded checks + F01–F03 regression + Play Mode UI pass; chưa build standalone F04 |
+| `checkpoint/f05-save-rebirth` | Save schema v2, migration v1, recovery và rebirth | Migration/I/O recovery verification và Play Mode rebirth pass; chưa kiểm standalone restart |
+| `checkpoint/f06-prototype` | Cosmetic catalog, free equip, preview và Windows build | F01–F06 verifications, Play Mode tint/rollback và Windows BuildReport pass; standalone QA lưu schema v3 trong profile cô lập |
 
-Các tag tiếp theo dự kiến: `checkpoint/f04-chests-gear`, `checkpoint/f05-save-rebirth`, `checkpoint/f06-prototype`. Chỉ tạo khi phần tương ứng hoàn tất. Thiết kế mới: `docs/GAME_DESIGN.md`; tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md).
+Thiết kế hiện tại: `docs/GAME_DESIGN.md`; tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). Chưa chốt tag kế tiếp.
 
 ## Mở checkpoint để quay mà không đụng thư mục đang làm
 

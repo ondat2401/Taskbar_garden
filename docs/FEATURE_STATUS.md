@@ -9,6 +9,6 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F03 compact shop | Đã push | `4e16846`, `checkpoint/f03-compact-shop`; Windows build: click Shop/menu, bung/thu 920×180 ↔ 920×540, pin, lock, drag và resize; Play Mode regression pass. Chưa kiểm DPI/multi-monitor. |
 | F04 chests/gear | Đã kiểm tra | Timer/pity/drop/affix/equip/salvage/essence seeded checks pass; scene Play Mode kiểm listener và cửa sổ nổi. Chưa chạy standalone hoặc kiểm DPI. |
 | F05 save/rebirth | Đã kiểm tra | `checkpoint/f05-save-rebirth`; schema v2 migrate v1, atomic repeated-save/backup recovery, chặn save tương lai/lỗi; isolated disk round-trip và Play Mode rebirth giữ gear/theme/rương/lựa chọn cây, reset vàng/stock/rank/vụ đang trồng. Chưa kiểm standalone restart. |
-| F06 cosmetic/build | Tiếp theo | — |
+| F06 cosmetic/build | Đã push | `checkpoint/f06-prototype`; schema v3 migrate v1/v2; ba cosmetic miễn phí equip/lưu, hai premium và một bundle chỉ preview; F01–F06 verification và Play Mode tint/rollback/save capture pass; Windows BuildReport Succeeded, standalone QA ghi save v3 trong profile cô lập. Chưa kiểm restart sau equip, DPI/multi-monitor hoặc gamepad. |
 
 AI assets: `theme-growth-ai.png` (built-in Imagegen, 2026-10-19), 3×2 fire/frost growth stages, Point/uncompressed, PPU400, pivot(.5,.1). Draft có glow; chưa gọi là strict32px palette. `garden-icons-ai.png` là atlas4 icon đã có từ baseline.

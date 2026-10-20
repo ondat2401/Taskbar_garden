@@ -14,6 +14,7 @@ namespace IdleGarden
         public Text statusLabel;
         public Text harvestLabel;
         public GardenHud hud;
+        public GardenCosmeticController cosmetics;
         public GardenSimulation Simulation { get; private set; }
         public GardenProgression Progression { get; private set; }
         private GardenSaveStore saveStore;
@@ -37,6 +38,7 @@ namespace IdleGarden
             }
             Simulation = new GardenSimulation(profile, Progression);
             if (saved != null) Simulation.Restore(saved);
+            if (cosmetics) cosmetics.Restore(saved != null ? saved.cosmetics : null);
             viewX = (Simulation.WellX + Simulation.RightEdge) * .5f;
             Application.runInBackground = true;
             Application.targetFrameRate = 30;
@@ -63,7 +65,7 @@ namespace IdleGarden
                 if (pointer.x >= 0 && pointer.x <= Screen.width && pointer.y >= 30 && pointer.y < gardenCamera.pixelHeight)
                     viewX += Mouse.current.scroll.ReadValue().y * -.003f;
             }
-            float gardenHeight = hud && (hud.ShopOpen || hud.GearOpen) ? Mathf.Min(180, Screen.height) : Screen.height;
+            float gardenHeight = hud && (hud.ShopOpen || hud.GearOpen || hud.CosmeticsOpen) ? Mathf.Min(180, Screen.height) : Screen.height;
             gardenCamera.rect = new Rect(0, 0, 1, gardenHeight / Screen.height);
             int pixelScale = Mathf.Max(1, Mathf.FloorToInt(Screen.width / 450f));
             gardenCamera.orthographicSize = gardenHeight / (64f * pixelScale);
@@ -91,6 +93,7 @@ namespace IdleGarden
         {
             if (saveStore == null || Simulation == null || Progression == null) return;
             var saved = Progression.Capture(); Simulation.CaptureInto(saved);
+            if (cosmetics) cosmetics.CaptureInto(saved);
             if (!saveStore.Save(saved) && saveStore.Warning != null) Debug.LogWarning(saveStore.Warning);
         }
 

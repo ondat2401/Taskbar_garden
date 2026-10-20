@@ -19,6 +19,7 @@ namespace IdleGarden.Editor
             try
             {
                 VerifyMigration(directory);
+                VerifyV2Migration(directory);
                 VerifySaveAndRecovery(directory);
                 VerifyFutureAndCorruptFiles(directory);
                 VerifyRebirth(profile, config, directory);
@@ -39,12 +40,25 @@ namespace IdleGarden.Editor
                 "\"workerX\":0,\"workerWater\":4,\"harvested\":4}");
             var store = new GardenSaveStore(path);
             var migrated = store.Load();
-            Check(migrated != null && migrated.version == 2 && migrated.plots[0].nextCropId == "carrot",
-                "F01 save did not migrate to the selected-crop schema.");
+            Check(migrated != null && migrated.version == GardenSaveData.CurrentVersion && migrated.plots[0].nextCropId == "carrot",
+                "F01 save did not migrate to the current schema.");
             Check(migrated.themes != null && migrated.gearInventory != null && migrated.equippedGear != null,
                 "Migration did not initialize fields introduced after F01.");
-            Check(store.Save(migrated) && JsonUtility.FromJson<GardenSaveData>(File.ReadAllText(path)).version == 2,
+            Check(migrated.cosmetics != null && migrated.cosmetics.workerId == string.Empty,
+                "Migration did not initialize the cosmetic loadout.");
+            Check(store.Save(migrated) && JsonUtility.FromJson<GardenSaveData>(File.ReadAllText(path)).version == GardenSaveData.CurrentVersion,
                 "Migrated save was not persisted at the current schema.");
+        }
+
+        private static void VerifyV2Migration(string directory)
+        {
+            string path = Path.Combine(directory, "version2.json");
+            var legacy = Save(); legacy.version = 2; legacy.cosmetics = null;
+            File.WriteAllText(path, JsonUtility.ToJson(legacy));
+            var migrated = new GardenSaveStore(path).Load();
+            Check(migrated != null && migrated.version == GardenSaveData.CurrentVersion && migrated.cosmetics != null &&
+                migrated.cosmetics.workerId == string.Empty && migrated.cosmetics.potId == string.Empty && migrated.cosmetics.cropId == string.Empty,
+                "F05 save did not migrate to the cosmetic schema.");
         }
 
         private static void VerifySaveAndRecovery(string directory)

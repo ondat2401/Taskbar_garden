@@ -9,10 +9,11 @@ namespace IdleGarden
     [Serializable] public sealed class InventorySave { public string id; public long count = -1; }
     [Serializable] public sealed class UpgradeSave { public string id; public int level = -1; }
     [Serializable] public sealed class PlotSave { public string cropId, nextCropId; public bool planted; public float growth = float.NaN, water = float.NaN; public int harvested = -1; }
+    [Serializable] public sealed class GardenCosmeticSave { public string workerId = "", potId = "", cropId = ""; }
     [Serializable]
     public sealed class GardenSaveData
     {
-        public const int CurrentVersion = 2;
+        public const int CurrentVersion = 3;
         public int version = CurrentVersion;
         public double gold, cycleGold;
         public long seeds;
@@ -31,6 +32,7 @@ namespace IdleGarden
         public long essence;
         public int chestPityMisses;
         public double chestTimerSeconds;
+        public GardenCosmeticSave cosmetics = new GardenCosmeticSave();
     }
 
     public sealed class GardenSaveStore
@@ -89,12 +91,13 @@ namespace IdleGarden
                     rebirths = int.MinValue, inventory = null, upgrades = null, plots = null,
                     workerX = float.NaN, workerWater = float.NaN, harvested = int.MinValue, themes = null,
                     chests = int.MinValue, gearInventory = null, equippedGear = null, essence = long.MinValue,
-                    chestPityMisses = int.MinValue, chestTimerSeconds = double.NaN
+                    chestPityMisses = int.MinValue, chestTimerSeconds = double.NaN, cosmetics = null
                 };
                 JsonUtility.FromJsonOverwrite(File.ReadAllText(path), saved);
                 newer = saved.version > GardenSaveData.CurrentVersion;
                 if (newer) return false;
                 if (saved.version == 1) MigrateV1(saved);
+                if (saved.version == 2) MigrateV2(saved);
                 return Valid(saved);
             }
             catch (ArgumentException) { return false; }
@@ -113,6 +116,15 @@ namespace IdleGarden
                 for (int i = 0; i < saved.plots.Length; i++)
                     if (saved.plots[i] != null && string.IsNullOrWhiteSpace(saved.plots[i].nextCropId))
                         saved.plots[i].nextCropId = saved.plots[i].cropId;
+            saved.version = 2;
+        }
+
+        private static void MigrateV2(GardenSaveData saved)
+        {
+            if (saved.cosmetics == null) saved.cosmetics = new GardenCosmeticSave();
+            if (saved.cosmetics.workerId == null) saved.cosmetics.workerId = string.Empty;
+            if (saved.cosmetics.potId == null) saved.cosmetics.potId = string.Empty;
+            if (saved.cosmetics.cropId == null) saved.cosmetics.cropId = string.Empty;
             saved.version = GardenSaveData.CurrentVersion;
         }
 
@@ -121,7 +133,8 @@ namespace IdleGarden
             if (data == null || data.version != GardenSaveData.CurrentVersion || !GardenProgression.Finite(data.gold) || data.gold < 0 || !GardenProgression.Finite(data.cycleGold) || data.cycleGold < 0 ||
                 data.seeds < 0 || data.rebirths < 0 || data.inventory == null || data.upgrades == null || data.plots == null || data.themes == null ||
                 data.chests < 0 || data.essence < 0 || data.chestPityMisses < 0 || !GardenProgression.Finite(data.chestTimerSeconds) || data.chestTimerSeconds < 0 ||
-                data.gearInventory == null || data.equippedGear == null ||
+                data.gearInventory == null || data.equippedGear == null || data.cosmetics == null ||
+                !ValidCosmeticId(data.cosmetics.workerId) || !ValidCosmeticId(data.cosmetics.potId) || !ValidCosmeticId(data.cosmetics.cropId) ||
                 !GardenProgression.Finite(data.workerX) || !GardenProgression.Finite(data.workerWater) || data.workerWater < 0 || data.harvested < 0) return false;
             var ids = new HashSet<string>();
             foreach (var item in data.inventory)
@@ -150,5 +163,7 @@ namespace IdleGarden
                     !GardenProgression.Finite(plot.water) || plot.water < 0 || plot.harvested < 0) return false;
             return true;
         }
+
+        private static bool ValidCosmeticId(string id) => id != null && id.Length <= 128;
     }
 }

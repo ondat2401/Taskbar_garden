@@ -11,6 +11,8 @@ namespace IdleGarden
         public GameObject shopPanel, menuPanel;
         public GardenFloatingWindow gearWindow;
         public GardenGearPanel gearPanel;
+        public GardenFloatingWindow cosmeticWindow;
+        public GardenCosmeticPanel cosmeticPanel;
         public Text moneyLabel, shopSummary, inventoryLabel, autoSellLabel, rebirthLabel, pinLabel, lockLabel, pauseLabel, shopButtonLabel, gearButtonLabel, noticeLabel;
         public Button rebirthButton;
         public ShopUpgradeRow[] rows;
@@ -21,6 +23,7 @@ namespace IdleGarden
         private int selectedCrop;
         public bool ShopOpen => shopPanel && shopPanel.activeSelf;
         public bool GearOpen => gearWindow && gearWindow.IsOpen;
+        public bool CosmeticsOpen => cosmeticWindow && cosmeticWindow.IsOpen;
         private bool rebirthArmed;
         private string notice;
 
@@ -28,6 +31,7 @@ namespace IdleGarden
         {
             bool open = !ShopOpen;
             if (gearWindow) gearWindow.Close();
+            CloseCosmeticsPreview();
             shopPanel.SetActive(open); menuPanel.SetActive(false);
             desktop.SetPanelExpanded(open); rebirthArmed = false; Refresh();
         }
@@ -35,6 +39,7 @@ namespace IdleGarden
         {
             if (!gearWindow) return;
             if (GearOpen) { CloseGear(); return; }
+            CloseCosmeticsPreview();
             shopPanel.SetActive(false); menuPanel.SetActive(false);
             desktop.SetPanelExpanded(true); rebirthArmed = false; gearWindow.Open(); Refresh();
         }
@@ -42,6 +47,28 @@ namespace IdleGarden
         {
             if (gearWindow) gearWindow.Close();
             desktop.SetPanelExpanded(false); Refresh();
+        }
+        public void ToggleCosmetics()
+        {
+            if (!cosmeticWindow) return;
+            if (CosmeticsOpen) { CloseCosmetics(); return; }
+            if (gearWindow) gearWindow.Close();
+            CloseCosmeticsPreview();
+            shopPanel.SetActive(false); menuPanel.SetActive(false);
+            desktop.SetPanelExpanded(true); rebirthArmed = false;
+            cosmeticWindow.Open();
+            if (cosmeticPanel) cosmeticPanel.Refresh();
+        }
+        public void CloseCosmetics()
+        {
+            CloseCosmeticsPreview();
+            desktop.SetPanelExpanded(ShopOpen || GearOpen);
+            Refresh();
+        }
+        private void CloseCosmeticsPreview()
+        {
+            if (cosmeticWindow) cosmeticWindow.Close();
+            if (garden && garden.cosmetics) garden.cosmetics.ClearPreview();
         }
         public void ShowGarden() { gardenPage.SetActive(true); upgradesPage.SetActive(false); Refresh(); }
         public void ShowUpgrades() { gardenPage.SetActive(false); upgradesPage.SetActive(true); Refresh(); }
@@ -74,6 +101,7 @@ namespace IdleGarden
             {
                 shopPanel.SetActive(false);
                 if (gearWindow) gearWindow.Close();
+                CloseCosmeticsPreview();
                 desktop.SetPanelExpanded(false);
             }
             menuPanel.SetActive(open);

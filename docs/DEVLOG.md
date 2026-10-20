@@ -70,8 +70,18 @@ Rebirth reset vàng chu kỳ, kho cây, rank và cây đang trồng nhưng giữ
 
 **Đã kiểm tra:** compile; F01–F05 Editor verifications; I/O trên thư mục tạm với migration v1, save/replace nhiều lần, fallback backup, file tương lai và file hỏng; đọc lại save sau rebirth bằng store mới. Play Mode xác nhận `GardenController.Rebirth()` giữ lựa chọn cây, theme, gear/rương và reset vụ đang trồng. Chưa restart Windows standalone hoặc chạm save thật.
 
+## 07 — Chọn ngoại hình, chưa mở giao dịch
+
+**2026-10-20 · F06 · `checkpoint/f06-prototype`**
+
+Thêm catalog cosmetic theo slot Worker/Pot/Crop và bundle, với ba lựa chọn miễn phí để trang bị, hai premium và một bundle nội dung cố định để preview. Preview premium/bundle đổi tint trực tiếp trên vườn nhưng không ghi vào loadout; đóng cửa sổ trả lại màu đã trang bị. Không có nút mua hoặc cấp entitlement. Cửa sổ mở từ Window Menu, cùng Canvas và `GardenFloatingWindow` với Inventory. Catalog, áp tint/loadout và presentation nằm ở các lớp riêng.
+
+Save schema v3 migrate cả v1 và v2; lựa chọn free được lưu. F01–F06 Editor verifications và Play Mode UnityEvent/tint/rollback/save-capture pass. Game View đã xem ở 510×287. Windows `BuildReport` Succeeded; standalone smoke dùng Company/Product cô lập và tạo save schema v3 trong profile QA, giữ nguyên save người chơi. Chưa restart sau khi equip cosmetic, chưa kiểm DPI/multi-monitor hoặc gamepad.
+
+**Cảnh quay:** mở Menu → Cosmetics; chọn Moonlit Garden → Preview on garden; xem tint người/chậu/cây; đóng để thấy loadout trở lại; equip Mint Apron và mở lại panel để thấy đã lưu.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-Các mốc sắp tới: F06 cosmetic preview và build. Cập nhật từng mốc khi xong, không tạo sẵn câu chuyện thành công.
+Checkpoint tiếp theo chưa xác định; cập nhật sau khi chốt feature kế tiếp, không tạo sẵn câu chuyện thành công.

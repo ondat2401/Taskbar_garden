@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe24455a6a7d8e0428e6cc6236beb531, type: 3}
+  m_Name: GardenCosmetics
+  m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticCatalog
+  items:
+  - id: mint-apron
+    displayName: Mint Apron
+    description: A fresh green outfit for the gardener.
+    target: 0
+    offer: 0
+    workerTint: {r: 0.72, g: 0.88, b: 0.68, a: 1}
+    potTint: {r: 1, g: 1, b: 1, a: 1}
+    cropTint: {r: 1, g: 1, b: 1, a: 1}
+  - id: blue-glaze
+    displayName: Blue Glaze
+    description: A cool glaze for every pot.
+    target: 1
+    offer: 0
+    workerTint: {r: 1, g: 1, b: 1, a: 1}
+    potTint: {r: 0.6, g: 0.8, b: 0.91, a: 1}
+    cropTint: {r: 1, g: 1, b: 1, a: 1}
+  - id: golden-sprouts
+    displayName: Golden Sprouts
+    description: Warm crop colors with no gameplay bonus.
+    target: 2
+    offer: 0
+    workerTint: {r: 1, g: 1, b: 1, a: 1}
+    potTint: {r: 1, g: 1, b: 1, a: 1}
+    cropTint: {r: 1, g: 0.78, b: 0.42, a: 1}
+  - id: dusk-gardener
+    displayName: Dusk Gardener
+    description: Premium outfit preview; no purchase is available.
+    target: 0
+    offer: 1
+    workerTint: {r: 0.73, g: 0.6, b: 0.88, a: 1}
+    potTint: {r: 1, g: 1, b: 1, a: 1}
+    cropTint: {r: 1, g: 1, b: 1, a: 1}
+  - id: rose-bloom
+    displayName: Rose Bloom
+    description: Premium flower tint preview only.
+    target: 2
+    offer: 1
+    workerTint: {r: 1, g: 1, b: 1, a: 1}
+    potTint: {r: 1, g: 1, b: 1, a: 1}
+    cropTint: {r: 0.93, g: 0.62, b: 0.72, a: 1}
+  - id: moonlit-garden
+    displayName: Moonlit Garden
+    description: 'Fixed-content set: gardener, blue pots, and soft green crops.'
+    target: 3
+    offer: 2
+    workerTint: {r: 0.68, g: 0.62, b: 0.87, a: 1}
+    potTint: {r: 0.53, g: 0.77, b: 0.85, a: 1}
+    cropTint: {r: 0.7, g: 0.85, b: 0.6, a: 1}

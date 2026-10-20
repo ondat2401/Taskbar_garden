@@ -52,7 +52,7 @@ Affix chọn không trùng stat trên cùng item. Các stat: tốc độ lớn, 
 ## Cosmetic và IAP
 
 - Skin cây/chậu/nhân vật chỉ đổi hình hoặc tint, không buff chỉ số. Theme nội dung kiếm qua chơi, không khóa gameplay bằng skin trả tiền.
-- Catalog phân biệt cosmetic miễn phí, premium và gói quà nội dung cố định. Chưa tự đặt giá thương mại cuối cùng. Prototype chỉ cho xem catalog/preview, không giả là đã mua thành công.
+- Catalog phân biệt cosmetic miễn phí, premium và gói quà nội dung cố định. Prototype cho trang bị cosmetic miễn phí và preview premium/bundle; không có giá thương mại cuối cùng hay trạng thái mua thành công giả.
 - Không phát entitlement premium bằng local UI hoặc chỉ dựa trên callback client. Steam production cần AppID, cấu hình sản phẩm và receipt/entitlement được xác thực (Steam Inventory Service hoặc purchasing server).
 - Giữ API mua thật ngoài prototype; không tạo checkout giả nhận tiền. Nguồn chính thức: https://partner.steamgames.com/doc/features/inventory và https://partner.steamgames.com/doc/features/microtransactions/implementation.
 - Quyết định thương mại có thể đổi sau khi có dữ liệu chơi; paid randomized rewards không nằm trong bản thiết kế này.
@@ -60,9 +60,9 @@ Affix chọn không trùng stat trên cùng item. Các stat: tốc độ lớn, 
 ## Data / lưu / giao diện
 
 - ScriptableObject profile/catalog tham chiếu trực tiếp: crops, themes, upgrades, gear, drop rules, cosmetics. IDs ổn định là save key. Mọi weight, range, cost, interval chỉnh bằng Editor.
-- Save plain data có schema version, upgrade migration, temp+flush+replace+backup; giữ file từ version tương lai, không ghi đè khi không đọc được. Lưu cả lựa chọn cây, công cụ/affix, thời gian dư, pity, milestone, theme và cosmetic.
+- Save plain data có schema version, migration, temp+flush+replace+backup; giữ file từ version tương lai, không ghi đè khi không đọc được. Schema hiện tại v3 migrate v1/v2. Lưu cả lựa chọn cây, công cụ/affix, thời gian dư, pity, milestone, theme và cosmetic.
 - UI chính chỉ có tiền, Shop và menu. Shop chứa các thao tác vườn/nâng cấp. Inventory, thông tin item và màn phụ mở thành cửa sổ nhỏ nổi cùng kiểu khung game, nằm trong cùng Canvas/process chứ không tạo OS window riêng. Mỗi cửa sổ có thanh tiêu đề, nút đóng và kéo được trong vùng game.
-- Dùng composition theo trách nhiệm: `GardenFloatingWindow` chỉ điều khiển khung/đóng/kéo; `GardenGearPanel` trình bày inventory và gọi API progression; `GardenProgression` giữ dữ liệu và luật. `GardenHud` chỉ quản lý thanh chính và chuyển trạng thái giữa Shop/menu/cửa sổ. Các reference được serialize rõ ràng, không resolve dependency bằng lookup.
+- Dùng composition theo trách nhiệm: `GardenFloatingWindow` chỉ điều khiển khung/đóng/kéo; `GardenGearPanel` trình bày inventory và gọi progression; `GardenCosmeticPanel` trình bày catalog/preview và gọi `GardenCosmeticController`; controller áp tint và giữ loadout, còn catalog là ScriptableObject. `GardenHud` chỉ quản lý thanh chính và chuyển trạng thái giữa Shop/menu/cửa sổ. Các reference được serialize rõ ràng, không resolve dependency bằng lookup.
 - Tất cả UI/plot GameObject được chuẩn bị bằng Editor; runtime không spawn/destroy UI hoặc lookup dependency. Dùng anchor và CanvasScaler để cửa sổ phụ ở gọn trong cửa sổ game; giữ idle30FPS.
 
 ## Giai đoạn và gate kiểm chứng
