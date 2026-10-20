@@ -11,7 +11,8 @@ namespace IdleGarden
         [Min(1)] public float growSeconds = 20;
         [Min(0)] public float waterPerSecond = 1;
         [Min(1)] public float waterCapacity = 12;
-        [Range(0, 1)] public float waterThreshold = .3f;
+        // Kept for serialized asset compatibility; watering now waits until the plot is dry.
+        [HideInInspector, Range(0, 1)] public float waterThreshold = .3f;
         [Min(1)] public int yield = 1;
         [Min(1)] public int sellPrice = 8;
         public Sprite[] stages;

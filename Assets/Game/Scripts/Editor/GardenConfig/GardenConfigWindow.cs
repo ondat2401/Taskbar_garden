@@ -78,7 +78,7 @@ namespace IdleGarden.Editor
                     var crop = plot.crop;
                     var foldout = new Foldout { text = crop.displayName, value = true }; fields.Add(foldout);
                     var cropData = new SerializedObject(crop);
-                    foreach (string property in new[] { "id", "displayName", "growSeconds", "waterPerSecond", "waterCapacity", "waterThreshold", "yield", "sellPrice", "stages" })
+                    foreach (string property in new[] { "id", "displayName", "growSeconds", "waterPerSecond", "waterCapacity", "yield", "sellPrice", "stages" })
                         Add(cropData, property, foldout);
                     var preview = new VisualElement(); preview.style.flexDirection = FlexDirection.Row;
                     if (crop.stages != null)

@@ -4,7 +4,7 @@ Ngày 2026-10-19. Đây là hướng triển khai đã được user giao tự q
 
 ## Trải nghiệm
 
-Vườn là một dải pixel art sát taskbar. Player chọn cây cho từng chậu, chọn công cụ và đầu tư; nhân vật tự trồng, tưới, lấy nước, thu hoạch, bán và trồng lại mãi. Không có cây chết hoặc thao tác tưới bắt buộc. Đổi cây giữa vụ chỉ đổi vụ tiếp theo, không xóa cây đang lớn. Mỗi chậu có lựa chọn riêng, không ghi runtime lựa chọn vào profile thiết kế.
+Vườn là một dải pixel art sát taskbar. Player chọn cây cho từng chậu, chọn công cụ và đầu tư; nhân vật tự trồng, chỉ đi tưới khi chậu cạn, lấy nước, thu hoạch, bán và trồng lại mãi. Khi không có việc, nhân vật nghỉ ở trạng thái Idle; có thể thêm hoạt động nghỉ sau này. Không có cây chết hoặc thao tác tưới bắt buộc. Đổi cây giữa vụ chỉ đổi vụ tiếp theo, không xóa cây đang lớn. Mỗi chậu có lựa chọn riêng, không ghi runtime lựa chọn vào profile thiết kế.
 
 Vòng chính: cây → nông sản/vàng → nâng cấp hoặc mở theme → cây mới + rương mốc → công cụ có buff → chăm vườn tốt hơn → tái sinh → bonus vĩnh viễn. Rương theo thời gian và đồ trùng tạo vòng sưu tầm lâu dài. Không cần mua IAP để mở đủ tính năng gameplay.
 

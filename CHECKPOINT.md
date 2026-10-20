@@ -1,6 +1,6 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-20. F06 cosmetic preview/build đã tích hợp và kiểm tra. User cho phép tự làm, test và commit từng giai đoạn.
+Cập nhật 2026-10-20. F06 cosmetic preview/build đã tích hợp. Follow-up grounding/watering đã kiểm tra ở `checkpoint/f06-worker-grounding`; F07 UI/art polish chưa bắt đầu. User cho phép tự làm, test và commit từng giai đoạn.
 
 ## Đã chốt
 
@@ -10,6 +10,7 @@ Cập nhật 2026-10-20. F06 cosmetic preview/build đã tích hợp và kiểm 
 - F04: tag `checkpoint/f04-chests-gear`. Rương thời gian/pity, rarity/affix, inventory/equip/salvage/essence và cửa sổ nổi đã vào scene. Seeded verification, F01–F03 regression và Play Mode UI pass. Chưa chạy standalone F04; chưa kiểm DPI/multi-monitor.
 - F05: tag `checkpoint/f05-save-rebirth`. Save schema v2/migration v1, atomic replace/backup recovery, bảo toàn file tương lai/lỗi và rebirth giữ lựa chọn cây cùng tiến trình vĩnh viễn. F01–F05 verifier và Play Mode rebirth pass; I/O dùng thư mục tạm cô lập, chưa restart standalone.
 - F06: tag `checkpoint/f06-prototype`. Catalog có 3 cosmetic miễn phí, 2 premium và 1 bundle cố định; miễn phí equip/lưu, premium/bundle preview tint tạm thời, không checkout hoặc entitlement giả. Save schema v3 migrate v1/v2. F01–F06 verifier, Play Mode UI và Windows BuildReport pass; standalone QA ghi save v3 vào profile cô lập.
+- Follow-up F06: tag `checkpoint/f06-worker-grounding`. Worker và well đặt đúng ground baseline; crop đặt lên mặt đất, worker vẽ sau crop. Chậu chỉ được tưới khi nước cạn; scheduler luân phiên trồng/tưới và quay vòng chậu để tránh bỏ đói vị trí. F01–F06 verifications, Play Mode và Game View pass; chưa build standalone lại.
 - Thiết kế mới: `docs/GAME_DESIGN.md`. Tiến độ: `docs/FEATURE_STATUS.md`. Hành trình để dựng video: `docs/DEVLOG.md`; quy trình tag: `docs/GIT_CHECKPOINTS.md`.
 
 ## Đã kiểm tra F03
@@ -24,7 +25,7 @@ Rương mỗi600 giây unpaused real-time (không theo simulation speed/offline)
 
 Đã chạy compile; `GardenVerification.Run()`, `GardenEconomyVerification.Run()`, `GardenFeatureVerification.Pots()` và `GardenGearVerification.Run()` pass. Play Mode kiểm tra mở rương qua UnityEvent, chọn row, equip, chặn salvage đồ đang mặc, đóng cửa sổ, Shop/menu chuyển trạng thái và drag không vượt Canvas. Game View 510×287 đã xem. F04 không ghi persistent save trong Editor; chưa kiểm file I/O hoặc native Windows build.
 
-F06 đã hoàn tất. Chưa chốt checkpoint kế tiếp.
+F06 đã hoàn tất; follow-up grounding/watering đã chốt. F07 tiếp theo là polish UI và đồ họa game, chưa bắt đầu.
 
 ## Đã kiểm tra F05
 
@@ -37,6 +38,12 @@ F06 đã hoàn tất. Chưa chốt checkpoint kế tiếp.
 Catalog ScriptableObject phân loại từng cosmetic theo slot và offer. `GardenCosmeticController` giữ loadout, áp tint và hoàn tác preview; `GardenCosmeticPanel` chỉ trình bày/lựa chọn; `GardenFloatingWindow` vẫn phụ trách khung, đóng và kéo. Free item được trang bị và lưu; premium/bundle chỉ xem thử, không có purchase API hay cấp entitlement. Cửa sổ Cosmetics mở từ menu trong Canvas game, dùng cùng kiểu khung với Inventory.
 
 Save schema v3 migrate dữ liệu v1/v2 và giữ cosmetic miễn phí. Compile cùng F01–F06 Editor verifications pass. Play Mode gọi các UnityEvent thật: mở cửa sổ, preview bundle đổi tint worker/pot/crop, đóng cửa sổ phục hồi loadout, equip free và kiểm tra snapshot save hợp lệ. Game View đã xem ở 510×287. Windows BuildReport qua `GardenPrototypeBuilder.BuildWindows()` là Succeeded; standalone QA dùng Company/Product riêng và ghi save v3 ở profile cô lập, không chạm save người chơi. Chưa restart standalone sau khi equip, chưa kiểm DPI/multi-monitor hoặc gamepad.
+
+## Đã kiểm tra follow-up grounding/watering
+
+Worker và well dùng baseline `y=-0.2`, crop dùng mặt soil `y=-0.04`; sorting order worker 4 sau crop 5. `GardenSimulation` chỉ gọi job tưới khi nước chậu bằng 0, luân phiên trồng/tưới và duyệt chậu theo vòng để không bỏ đói chậu xa. Khi không còn việc, `GardenJob.Idle` phát animation Idle hiện có.
+
+Compile pass; `GardenVerification.Run()` kiểm tra vườn 4/8/12 chậu, refill, pause, dry-only watering/rest và cây khô; F01–F06 verifications pass. Play Mode/Game View 510×287 xác nhận baseline, sorting và simulation chạy; scene không dirty sau khi dừng. Chưa build Windows standalone lại cho follow-up, chưa kiểm DPI/multi-monitor hoặc gamepad.
 
 ## Giữ nguyên
 

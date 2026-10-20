@@ -1,6 +1,6 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. F01–F06 đã tích hợp và kiểm tra; xem docs/GAME_DESIGN.md để chọn feature tiếp theo. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F06 đã tích hợp; follow-up grounding/watering ở `checkpoint/f06-worker-grounding`. F07 UI/art polish chưa bắt đầu. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
 
 ## Project
 
@@ -10,7 +10,7 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 
 ## Code liên quan
 
-- Garden/GardenSimulation.cs: state/job, chọn cây, Capture/Restore. GardenController.cs: tick, camera, HUD, autosave standalone; Editor không ghi save.
+- Garden/GardenSimulation.cs: state/job, dry-only watering, luân phiên việc trồng/tưới và quay vòng chậu để tránh bỏ đói chậu xa, chọn cây, Capture/Restore. GardenController.cs: tick, camera, HUD, autosave standalone; Editor không ghi save.
 - Progression/GardenProgression.cs: economy/theme/chests/gear/rebirth. GearConfig.cs và EquipmentDefinition.cs: luật drop và base stats. GardenSaveStore.cs: DTO version3, migrate v1/v2, atomic replacement và backup recovery.
 - Cosmetics/GardenCosmeticCatalog.cs và GardenCosmeticController.cs: catalog, loadout miễn phí, tint preview tạm thời và Capture/Restore.
 - Crops/CropDefinition.cs, GardenTheme.cs: cây và theme. Worker/WorkerConfig.cs: chỉ số gốc.
@@ -20,7 +20,7 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 
 ## Verification
 
-F01–F05 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. F06 catalog/verifier pass; Play Mode xác nhận listener, preview tint cả worker/pot/crop, đóng cửa sổ hoàn tác và equip miễn phí tạo save hợp lệ. Windows BuildReport Succeeded; standalone smoke ghi save schema v3 trong profile QA cô lập. Chưa kiểm restart sau equip, DPI/multi-monitor hoặc gamepad.
+F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View 510×287 pass; xác nhận worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. Chưa build standalone lại sau follow-up; chưa kiểm DPI/multi-monitor hoặc gamepad.
 
 ## Workflow
 

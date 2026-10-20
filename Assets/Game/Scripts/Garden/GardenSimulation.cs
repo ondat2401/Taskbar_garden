@@ -34,6 +34,8 @@ namespace IdleGarden
         public float ActionProgress { get; private set; }
         public bool Paused;
         private float actionElapsed;
+        private GardenJob lastActionJob;
+        private int nextPlotIndex;
         private readonly GardenProgression progression;
         public float TankCapacity => (Profile.worker.tankCapacity + (progression?.GearFlatBonus(UpgradeStat.TankCapacity) ?? 0)) *
                                      (progression?.Multiplier(UpgradeStat.TankCapacity) ?? 1);
@@ -95,6 +97,8 @@ namespace IdleGarden
             else
             {
                 var plot = Plots[Target];
+                lastActionJob = Job;
+                nextPlotIndex = (Target + 1) % Plots.Length;
                 switch (Job)
                 {
                     case GardenJob.Plant: plot.Planted = true; plot.Growth = 0; break;
@@ -114,22 +118,25 @@ namespace IdleGarden
 
         private void ChooseJob()
         {
+            GardenJob firstSecondaryJob = lastActionJob == GardenJob.Water ? GardenJob.Plant : GardenJob.Water;
             for (int priority = 0; priority < 3; priority++)
             {
-                int nearest = -1; float distance = float.MaxValue;
-                for (int i = 0; i < Plots.Length; i++)
+                int candidate = -1;
+                GardenJob candidateJob = priority == 0 ? GardenJob.Harvest :
+                    priority == 1 ? firstSecondaryJob : firstSecondaryJob == GardenJob.Plant ? GardenJob.Water : GardenJob.Plant;
+                for (int offset = 0; offset < Plots.Length; offset++)
                 {
+                    int i = (nextPlotIndex + offset) % Plots.Length;
                     var plot = Plots[i];
-                    bool wanted = priority == 0 ? plot.Ready : priority == 1
-                        ? plot.Planted && !plot.Ready && plot.Water <= plot.Crop.waterCapacity * Mathf.Clamp01(plot.Crop.waterThreshold)
-                            && plot.Water < plot.Crop.waterCapacity && plot.Crop.waterPerSecond > 0
-                        : !plot.Planted;
-                    float candidateDistance = Mathf.Abs(PlotX(i) - WorkerX);
-                    if (wanted && candidateDistance < distance) { nearest = i; distance = candidateDistance; }
+                    bool wanted = candidateJob == GardenJob.Harvest ? plot.Ready : candidateJob == GardenJob.Plant
+                        ? !plot.Planted
+                        : plot.Planted && !plot.Ready && plot.Water <= .001f
+                            && plot.Water < plot.Crop.waterCapacity && plot.Crop.waterPerSecond > 0;
+                    if (wanted) { candidate = i; break; }
                 }
-                if (nearest < 0) continue;
-                Target = nearest;
-                Job = priority == 0 ? GardenJob.Harvest : priority == 1 ? GardenJob.Water : GardenJob.Plant;
+                if (candidate < 0) continue;
+                Target = candidate;
+                Job = candidateJob;
                 if (Job == GardenJob.Water && Water < Mathf.Min(WaterPerAction, TankCapacity) - .001f)
                     Job = GardenJob.Refill;
                 return;

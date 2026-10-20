@@ -80,6 +80,14 @@ Save schema v3 migrate cả v1 và v2; lựa chọn free được lưu. F01–F0
 
 **Cảnh quay:** mở Menu → Cosmetics; chọn Moonlit Garden → Preview on garden; xem tint người/chậu/cây; đóng để thấy loadout trở lại; equip Mint Apron và mở lại panel để thấy đã lưu.
 
+### Follow-up F06 — chạm đất và chăm vườn công bằng hơn
+
+**2026-10-20 · `checkpoint/f06-worker-grounding`**
+
+Hạ worker và giếng về cùng ground baseline; đặt cây trên mặt đất của chậu và vẽ worker sau cây. Nước không còn kích hoạt lượt tưới sớm: nhân vật chỉ đi tưới khi chậu cạn. Khi không có việc, simulation ở `Idle` và dùng animation nghỉ đã có.
+
+Regression 12 chậu phát hiện ưu tiên tuyệt đối khiến một số chậu bị bỏ đói. Scheduler nay luân phiên trồng/tưới và quay vòng vị trí, vẫn giữ thu hoạch ưu tiên cao. Compile, F01–F06 verifications, Play Mode và Game View 510×287 pass; chưa build standalone lại.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.

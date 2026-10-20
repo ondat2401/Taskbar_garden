@@ -40,13 +40,22 @@ namespace IdleGarden.Editor
                     if (sim.WorkerX != x || sim.Water != water || sim.HarvestCount != harvested) throw new Exception("Pause mutated simulation.");
                     sim.Paused = false;
                 }
-                profile.plots.Clear(); profile.plots.Add(new PlotConfig { crop = crop, startingWater = 0 });
+                profile.plots.Clear(); profile.plots.Add(new PlotConfig { crop = crop, startingWater = .8f });
+                var resting = new GardenSimulation(profile); resting.Plots[0].Planted = true;
+                resting.Tick(.1f);
+                if (resting.Job != GardenJob.Idle || resting.Moving)
+                    throw new Exception("Worker should rest while a crop still has water.");
+                resting.Plots[0].Water = .02f; resting.Tick(.05f);
+                if (resting.Job != GardenJob.Water || resting.Target != 0)
+                    throw new Exception("Worker did not dispatch watering after the plot ran dry.");
+
+                profile.plots[0].startingWater = 0;
                 var dry = new GardenSimulation(profile); dry.Plots[0].Planted = true;
                 dry.Tick(.1f);
                 if (dry.Plots[0].Growth != 0) throw new Exception("Dry crop grew.");
                 dry.Plots[0].Water = 2; crop.growSeconds = 10; dry.Tick(.1f);
                 if (Mathf.Abs(dry.Plots[0].Growth - .01f) > .0001f) throw new Exception("Live crop config did not apply.");
-                Debug.Log("PASS: 4/8/12 plots, repeated harvests, refill, bounds, pause, dry growth and live numeric config.");
+                Debug.Log("PASS: 4/8/12 plots, repeated harvests, refill, bounds, pause, dry-only watering/rest, dry growth and live numeric config.");
             }
             finally
             {

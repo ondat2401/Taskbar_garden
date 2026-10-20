@@ -52,7 +52,7 @@ namespace IdleGarden
             Simulation.Tick(dt * Mathf.Max(0, profile.simulationSpeed));
             Progression?.TickChestTimer(dt, Simulation.Paused);
             animationTime += dt * profile.simulationSpeed * (Simulation.Paused ? 0 : 1);
-            workerTransform.position = new Vector3(Mathf.Round(Simulation.WorkerX * 32) / 32, .09375f, 0);
+            workerTransform.position = new Vector3(Mathf.Round(Simulation.WorkerX * 32) / 32, GardenProfile.GroundY, 0);
             workerRenderer.flipX = Simulation.FacingLeft;
             var config = profile.worker;
             var frames = Simulation.Moving ? config.walkFrames : Simulation.Job == GardenJob.Idle ? config.idleFrames : config.workFrames;

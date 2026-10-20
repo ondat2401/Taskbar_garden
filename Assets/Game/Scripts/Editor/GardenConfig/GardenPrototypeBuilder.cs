@@ -44,9 +44,9 @@ namespace IdleGarden.Editor
             native.SetCamera(camera);
             var desktop = root.AddComponent<DesktopWindow>(); desktop.profile = profile; desktop.window = native; desktop.targetCamera = camera;
             // Native window properties are only changed by DesktopWindow in Windows standalone.
-            var worker = SpriteObject("Worker", root.transform, profile.worker.idleFrames[0], new Vector3(-1.5f, .08f, 0), 10);
+            var worker = SpriteObject("Worker", root.transform, profile.worker.idleFrames[0], new Vector3(-1.5f, GardenProfile.GroundY, 0), 4);
             controller.workerTransform = worker.transform; controller.workerRenderer = worker;
-            SpriteObject("Well", root.transform, profile.wellSprite, new Vector3(-profile.wellDistance, .02f, 0), 4);
+            SpriteObject("Well", root.transform, profile.wellSprite, new Vector3(-profile.wellDistance, GardenProfile.GroundY, 0), 3);
             var events = new GameObject("EventSystem", typeof(EventSystem), typeof(InputSystemUIInputModule)); events.transform.SetParent(root.transform);
             BuildHud(root.transform, controller, desktop);
             ApplyLayout(profile);
@@ -81,7 +81,7 @@ namespace IdleGarden.Editor
                 var template = new GameObject("Plot");
                 var view = template.AddComponent<PlotView>();
                 view.soilRenderer = SpriteObject("Soil", template.transform, profile.soilSprite, Vector3.zero, 2);
-                view.cropRenderer = SpriteObject("Crop", template.transform, profile.plots[0].crop.stages[0], new Vector3(0, .1f, 0), 5);
+                view.cropRenderer = SpriteObject("Crop", template.transform, profile.plots[0].crop.stages[0], new Vector3(0, GardenProfile.CropSurfaceY, 0), 5);
                 for (int i = 0; i < 2; i++)
                 {
                     float y = -.48f - i * .13f;
@@ -102,6 +102,7 @@ namespace IdleGarden.Editor
                 instance.name = $"Plot {i + 1:00}"; instance.transform.localPosition = new Vector3(i * profile.plotSpacing, 0, 0);
                 var view = instance.GetComponent<PlotView>(); view.soilRenderer.sprite = profile.soilSprite;
                 view.cropRenderer.sprite = profile.plots[i].crop.stages[0]; controller.plots[i] = view;
+                view.cropRenderer.transform.localPosition = new Vector3(0, GardenProfile.CropSurfaceY, 0);
                 view.garden=controller; view.plotIndex=i;
                 var collider=instance.GetComponent<BoxCollider2D>(); if(!collider) collider=instance.AddComponent<BoxCollider2D>();
                 collider.offset=new Vector2(0,.35f); collider.size=new Vector2(1.2f,1.5f);
@@ -113,12 +114,13 @@ namespace IdleGarden.Editor
             float left = -profile.wellDistance - 1;
             float right = (profile.plots.Count - 1) * profile.plotSpacing + 1;
             for (float x = left; x < right; x += 1)
-                SpriteObject("Grass", layout.transform, profile.grassSprite, new Vector3(x, -.2f, 0), 0).sharedMaterial = material;
+                SpriteObject("Grass", layout.transform, profile.grassSprite, new Vector3(x, GardenProfile.GroundY, 0), 0).sharedMaterial = material;
             var well = controller.transform.Find("Well");
-            if (well) { Undo.RecordObject(well, "Move well"); well.localPosition = new Vector3(-profile.wellDistance, .02f, 0); }
+            if (well) { Undo.RecordObject(well, "Ground well"); well.localPosition = new Vector3(-profile.wellDistance, GardenProfile.GroundY, 0); }
             Undo.RecordObject(controller.workerTransform, "Move worker");
             Undo.RecordObject(controller.gardenCamera.transform, "Move garden camera");
-            controller.workerTransform.localPosition = new Vector3(-profile.wellDistance, .08f, 0);
+            controller.workerTransform.localPosition = new Vector3(-profile.wellDistance, GardenProfile.GroundY, 0);
+            if (controller.workerRenderer) { Undo.RecordObject(controller.workerRenderer, "Sort worker behind crops"); controller.workerRenderer.sortingOrder = 4; }
             controller.gardenCamera.transform.position = new Vector3((left + right) * .5f, 1.15f, -10);
             foreach (var renderer in controller.GetComponentsInChildren<SpriteRenderer>()) renderer.sharedMaterial = material;
             EditorUtility.SetDirty(controller); EditorSceneManager.MarkSceneDirty(controller.gameObject.scene);
