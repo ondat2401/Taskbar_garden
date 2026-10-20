@@ -97,7 +97,9 @@ namespace IdleGarden
         public bool Rebirth()
         {
             if (Progression == null || !Progression.TryRebirth()) return false;
+            var previous = Simulation;
             Simulation = new GardenSimulation(profile, Progression);
+            Simulation.CopyCropSelectionsFrom(previous);
             SaveGame(); return true;
         }
         private void OnApplicationQuit() { SaveGame(); }

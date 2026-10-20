@@ -160,6 +160,14 @@ namespace IdleGarden
             }
             WorkerX = Mathf.Clamp(saved.workerX, WellX, RightEdge); Water = Mathf.Min(saved.workerWater, TankCapacity); HarvestCount = saved.harvested;
         }
+
+        public void CopyCropSelectionsFrom(GardenSimulation source)
+        {
+            if (source == null || source.Plots.Length != Plots.Length) throw new ArgumentException("Garden layouts must match.");
+            for (int i = 0; i < Plots.Length; i++)
+                if (!SelectCrop(i, source.Plots[i].SelectedCrop)) throw new InvalidOperationException("A selected crop is no longer unlocked.");
+        }
+
         public bool SelectCrop(int index, CropDefinition crop)
         {
             if (index < 0 || index >= Plots.Length || !crop || (progression != null && !progression.CropUnlocked(crop))) return false;

@@ -6,13 +6,14 @@ using UnityEngine;
 
 namespace IdleGarden
 {
-    [Serializable] public sealed class InventorySave { public string id; public long count; }
-    [Serializable] public sealed class UpgradeSave { public string id; public int level; }
-    [Serializable] public sealed class PlotSave { public string cropId, nextCropId; public bool planted; public float growth, water; public int harvested; }
+    [Serializable] public sealed class InventorySave { public string id; public long count = -1; }
+    [Serializable] public sealed class UpgradeSave { public string id; public int level = -1; }
+    [Serializable] public sealed class PlotSave { public string cropId, nextCropId; public bool planted; public float growth = float.NaN, water = float.NaN; public int harvested = -1; }
     [Serializable]
     public sealed class GardenSaveData
     {
-        public int version = 1;
+        public const int CurrentVersion = 2;
+        public int version = CurrentVersion;
         public double gold, cycleGold;
         public long seeds;
         public int rebirths;
@@ -82,22 +83,43 @@ namespace IdleGarden
             if (!File.Exists(path)) return false;
             try
             {
-                saved = JsonUtility.FromJson<GardenSaveData>(File.ReadAllText(path));
-                if (saved != null)
+                saved = new GardenSaveData
                 {
-                    if (saved.gearInventory == null) saved.gearInventory = Array.Empty<GearInstance>();
-                    if (saved.equippedGear == null) saved.equippedGear = Array.Empty<EquippedGearSave>();
-                }
-                newer = saved != null && saved.version > 1;
-                return !newer && Valid(saved);
+                    version = int.MinValue, gold = double.NaN, cycleGold = double.NaN, seeds = long.MinValue,
+                    rebirths = int.MinValue, inventory = null, upgrades = null, plots = null,
+                    workerX = float.NaN, workerWater = float.NaN, harvested = int.MinValue, themes = null,
+                    chests = int.MinValue, gearInventory = null, equippedGear = null, essence = long.MinValue,
+                    chestPityMisses = int.MinValue, chestTimerSeconds = double.NaN
+                };
+                JsonUtility.FromJsonOverwrite(File.ReadAllText(path), saved);
+                newer = saved.version > GardenSaveData.CurrentVersion;
+                if (newer) return false;
+                if (saved.version == 1) MigrateV1(saved);
+                return Valid(saved);
             }
             catch (ArgumentException) { return false; }
         }
 
+        private static void MigrateV1(GardenSaveData saved)
+        {
+            if (saved.themes == null) saved.themes = Array.Empty<string>();
+            if (saved.gearInventory == null) saved.gearInventory = Array.Empty<GearInstance>();
+            if (saved.equippedGear == null) saved.equippedGear = Array.Empty<EquippedGearSave>();
+            if (saved.chests == int.MinValue) saved.chests = 0;
+            if (saved.essence == long.MinValue) saved.essence = 0;
+            if (saved.chestPityMisses == int.MinValue) saved.chestPityMisses = 0;
+            if (double.IsNaN(saved.chestTimerSeconds)) saved.chestTimerSeconds = 0;
+            if (saved.plots != null)
+                for (int i = 0; i < saved.plots.Length; i++)
+                    if (saved.plots[i] != null && string.IsNullOrWhiteSpace(saved.plots[i].nextCropId))
+                        saved.plots[i].nextCropId = saved.plots[i].cropId;
+            saved.version = GardenSaveData.CurrentVersion;
+        }
+
         public static bool Valid(GardenSaveData data)
         {
-            if (data == null || data.version != 1 || !GardenProgression.Finite(data.gold) || data.gold < 0 || !GardenProgression.Finite(data.cycleGold) || data.cycleGold < 0 ||
-                data.seeds < 0 || data.rebirths < 0 || data.inventory == null || data.upgrades == null || data.plots == null ||
+            if (data == null || data.version != GardenSaveData.CurrentVersion || !GardenProgression.Finite(data.gold) || data.gold < 0 || !GardenProgression.Finite(data.cycleGold) || data.cycleGold < 0 ||
+                data.seeds < 0 || data.rebirths < 0 || data.inventory == null || data.upgrades == null || data.plots == null || data.themes == null ||
                 data.chests < 0 || data.essence < 0 || data.chestPityMisses < 0 || !GardenProgression.Finite(data.chestTimerSeconds) || data.chestTimerSeconds < 0 ||
                 data.gearInventory == null || data.equippedGear == null ||
                 !GardenProgression.Finite(data.workerX) || !GardenProgression.Finite(data.workerWater) || data.workerWater < 0 || data.harvested < 0) return false;
@@ -124,7 +146,7 @@ namespace IdleGarden
                 if (item == null || !Enum.IsDefined(typeof(GearSlot), item.slot) || string.IsNullOrWhiteSpace(item.instanceId) ||
                     !equippedSlots.Add(item.slot) || !ids.Contains(item.instanceId)) return false;
             foreach (var plot in data.plots)
-                if (plot == null || string.IsNullOrWhiteSpace(plot.cropId) || !GardenProgression.Finite(plot.growth) || plot.growth < 0 || plot.growth > 1 ||
+                if (plot == null || string.IsNullOrWhiteSpace(plot.cropId) || string.IsNullOrWhiteSpace(plot.nextCropId) || !GardenProgression.Finite(plot.growth) || plot.growth < 0 || plot.growth > 1 ||
                     !GardenProgression.Finite(plot.water) || plot.water < 0 || plot.harvested < 0) return false;
             return true;
         }

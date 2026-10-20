@@ -60,8 +60,18 @@ Inventory mở trong cửa sổ nổi cùng Canvas. `GardenFloatingWindow` phụ
 
 **Đã kiểm tra:** compile, F01–F03 regression, seeded timer/pity/drop/affix/capacity/equip/salvage/essence/capture checks; Play Mode mở rương và thao tác qua listener, kiểm tra panel transitions và drag bounds. Đã xem Game View ở510×287. Chưa chạy Windows standalone F04, chưa kiểm DPI/multi-monitor hoặc file I/O save.
 
+## 06 — Lưu tiến trình và tái sinh
+
+**2026-10-20 · F05 · `checkpoint/f05-save-rebirth`**
+
+Nâng schema lên v2 và migrate save v1: lựa chọn cây cũ lấy từ cây đã lưu, các trường theme/gear mới được khởi tạo an toàn. Save tiếp tục ghi file tạm, flush, replace và giữ bản backup. Nếu file primary lỗi thì khôi phục backup mà vẫn giữ file lỗi; nếu save thuộc build mới hơn hoặc không đọc được thì chặn ghi để tránh mất dữ liệu.
+
+Rebirth reset vàng chu kỳ, kho cây, rank và cây đang trồng nhưng giữ bonus seed, theme, gear, rương/pity/essence cùng lựa chọn riêng của từng chậu. Controller tạo simulation mới rồi áp lại lựa chọn đã mở khóa.
+
+**Đã kiểm tra:** compile; F01–F05 Editor verifications; I/O trên thư mục tạm với migration v1, save/replace nhiều lần, fallback backup, file tương lai và file hỏng; đọc lại save sau rebirth bằng store mới. Play Mode xác nhận `GardenController.Rebirth()` giữ lựa chọn cây, theme, gear/rương và reset vụ đang trồng. Chưa restart Windows standalone hoặc chạm save thật.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-Các mốc sắp tới: F05 save/tái sinh; F06 cosmetic preview và build. Cập nhật từng mốc khi xong, không tạo sẵn câu chuyện thành công.
+Các mốc sắp tới: F06 cosmetic preview và build. Cập nhật từng mốc khi xong, không tạo sẵn câu chuyện thành công.
