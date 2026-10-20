@@ -12,6 +12,7 @@ namespace IdleGarden.Editor
         private static void Box(int x, int y, int width, int height, string hex)
         {
             ColorUtility.TryParseHtmlString("#" + hex, out Color color);
+            if (hex != "FFFFFF") color = GardenUiPalette.SnapToSharedColor((Color32)color);
             for (int row = y; row < y + height; row++)
                 for (int col = x; col < x + width; col++)
                     if (col >= 0 && col < canvas.width && row >= 0 && row < canvas.height) canvas.SetPixel(col, row, color);
@@ -37,6 +38,12 @@ namespace IdleGarden.Editor
         public static Dictionary<string, Sprite> Generate()
         {
             var sprites = new Dictionary<string, Sprite>();
+            const string atlasPath = "Assets/Game/Textures/Palette/garden-placeholder-atlas.png";
+            foreach (Object asset in AssetDatabase.LoadAllAssetsAtPath(atlasPath))
+                if (asset is Sprite sprite) sprites[sprite.name] = sprite;
+            if (sprites.Count == 19) return sprites;
+            sprites.Clear();
+
             Begin(1, 1); Box(0, 0, 1, 1, "FFFFFF"); sprites["pixel"] = Save("Environment", "pixel", new Vector2(0, .5f), 1);
             Begin(40, 16);
             Box(0, 0, 40, 10, "513E35"); Box(1, 3, 38, 8, "8E6746"); Box(2, 6, 36, 5, "BB8857");
@@ -49,21 +56,21 @@ namespace IdleGarden.Editor
             Box(7, 17, 19, 2, "63A6BE"); Box(5, 20, 3, 14, "76573F"); Box(24, 20, 3, 14, "76573F");
             Box(1, 33, 30, 4, "6B4B36"); Box(4, 37, 24, 3, "A77D50"); Box(10, 4, 8, 2, "697D85");
             sprites["well"] = Save("Environment", "well", new Vector2(.5f, 0));
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 Begin(32, 48);
                 Box(10, 0, 5, 8, "393E48"); Box(18, i == 1 ? 2 : 0, 5, 8, "393E48");
                 Box(10, 6, 13, 13, "4C7080"); Box(9, 16, 15, 13, "8EAA69"); Box(13, 16, 7, 10, "B7C48B");
-                Box(6, i == 2 ? 20 : 13, 4, 12, "F0C79D"); Box(24, i == 2 ? 20 : 13, 4, 12, "F0C79D");
+                Box(6, i == 3 ? 20 : 13, 4, 12, "F0C79D"); Box(24, i == 3 ? 20 : 13, 4, 12, "F0C79D");
                 Box(10, 28, 15, 12, "F0C79D"); Box(10, 36, 15, 5, "73513D"); Box(12, 33, 2, 2, "363D3F"); Box(22, 33, 2, 2, "363D3F");
                 Box(6, 39, 24, 4, "D6AD66"); Box(11, 42, 14, 5, "E5BF7D"); Box(11, 41, 14, 2, "826B43");
-                if (i == 2) { Box(25, 17, 6, 7, "71A5B2"); Box(27, 24, 3, 3, "ABC9CE"); }
+                if (i == 3) { Box(25, 17, 6, 7, "71A5B2"); Box(27, 24, 3, 3, "ABC9CE"); }
                 sprites["worker" + i] = Save("Worker", "worker" + i, new Vector2(.5f, 0));
             }
             for (int stage = 0; stage < 3; stage++)
             {
                 Begin(); Plant(stage, false); sprites["carrot" + stage] = Save("Crops", "carrot" + stage, new Vector2(.5f, 0));
-                if (stage > 0) { Begin(); Plant(stage, true); sprites["radish" + stage] = Save("Crops", "radish" + stage, new Vector2(.5f, 0)); }
+                Begin(); Plant(stage, true); sprites["radish" + stage] = Save("Crops", "radish" + stage, new Vector2(.5f, 0));
             }
             return sprites;
         }

@@ -1,6 +1,6 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. F01–F06 đã tích hợp; follow-up grounding/watering ở `checkpoint/f06-worker-grounding`. F07 UI polish đã tích hợp trong `checkpoint/f07-ui-polish`. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F06 đã tích hợp; follow-up grounding/watering ở `checkpoint/f06-worker-grounding`. F07 UI polish ở `checkpoint/f07-ui-polish`; F08 placeholder art/palette ở `checkpoint/f08-shared-art-palette`. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
 
 ## Project
 
@@ -15,13 +15,13 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 - Cosmetics/GardenCosmeticCatalog.cs và GardenCosmeticController.cs: catalog, loadout miễn phí, tint preview tạm thời và Capture/Restore.
 - Crops/CropDefinition.cs, GardenTheme.cs: cây và theme. Worker/WorkerConfig.cs: chỉ số gốc.
 - UI/GardenHud.cs: callback chậu/cây/theme/tab/shop và chuyển cửa sổ. GardenFloatingWindow chỉ quản lý khung; GardenGearPanel và GardenCosmeticPanel giữ presentation riêng; row và cửa sổ được dựng sẵn bằng Editor.
-- UI/GardenUiPalette.cs: màu, trạng thái nút và viền dùng chung cho workshop, inventory và cosmetic.
+- UI/GardenUiPalette.cs: palette 22 màu dùng chung cho HUD và sprite placeholder, trạng thái nút và viền.
 - Desktop/DesktopWindow.cs, WindowHandle.cs: native drag/resize/menu, Windows standalone.
 - Editor/GardenConfig/: GardenPrototypeBuilder, GardenProgressionSetup dựng scene/HUD; GardenCosmeticSetup tạo catalog/cửa sổ; các *Verification kiểm tra feature.
 
 ## Verification
 
-F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View 510×287 pass; xác nhận worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07 compile và sáu F01–F06 Editor verifications pass; Play Mode mở Garden, Upgrades, Inventory và Cosmetics, ảnh Game View xác nhận bảng/màu/trạng thái. Chưa build standalone riêng cho F07; chưa kiểm DPI/multi-monitor hoặc gamepad.
+F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View 510×287 pass; xác nhận worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07 compile và sáu F01–F06 Editor verifications pass; Play Mode mở Garden, Upgrades, Inventory và Cosmetics. F08 xác nhận 19 sprite atlas, palette 22 màu, crop/theme config, sorting player 4 trên soil 2 và Game View Upgrades. Chưa build standalone riêng cho F08; chưa kiểm DPI/multi-monitor hoặc gamepad.
 
 ## Workflow
 

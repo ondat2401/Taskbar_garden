@@ -264,7 +264,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a2f60c3b3e210aa4586156fdd095ba80, type: 3}
+  m_Sprite: {fileID: -722582010, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2168,7 +2168,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4817,7 +4817,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticRow
   owner: {fileID: 588324833}
   button: {fileID: 389760241}
-  background: {fileID: 389760243}
   swatch: {fileID: 1530253677}
   label: {fileID: 370776288}
   index: 5
@@ -5090,7 +5089,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5426,7 +5425,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5517,7 +5516,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 53599cbd1c8344745a09e4a2b20bfaf6, type: 3}
+  m_Sprite: {fileID: 268725722, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8039,7 +8038,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8209,7 +8208,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8433,7 +8432,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticRow
   owner: {fileID: 588324833}
   button: {fileID: 658887261}
-  background: {fileID: 658887263}
   swatch: {fileID: 1758918397}
   label: {fileID: 1827980209}
   index: 2
@@ -8926,7 +8924,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticRow
   owner: {fileID: 588324833}
   button: {fileID: 686728302}
-  background: {fileID: 686728304}
   swatch: {fileID: 68163284}
   label: {fileID: 529178143}
   index: 3
@@ -9875,7 +9872,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14838,7 +14835,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticRow
   owner: {fileID: 588324833}
   button: {fileID: 1237395254}
-  background: {fileID: 1237395256}
   swatch: {fileID: 1720693194}
   label: {fileID: 331649791}
   index: 4
@@ -15165,7 +15161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticRow
   owner: {fileID: 588324833}
   button: {fileID: 1270983029}
-  background: {fileID: 1270983031}
   swatch: {fileID: 1721119150}
   label: {fileID: 867147413}
   index: 0
@@ -16924,7 +16919,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20513,7 +20508,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22229,7 +22224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GardenCosmeticRow
   owner: {fileID: 588324833}
   button: {fileID: 1867049245}
-  background: {fileID: 1867049247}
   swatch: {fileID: 2052450088}
   label: {fileID: 636207029}
   index: 1
@@ -23063,7 +23057,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
+  m_Sprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -15,8 +15,9 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f06-prototype` | Cosmetic catalog, free equip, preview và Windows build | F01–F06 verifications, Play Mode tint/rollback và Windows BuildReport pass; standalone QA lưu schema v3 trong profile cô lập |
 | `checkpoint/f06-worker-grounding` | Follow-up: grounding sprites, dry-only watering và lịch việc công bằng | F01–F06 Editor verifications, Play Mode và Game View pass; chưa build standalone lại |
 | `checkpoint/f07-ui-polish` | Palette, viền, typography và trạng thái UI cho workshop/inventory/cosmetics | Compile, F01–F06 Editor verifications, Play Mode và Game View bốn UI pass; chưa build standalone riêng |
+| `checkpoint/f08-shared-art-palette` | Sprite atlas placeholder và palette chung cho world art/UI | Compile, map 19 sprite, F01–F06 verifications, sorting player/soil/crop và Play Mode Upgrades pass; chưa build standalone riêng |
 
-Thiết kế hiện tại: `docs/GAME_DESIGN.md`; tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). Checkpoint tiếp theo chưa được chọn.
+Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). Checkpoint tiếp theo chưa được chọn.
 
 ## Mở checkpoint để quay mà không đụng thư mục đang làm
 

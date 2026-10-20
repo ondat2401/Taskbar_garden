@@ -133,14 +133,14 @@ namespace IdleGarden.Editor
             var existing = AssetDatabase.LoadAssetAtPath<GardenProfile>(ProfilePath); if (existing) return existing;
             var art = GardenPlaceholderArt.Generate();
             var worker = ScriptableObject.CreateInstance<WorkerConfig>();
-            worker.idleFrames = new[] { art["worker0"] }; worker.walkFrames = new[] { art["worker0"], art["worker1"] }; worker.workFrames = new[] { art["worker2"], art["worker0"] };
+            worker.idleFrames = new[] { art["worker0"] }; worker.walkFrames = new[] { art["worker1"], art["worker2"] }; worker.workFrames = new[] { art["worker3"], art["worker0"] };
             AssetDatabase.CreateAsset(worker, "Assets/Game/_Configs/Worker/Gardener.asset");
             var carrot = ScriptableObject.CreateInstance<CropDefinition>();
             carrot.stages = new[] { art["carrot0"], art["carrot1"], art["carrot2"] };
             AssetDatabase.CreateAsset(carrot, "Assets/Game/_Configs/Crops/Carrot.asset");
             var radish = ScriptableObject.CreateInstance<CropDefinition>(); radish.id = "radish"; radish.displayName = "Radish";
             radish.growSeconds = 30; radish.waterCapacity = 16; radish.yield = 2;
-            radish.stages = new[] { art["carrot0"], art["radish1"], art["radish2"] };
+            radish.stages = new[] { art["radish0"], art["radish1"], art["radish2"] };
             AssetDatabase.CreateAsset(radish, "Assets/Game/_Configs/Crops/Radish.asset");
             var profile = ScriptableObject.CreateInstance<GardenProfile>(); profile.worker = worker;
             profile.soilSprite = art["soil"]; profile.wellSprite = art["well"]; profile.grassSprite = art["grass"];

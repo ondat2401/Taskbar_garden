@@ -1,0 +1,770 @@
+fileFormatVersion: 2
+guid: b91ab9542cf04544ea279785ad2947af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5833320447579243654
+    second: garden-placeholder-atlas_0
+  - first:
+      213: 3884601093948263216
+    second: garden-placeholder-atlas_1
+  - first:
+      213: -1822514027163013523
+    second: garden-placeholder-atlas_2
+  - first:
+      213: 5686129670685134290
+    second: garden-placeholder-atlas_3
+  - first:
+      213: -2136135797838409063
+    second: garden-placeholder-atlas_4
+  - first:
+      213: 6060147672161588444
+    second: garden-placeholder-atlas_5
+  - first:
+      213: -1163501773608152940
+    second: garden-placeholder-atlas_6
+  - first:
+      213: 398849123593854325
+    second: garden-placeholder-atlas_7
+  - first:
+      213: 2269657808244807863
+    second: garden-placeholder-atlas_8
+  - first:
+      213: -4001336646153729450
+    second: garden-placeholder-atlas_9
+  - first:
+      213: 4918989343003784428
+    second: garden-placeholder-atlas_10
+  - first:
+      213: 2515595558522141197
+    second: garden-placeholder-atlas_11
+  - first:
+      213: 8126931615414461357
+    second: garden-placeholder-atlas_12
+  - first:
+      213: 1685222395712338000
+    second: garden-placeholder-atlas_13
+  - first:
+      213: 8678752283902086874
+    second: garden-placeholder-atlas_14
+  - first:
+      213: 2865588271208706118
+    second: garden-placeholder-atlas_15
+  - first:
+      213: -4224017150772910587
+    second: garden-placeholder-atlas_16
+  - first:
+      213: 3778051181591390070
+    second: garden-placeholder-atlas_17
+  - first:
+      213: 8547515620427775093
+    second: garden-placeholder-atlas_18
+  - first:
+      213: -450840392608169020
+    second: garden-placeholder-atlas_19
+  - first:
+      213: -1336026940951424028
+    second: garden-placeholder-atlas_20
+  - first:
+      213: -8187803414975212476
+    second: garden-placeholder-atlas_21
+  - first:
+      213: -8833774103335583205
+    second: garden-placeholder-atlas_22
+  - first:
+      213: -271727185202971736
+    second: garden-placeholder-atlas_23
+  - first:
+      213: 5693834385160094348
+    second: garden-placeholder-atlas_24
+  - first:
+      213: 2947366194597771147
+    second: garden-placeholder-atlas_25
+  - first:
+      213: -4443331052696133866
+    second: garden-placeholder-atlas_26
+  - first:
+      213: 5393086219843186499
+    second: garden-placeholder-atlas_27
+  - first:
+      213: -2125366632534239583
+    second: garden-placeholder-atlas_28
+  - first:
+      213: 7607992007484008855
+    second: garden-placeholder-atlas_29
+  - first:
+      213: -7442875928495735672
+    second: garden-placeholder-atlas_30
+  - first:
+      213: -4377935843686294520
+    second: garden-placeholder-atlas_31
+  - first:
+      213: 4154412848937330160
+    second: garden-placeholder-atlas_32
+  - first:
+      213: 5546391887750781164
+    second: garden-placeholder-atlas_33
+  - first:
+      213: 2638113876763354928
+    second: garden-placeholder-atlas_34
+  - first:
+      213: 1958054666757302300
+    second: garden-placeholder-atlas_35
+  - first:
+      213: -4424504448512913878
+    second: garden-placeholder-atlas_36
+  - first:
+      213: -7603712585401717888
+    second: garden-placeholder-atlas_37
+  - first:
+      213: -7169812904412267116
+    second: garden-placeholder-atlas_38
+  - first:
+      213: 8847533956803619802
+    second: garden-placeholder-atlas_39
+  - first:
+      213: 7152127952144456845
+    second: garden-placeholder-atlas_40
+  - first:
+      213: -6330498831263067987
+    second: garden-placeholder-atlas_41
+  - first:
+      213: 2786768412954030571
+    second: garden-placeholder-atlas_42
+  - first:
+      213: 2334110945823717717
+    second: garden-placeholder-atlas_43
+  - first:
+      213: 1669124995215382383
+    second: garden-placeholder-atlas_44
+  - first:
+      213: -1522922989135168554
+    second: garden-placeholder-atlas_45
+  - first:
+      213: 1147706616865464178
+    second: garden-placeholder-atlas_46
+  - first:
+      213: -8728721323412105574
+    second: garden-placeholder-atlas_47
+  - first:
+      213: 3379742730296476154
+    second: garden-placeholder-atlas_48
+  - first:
+      213: -7214258960474599182
+    second: garden-placeholder-atlas_49
+  - first:
+      213: -3181970530266226805
+    second: garden-placeholder-atlas_50
+  - first:
+      213: -316979663877817675
+    second: garden-placeholder-atlas_51
+  - first:
+      213: -7591757666484909223
+    second: garden-placeholder-atlas_52
+  - first:
+      213: -8192451907286820280
+    second: garden-placeholder-atlas_53
+  - first:
+      213: 8193332516126879857
+    second: garden-placeholder-atlas_54
+  - first:
+      213: 247640567147191830
+    second: garden-placeholder-atlas_55
+  - first:
+      213: -2209844891053344311
+    second: garden-placeholder-atlas_56
+  - first:
+      213: -4241236981709383393
+    second: garden-placeholder-atlas_57
+  - first:
+      213: 7214254394068536839
+    second: garden-placeholder-atlas_58
+  - first:
+      213: 4021436446352004986
+    second: garden-placeholder-atlas_59
+  - first:
+      213: 6162789699185400646
+    second: garden-placeholder-atlas_60
+  - first:
+      213: 971032832194085926
+    second: garden-placeholder-atlas_61
+  - first:
+      213: 3266405567722773048
+    second: garden-placeholder-atlas_62
+  - first:
+      213: 5733160469208436157
+    second: garden-placeholder-atlas_63
+  - first:
+      213: 5316280234877709404
+    second: garden-placeholder-atlas_64
+  - first:
+      213: -2041494829599431573
+    second: garden-placeholder-atlas_65
+  - first:
+      213: -6066968112657686417
+    second: garden-placeholder-atlas_66
+  - first:
+      213: 1959555286229378768
+    second: garden-placeholder-atlas_67
+  - first:
+      213: -1499262181239705844
+    second: garden-placeholder-atlas_68
+  - first:
+      213: 4120346280605000957
+    second: garden-placeholder-atlas_69
+  - first:
+      213: 2626775110936125833
+    second: garden-placeholder-atlas_70
+  - first:
+      213: 8242783786229893064
+    second: garden-placeholder-atlas_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 170
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: worker0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452eb118552fd4a4ca02c085bb3e4c8c
+      internalID: -722582010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbacc2c9234b0fe459b34c225aec990e
+      internalID: -308035683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830aecbd4e33e314da35d2978709a75b
+      internalID: 1896461013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04bb94e126628c1448d65f45c46e08da
+      internalID: 2141587306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: well
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9a87d86c8bed94dbd5dd5fe0e4bf8d
+      internalID: 268725722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3614b193511c855478a25de23ffda39a
+      internalID: -926374534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soil
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8098fe6c486b5954a9fbb2f47851b070
+      internalID: 2034330793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ca5605820f1534f848ff7db2194fe9
+      internalID: 1486612576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef114c0358ab44419c8ee6b2d3329e1
+      internalID: -1212159657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5ad62ab4175df499fca4d4e31ed4e9
+      internalID: -1992246100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radish0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9694923899a5199449193822606e14f6
+      internalID: 962516142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radish1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4214865854cf3274fbf3ce5f8dafe598
+      internalID: 1439909922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radish2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ef59ebfbd52934a817a8cc32f55ece
+      internalID: 431314238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116f9c987d8098a4c87f8dd35f5d5fda
+      internalID: 921316547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33aee8bfdaac1c4eb6edcd3c554ff79
+      internalID: 1700136538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9016bf4e6e41a04d94db9e5e10d09c0
+      internalID: 253516704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b29bfd64dda6c94c9ce840073eb9877
+      internalID: -510171355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8afe70926675e44f940873f4dd0506a
+      internalID: 1855867332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68385926885ea8b42b8bc0da253849e4
+      internalID: -175308962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f29e5e0d1f98ff24b9195e41d2ea85ea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      carrot0: 1486612576
+      carrot1: -1212159657
+      carrot2: -1992246100
+      fire0: 921316547
+      fire1: 1700136538
+      fire2: 253516704
+      frost0: -510171355
+      frost1: 1855867332
+      frost2: -175308962
+      grass: -926374534
+      radish0: 962516142
+      radish1: 1439909922
+      radish2: 431314238
+      soil: 2034330793
+      well: 268725722
+      worker0: -722582010
+      worker1: -308035683
+      worker2: 1896461013
+      worker3: 2141587306
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -98,6 +98,16 @@ Compile, sáu F01–F06 Editor verifications, Play Mode và Game View 510×287 p
 
 **Cảnh quay:** mở Shop và đổi Pots/Upgrades, mở Inventory, sau đó Menu → Cosmetics; rê chuột qua nút để thấy trạng thái hover và chọn cosmetic để thấy selected.
 
+### F08 — palette chung và art placeholder
+
+**2026-10-20 · `checkpoint/f08-shared-art-palette`**
+
+Tạo atlas mới cho worker, giếng, ground và bốn loại cây; dùng cùng palette 22 màu với HUD và remap icon atlas để các vùng có chung ngôn ngữ màu. Sprite mới được gắn vào config, prefab và scene; giữ player layer 4 phía trên soil 2, crop 5 ở trước. Bản art vẫn là placeholder, không xem đây là polish cuối.
+
+Atlas mapping và provenance ở `docs/PLACEHOLDER_ART.md`. Unity Editor compile và mapping/theme setup pass; F01–F06 Editor verifications pass; Play Mode/Game View 510×287 xem Garden và Upgrades, icon còn đọc được. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad.
+
+**Cảnh quay:** mở Garden để xem worker, giếng và các luống; chuyển Upgrades để thấy icon cùng màu HUD.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
