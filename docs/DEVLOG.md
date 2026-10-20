@@ -108,6 +108,14 @@ Atlas mapping và provenance ở `docs/PLACEHOLDER_ART.md`. Unity Editor compile
 
 **Cảnh quay:** mở Garden để xem worker, giếng và các luống; chuyển Upgrades để thấy icon cùng màu HUD.
 
+### Follow-up QA F07 — nhãn offer Cosmetic
+
+Sau khi QA lại F07, sáu tên offer trong Cosmetics bị mất vì RectTransform của mỗi label cao 0px. Cập nhật cấu hình Editor và scene để label phủ chiều cao 40px.
+
+Play Mode hiển thị đủ sáu tên, chọn Blue Glaze cập nhật phần chi tiết, nút đóng hoạt động; kiểm tra palette/trạng thái trên 78 nút và chạy lại F01–F06 Editor verifications. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad.
+
+**Cảnh quay:** mở Menu → Cosmetics, xác nhận sáu offer hiện tên rồi chọn Blue Glaze.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.

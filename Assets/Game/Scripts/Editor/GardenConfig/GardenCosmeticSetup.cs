@@ -123,7 +123,7 @@ namespace IdleGarden.Editor
                 GardenUiPalette.StyleButton(button);
                 var view = row.gameObject.AddComponent<GardenCosmeticRow>();
                 view.owner = hud.cosmeticPanel; view.button = button; view.index = i;
-                view.label = MakeText("Cosmetic Name", row, "Cosmetic", new Vector2(8,0), new Vector2(-42,0), 11, TextAnchor.MiddleLeft, false);
+                view.label = MakeText("Cosmetic Name", row, "Cosmetic", new Vector2(8,-40), new Vector2(-42,0), 11, TextAnchor.MiddleLeft, true);
                 var swatch = Box("Color Swatch", row, new Vector2(1,.5f), new Vector2(1,.5f),
                     new Vector2(-30,-10), new Vector2(-8,10), Color.white);
                 view.swatch = swatch.GetComponent<Image>();

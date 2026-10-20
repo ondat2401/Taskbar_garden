@@ -1,6 +1,6 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. F01–F06 đã tích hợp; follow-up grounding/watering ở `checkpoint/f06-worker-grounding`. F07 UI polish ở `checkpoint/f07-ui-polish`; F08 placeholder art/palette ở `checkpoint/f08-shared-art-palette`. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F06 đã tích hợp; follow-up grounding/watering ở `checkpoint/f06-worker-grounding`. F07 UI polish ở `checkpoint/f07-ui-polish`, QA follow-up sửa nhãn Cosmetic ở `checkpoint/f07-cosmetic-label-fix`; F08 placeholder art/palette ở `checkpoint/f08-shared-art-palette`. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
 
 ## Project
 
@@ -21,7 +21,7 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 
 ## Verification
 
-F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View 510×287 pass; xác nhận worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07 compile và sáu F01–F06 Editor verifications pass; Play Mode mở Garden, Upgrades, Inventory và Cosmetics. F08 xác nhận 19 sprite atlas, palette 22 màu, crop/theme config, sorting player 4 trên soil 2 và Game View Upgrades. Chưa build standalone riêng cho F08; chưa kiểm DPI/multi-monitor hoặc gamepad.
+F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View 510×287 pass; xác nhận worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07 compile và sáu F01–F06 Editor verifications pass; Play Mode mở Garden, Upgrades, Inventory và Cosmetics. QA follow-up F07 xác nhận sáu nhãn Cosmetic có chiều cao 40px, chọn dòng/đóng cửa sổ và 78 nút dùng palette trạng thái. F08 xác nhận 19 sprite atlas, palette 22 màu, crop/theme config, sorting player 4 trên soil 2 và Game View Upgrades. Chưa build standalone riêng cho follow-up; chưa kiểm DPI/multi-monitor hoặc gamepad.
 
 ## Workflow
 

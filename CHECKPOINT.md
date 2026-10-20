@@ -1,6 +1,6 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-20. F01–F06 và follow-up grounding/watering đã tích hợp. F07 UI polish đã hoàn tất. F08 art placeholder/palette đã kiểm tra, chốt bằng tag `checkpoint/f08-shared-art-palette`. User cho phép tự làm, test và commit từng giai đoạn.
+Cập nhật 2026-10-20. F01–F06 và follow-up grounding/watering đã tích hợp. F07 UI polish đã hoàn tất; QA follow-up sửa rect nhãn Cosmetic bị cao 0px, chốt bằng tag `checkpoint/f07-cosmetic-label-fix`. F08 art placeholder/palette đã kiểm tra, chốt bằng tag `checkpoint/f08-shared-art-palette`. User cho phép tự làm, test và commit từng giai đoạn.
 
 ## Đã chốt
 
@@ -13,6 +13,7 @@ Cập nhật 2026-10-20. F01–F06 và follow-up grounding/watering đã tích h
 - Follow-up F06: tag `checkpoint/f06-worker-grounding`. Worker và well đặt đúng ground baseline; crop đặt lên mặt đất, worker vẽ sau crop. Chậu chỉ được tưới khi nước cạn; scheduler luân phiên trồng/tưới và quay vòng chậu để tránh bỏ đói vị trí. F01–F06 verifications, Play Mode và Game View pass; chưa build standalone lại.
 - F07 UI polish: tag `checkpoint/f07-ui-polish`. Giao diện dùng palette xanh rêu tối, chữ parchment, accent brass, viền mảnh và trạng thái hover/pressed/disabled/selected. Áp dụng cho workshop, inventory và cosmetics; giữ nền game trong suốt để cửa sổ desktop tiếp tục click-through. Compile, sáu F01–F06 Editor verifications và Play Mode/Game View cho bốn cửa sổ pass. Chưa build standalone riêng hoặc kiểm DPI/multi-monitor/gamepad.
 - F08 shared art palette: tag `checkpoint/f08-shared-art-palette`. Tạo sprite atlas placeholder cho worker, giếng, nền cỏ/đất và ba giai đoạn của bốn cây; áp 22 màu từ `GardenUiPalette.SharedColors` cho world art và icon UI. Config, prefab và scene trỏ đến sprite mới; player vẫn sortingOrder 4, soil 2, crop 5. Compile, 19-sprite mapping, F01–F06 verifications và Play Mode/Game View Upgrades pass. Chưa build standalone riêng hoặc kiểm DPI/multi-monitor/gamepad.
+- Follow-up QA F07: tag `checkpoint/f07-cosmetic-label-fix`. Sáu tên offer bị vô hình do RectTransform cao 0px; sửa cấu hình Editor và scene thành 40px. Play Mode xác nhận đủ tên, chọn offer/đóng cửa sổ, 78 nút đúng palette; F01–F06 Editor verifications pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad.
 - Thiết kế mới: `docs/GAME_DESIGN.md`. Tiến độ: `docs/FEATURE_STATUS.md`. Hành trình để dựng video: `docs/DEVLOG.md`; quy trình tag: `docs/GIT_CHECKPOINTS.md`.
 
 ## Đã kiểm tra F03
