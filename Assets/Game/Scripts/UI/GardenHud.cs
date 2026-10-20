@@ -9,7 +9,9 @@ namespace IdleGarden
         public GardenController garden;
         public DesktopWindow desktop;
         public GameObject shopPanel, menuPanel;
-        public Text moneyLabel, shopSummary, inventoryLabel, autoSellLabel, rebirthLabel, pinLabel, lockLabel, pauseLabel, shopButtonLabel, noticeLabel;
+        public GardenFloatingWindow gearWindow;
+        public GardenGearPanel gearPanel;
+        public Text moneyLabel, shopSummary, inventoryLabel, autoSellLabel, rebirthLabel, pinLabel, lockLabel, pauseLabel, shopButtonLabel, gearButtonLabel, noticeLabel;
         public Button rebirthButton;
         public ShopUpgradeRow[] rows;
         public GameObject gardenPage, upgradesPage;
@@ -18,14 +20,28 @@ namespace IdleGarden
         public int SelectedPot { get; private set; }
         private int selectedCrop;
         public bool ShopOpen => shopPanel && shopPanel.activeSelf;
+        public bool GearOpen => gearWindow && gearWindow.IsOpen;
         private bool rebirthArmed;
         private string notice;
 
         public void ToggleShop()
         {
             bool open = !ShopOpen;
+            if (gearWindow) gearWindow.Close();
             shopPanel.SetActive(open); menuPanel.SetActive(false);
             desktop.SetPanelExpanded(open); rebirthArmed = false; Refresh();
+        }
+        public void ToggleGear()
+        {
+            if (!gearWindow) return;
+            if (GearOpen) { CloseGear(); return; }
+            shopPanel.SetActive(false); menuPanel.SetActive(false);
+            desktop.SetPanelExpanded(true); rebirthArmed = false; gearWindow.Open(); Refresh();
+        }
+        public void CloseGear()
+        {
+            if (gearWindow) gearWindow.Close();
+            desktop.SetPanelExpanded(false); Refresh();
         }
         public void ShowGarden() { gardenPage.SetActive(true); upgradesPage.SetActive(false); Refresh(); }
         public void ShowUpgrades() { gardenPage.SetActive(false); upgradesPage.SetActive(true); Refresh(); }
@@ -57,6 +73,7 @@ namespace IdleGarden
             if (open)
             {
                 shopPanel.SetActive(false);
+                if (gearWindow) gearWindow.Close();
                 desktop.SetPanelExpanded(false);
             }
             menuPanel.SetActive(open);
@@ -90,6 +107,8 @@ namespace IdleGarden
             if (progress == null || garden.Simulation == null) return;
             moneyLabel.text = GardenProgression.Number(progress.Gold) + " gold   ·   " + progress.Seeds + " seeds";
             shopButtonLabel.text = ShopOpen ? "Garden" : "Shop";
+            if (gearButtonLabel) gearButtonLabel.text = GearOpen ? "Close" : "Gear";
+            if (GearOpen && gearPanel) gearPanel.Refresh();
             pinLabel.text = desktop.Topmost ? "Always on top: ON" : "Always on top: OFF";
             lockLabel.text = desktop.locked ? "Position lock: ON" : "Position lock: OFF";
             pauseLabel.text = garden.Simulation.Paused ? "Resume garden" : "Pause garden";

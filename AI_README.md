@@ -1,28 +1,28 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. F01–F03 đã kiểm tra; F04 đang làm. Thiết kế chuẩn docs/GAME_DESIGN.md, tiến độ docs/FEATURE_STATUS.md, hành trình docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng và ghi dev log + commit/tag. Không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F04 đã kiểm tra; tiếp theo F05 save/rebirth. Thiết kế chuẩn docs/GAME_DESIGN.md, tiến độ docs/FEATURE_STATUS.md, hành trình docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng và ghi dev log + commit/tag. Không nối nhật ký dài vào file này.
 
 ## Project
 
 Unity 6000.3.10f1, URP17.3, InputSystem1.18, uGUI2; Windows desktop qua UniWindowController. Scene Assets/Game/Scenes/GardenPrototype.unity. Profile Assets/Game/_Configs/Garden/Prototype.asset → GardenEconomy.asset. Assets thuộc Assets/Game; scripts chia feature. Packages MCP của user giữ nguyên.
 
-Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạch lặp lại. Đổi giữa vụ đợi cây cũ xong. Ba theme/bốn cây/sáu nâng cấp hiện có. Kho giữ reserve4 và tự bán dư, mở theme thưởng một rương. Rương timed/rarity affix chưa triển khai; save/rebirth còn cần hoàn thiện và kiểm tra. Multiplayer/Steam commerce chưa làm. Thiết kế IAP cosmetic, chưa có purchase thật.
+Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạch lặp lại. Đổi giữa vụ đợi cây cũ xong. Ba theme/bốn cây/sáu nâng cấp; rương timed, pity, gear/affix, equip và salvage đã tích hợp. Save/rebirth và I/O file cần kiểm tra tiếp ở F05. Multiplayer/Steam commerce chưa làm. Thiết kế IAP cosmetic, chưa có purchase thật.
 
 ## Code liên quan
 
 - Garden/GardenSimulation.cs: state/job, chọn cây, Capture/Restore. GardenController.cs: tick, camera, HUD, autosave standalone; Editor không ghi save.
-- Progression/GardenProgression.cs: inventory/gold/rank/theme/chests/rebirth. ProgressionConfig.cs và UpgradeDefinition.cs: data. GardenSaveStore.cs: DTO/version1, I/O nháp chưa test đầy đủ.
+- Progression/GardenProgression.cs: economy/theme/chests/gear/rebirth. GearConfig.cs và EquipmentDefinition.cs: luật drop và base stats. GardenSaveStore.cs: DTO version1 có gear fields; file I/O chưa test đầy đủ.
 - Crops/CropDefinition.cs, GardenTheme.cs: cây và theme. Worker/WorkerConfig.cs: chỉ số gốc.
-- UI/GardenHud.cs: callback chậu/cây/theme/tab/shop. ShopUpgradeRow.cs: nâng cấp. Garden/PlotView.cs: sprite và click chậu.
+- UI/GardenHud.cs: callback chậu/cây/theme/tab/shop và cửa sổ inventory. GardenFloatingWindow/GardenGearPanel: khung phụ và nội dung gear; mọi row được dựng trong Editor.
 - Desktop/DesktopWindow.cs, WindowHandle.cs: native drag/resize/menu, Windows standalone.
 - Editor/GardenConfig/: GardenPrototypeBuilder, GardenProgressionSetup dựng scene/HUD; GardenContentSetup tạo catalog; GardenThemeArt nối atlas; GardenConfigWindow chỉnh data; GardenVerification/GardenEconomyVerification/GardenFeatureVerification kiểm tra.
 
 ## Verification
 
-F01–F02 verification chạy lại pass: 10k giao dịch, giới hạn số học, 1200s sim, chọn cây riêng từng chậu, mở theme và mua upgrade không sửa base. F03: click Shop/menu, 920×180 ↔ 920×540, pin/lock, drag khi mở khóa và resize đã kiểm tra trên Windows build. Menu tự đóng Shop khi mở để không bị che; Play Mode và ảnh sau sửa pass. Chưa kiểm DPI/multi-monitor.
+F01–F02 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, chọn cây riêng từng chậu, theme và upgrade. F03 Windows build đã kiểm click, 920×180 ↔ 920×540, pin/lock, drag/resize; chưa kiểm DPI/multi-monitor. F04: seeded timer/pity/drop/affix/equip/salvage/capacity/capture checks pass; Play Mode xác nhận listener, panel transitions và drag bounds. Game View QA ở 510×287; chưa chạy standalone F04.
 
 ## Workflow
 
-unity status --format json; unity command recompile_status --format json. Eval qua live Editor để thao tác asset/scene, không sửa YAML. GardenVerification.Run(), GardenEconomyVerification.Run(), GardenFeatureVerification.Pots() là entry test hiện có trong namespace IdleGarden.Editor. Nếu script mới không vào compile list, AssetDatabase MoveAsset sang tên tạm rồi về có thể đăng ký lại; không reset Library/package.
+unity status --format json; unity command recompile_status --format json. Eval qua live Editor để thao tác asset/scene, không sửa YAML. GardenVerification.Run(), GardenEconomyVerification.Run(), GardenFeatureVerification.Pots(), GardenGearVerification.Run() là entry test trong namespace IdleGarden.Editor. Nếu script mới không vào compile list, AssetDatabase MoveAsset sang tên tạm rồi về có thể đăng ký lại; không reset Library/package.
 
 Giữ nguyên thay đổi NuGet meta/Assets/_Recovery ngoài feature. Assets/Temp chứa screenshot QA tạm, không stage. Không claim test chưa chạy. Build output Builds/Windows/IdleGarden.exe bị ignore; user muốn tag từng giai đoạn để quay video, không dời tag đã push.

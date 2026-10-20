@@ -8,6 +8,7 @@ namespace IdleGarden
         public CropDefinition[] crops;
         public UpgradeDefinition[] upgrades;
         public GardenTheme[] themes = System.Array.Empty<GardenTheme>();
+        public GearConfig gear;
         [Min(0)] public double startingGold = 30;
         [Min(0)] public int autoSellReserve = 4;
         [Min(1)] public double rebirthBaseGoal = 1000;
@@ -16,6 +17,7 @@ namespace IdleGarden
 
         public bool Validate(out string error)
         {
+            if (gear && !gear.Validate(out error)) return false;
             if (crops == null || crops.Length == 0 || upgrades == null)
             { error = "Progression needs a crop catalog and an upgrade list (which may be empty)."; return false; }
             if (autoSellReserve < 0) { error = "Auto-sell reserve cannot be negative."; return false; }

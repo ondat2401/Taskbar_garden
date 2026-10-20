@@ -41,7 +41,8 @@ namespace IdleGarden.Editor
         {
             GardenEconomySetup.EnsureConfig(profile);
             var config = profile.progression;
-            if (config.upgrades.Length > 0) return;
+            EnsureGearConfig(config);
+            if (config.upgrades != null && config.upgrades.Length > 0) return;
             Directory.CreateDirectory("Assets/Game/_Configs/Upgrades"); AssetDatabase.Refresh();
             var icons = ImportIcons();
             var carrot = config.crops[0]; var radish = config.crops.Length > 1 ? config.crops[1] : carrot;
@@ -55,6 +56,47 @@ namespace IdleGarden.Editor
                 Upgrade("mulch", "Water-saving mulch", "Water efficiency +20% of base per rank.", UpgradeStat.WaterEfficiency,.2f,45,carrot,null,Icon(icons,"harvest"))
             };
             EditorUtility.SetDirty(config); AssetDatabase.SaveAssetIfDirty(config);
+        }
+
+        private static void EnsureGearConfig(ProgressionConfig config)
+        {
+            if (config.gear) return;
+            const string folder = "Assets/Game/_Configs/Gear";
+            const string path = folder + "/Gear.asset";
+            Directory.CreateDirectory(folder); AssetDatabase.Refresh();
+            var gear = AssetDatabase.LoadAssetAtPath<GearConfig>(path);
+            bool created = !gear;
+            bool changed = false;
+            if (created) gear = ScriptableObject.CreateInstance<GearConfig>();
+            if (gear.equipment == null || gear.equipment.Length == 0)
+            {
+                gear.equipment = DefaultEquipment(); changed = true;
+            }
+            if (created) AssetDatabase.CreateAsset(gear, path);
+            config.gear = gear;
+            EditorUtility.SetDirty(config); AssetDatabase.SaveAssetIfDirty(config);
+            if (changed || created) AssetDatabase.SaveAssetIfDirty(gear);
+        }
+
+        private static EquipmentDefinition[] DefaultEquipment() => new[]
+        {
+            Equipment("wooden-can", "Wooden Can", GearSlot.WateringCan, new GearBaseStat { stat = UpgradeStat.TankCapacity, flatBonus = 4 }),
+            Equipment("copper-can", "Copper Can", GearSlot.WateringCan, new GearBaseStat { stat = UpgradeStat.TankCapacity, flatBonus = 10 }),
+            Equipment("garden-boots", "Garden Boots", GearSlot.Boots, new GearBaseStat { stat = UpgradeStat.MoveSpeed, percentBonus = .05f }),
+            Equipment("water-shoes", "Water Shoes", GearSlot.Boots, new GearBaseStat { stat = UpgradeStat.WaterEfficiency, percentBonus = .05f }),
+            Equipment("garden-gloves", "Garden Gloves", GearSlot.Gloves, new GearBaseStat { stat = UpgradeStat.ActionSpeed, percentBonus = .05f }),
+            Equipment("harvest-gloves", "Harvest Gloves", GearSlot.Gloves, new GearBaseStat { stat = UpgradeStat.CropYield, percentBonus = .05f })
+        };
+
+        private static EquipmentDefinition Equipment(string id, string title, GearSlot slot, GearBaseStat stat)
+        {
+            string path = "Assets/Game/_Configs/Gear/" + id + ".asset";
+            var item = AssetDatabase.LoadAssetAtPath<EquipmentDefinition>(path);
+            if (item) return item;
+            item = ScriptableObject.CreateInstance<EquipmentDefinition>();
+            item.id = id; item.displayName = title; item.slot = slot; item.baseStats = new[] { stat };
+            AssetDatabase.CreateAsset(item, path);
+            return item;
         }
         private static UpgradeDefinition Upgrade(string id, string title, string detail, UpgradeStat stat, float bonus, double cost, CropDefinition material, CropDefinition target, Sprite icon)
         {
@@ -108,11 +150,14 @@ namespace IdleGarden.Editor
             var canvasObject = new GameObject("HUD", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             Undo.RegisterCreatedObjectUndo(canvasObject, "Create compact HUD"); canvasObject.transform.SetParent(root, false);
             var canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            var scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(920, 540); scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight; scaler.matchWidthOrHeight = 0;
             var hud = canvasObject.AddComponent<GardenHud>(); hud.garden = controller; hud.desktop = desktop; controller.hud = hud;
             var bar = Box("Garden Bar", canvas.transform, new Vector2(0,1), Vector2.one, new Vector2(6,-32), new Vector2(-6,-4), Panel);
             var drag = bar.gameObject.AddComponent<WindowHandle>(); drag.window = desktop;
-            hud.moneyLabel = Text("Balance", bar, "IDLE GARDEN", new Vector2(9,0), new Vector2(-120,0), 12);
+            hud.moneyLabel = Text("Balance", bar, "IDLE GARDEN", new Vector2(9,0), new Vector2(-194,0), 12);
             hud.moneyLabel.rectTransform.anchorMax = Vector2.one;
+            hud.gearButtonLabel = Button("Gear", bar, new Vector2(1,0), Vector2.one, new Vector2(-188,2), new Vector2(-116,-2), "Gear", hud.ToggleGear);
             hud.shopButtonLabel = Button("Shop", bar, new Vector2(1,0), Vector2.one, new Vector2(-112,2), new Vector2(-40,-2), "Shop", hud.ToggleShop);
             Button("Menu", bar, new Vector2(1,0), Vector2.one, new Vector2(-36,2), new Vector2(-18,-2), ":", hud.ToggleMenu);
             var grip = Box("Resize", bar, new Vector2(1,0), Vector2.one, new Vector2(-16,1), new Vector2(-1,-1), new Color(.32f,.42f,.28f));
@@ -125,6 +170,58 @@ namespace IdleGarden.Editor
             hud.pauseLabel = Button("Pause", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-100), new Vector2(-6,-70), "Pause garden", hud.TogglePause);
             Button("Exit", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-134), new Vector2(-6,-104), "Exit", desktop.Quit);
             menu.gameObject.SetActive(false);
+            var gearRoot = Box("Gear Inventory Window", canvas.transform, new Vector2(.5f,.5f), new Vector2(.5f,.5f), new Vector2(-330,-220), new Vector2(330,220), Panel);
+            var header = Box("Gear Window Header", gearRoot, new Vector2(0,1), Vector2.one, new Vector2(0,-32), Vector2.zero, ButtonColor);
+            hud.gearWindow = header.gameObject.AddComponent<GardenFloatingWindow>();
+            hud.gearWindow.panel = gearRoot;
+            hud.gearWindow.canvasRect = canvasObject.GetComponent<RectTransform>();
+            Text("Window Title", header, "GARDEN INVENTORY", new Vector2(12,-28), new Vector2(-54,-4), 13, TextAnchor.MiddleLeft, true);
+            Button("Close Gear", header, new Vector2(1,1), Vector2.one, new Vector2(-42,-28), new Vector2(-6,-4), "×", hud.CloseGear);
+
+            hud.gearPanel = gearRoot.gameObject.AddComponent<GardenGearPanel>();
+            hud.gearPanel.garden = controller;
+            hud.gearPanel.inventoryLabel = Text("Gear Summary", gearRoot, "Inventory", new Vector2(12,-56), new Vector2(-220,-34), 12, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.timerLabel = Text("Chest Timer", gearRoot, "Next free chest", new Vector2(12,-80), new Vector2(-220,-58), 11, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.pityLabel = Text("Pity", gearRoot, "Pity", new Vector2(12,-104), new Vector2(-220,-82), 11, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.ratesLabel = Text("Drop Rates", gearRoot, "Base drops", new Vector2(12,-129), new Vector2(-12,-106), 10, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.ratesLabel.horizontalOverflow = HorizontalWrapMode.Wrap;
+            var openChest = Button("Open Chest", gearRoot, new Vector2(1,1), Vector2.one, new Vector2(-212,-70), new Vector2(-12,-42), "Open chest", hud.gearPanel.OpenChest);
+            hud.gearPanel.openChestButton = openChest.transform.parent.GetComponent<Button>();
+            var exchange = Button("Exchange Essence", gearRoot, new Vector2(1,1), Vector2.one, new Vector2(-212,-101), new Vector2(-12,-73), "Buy chest", hud.gearPanel.BuyChest);
+            hud.gearPanel.buyChestButton = exchange.transform.parent.GetComponent<Button>();
+            hud.gearPanel.essenceLabel = Text("Essence", gearRoot, "Essence", new Vector2(-212,-125), new Vector2(-12,-103), 11, TextAnchor.MiddleCenter, true, true);
+
+            var gearViewport = Box("Gear List Viewport", gearRoot, new Vector2(0,1), new Vector2(0,1), new Vector2(12,-428), new Vector2(288,-142), new Color(.1f,.15f,.12f));
+            gearViewport.gameObject.AddComponent<RectMask2D>();
+            int gearRows = controller.profile.progression.gear.inventoryCapacity;
+            var gearContent = Rect("Gear List", gearViewport, new Vector2(0,1), Vector2.one, new Vector2(0,-gearRows*28), Vector2.zero);
+            gearContent.pivot = new Vector2(.5f,1);
+            var gearScroll = gearViewport.gameObject.AddComponent<ScrollRect>(); gearScroll.viewport = gearViewport; gearScroll.content = gearContent;
+            gearScroll.horizontal = false; gearScroll.vertical = true; gearScroll.movementType = ScrollRect.MovementType.Clamped; gearScroll.scrollSensitivity = 28;
+            hud.gearPanel.rows = new GardenGearRow[gearRows];
+            for (int i = 0; i < gearRows; i++)
+            {
+                var row = Box("Gear " + i, gearContent, new Vector2(0,1), Vector2.one, new Vector2(2,-(i+1)*28+1), new Vector2(-2,-i*28-1), new Color(.14f,.21f,.16f));
+                var button = row.gameObject.AddComponent<Button>(); button.targetGraphic = row.GetComponent<Image>();
+                var view = row.gameObject.AddComponent<GardenGearRow>(); view.owner = hud.gearPanel; view.button = button; view.index = i;
+                view.label = Text("Item", row, "—", new Vector2(8,0), new Vector2(-8,0), 11, TextAnchor.MiddleLeft).Stretch();
+                UnityEditor.Events.UnityEventTools.AddPersistentListener(button.onClick, view.Select);
+                hud.gearPanel.rows[i] = view;
+            }
+            hud.gearPanel.selectedTitle = Text("Selected Item", gearRoot, "Select an item", new Vector2(304,-176), new Vector2(648,-144), 13, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.selectedStats = Text("Item Stats", gearRoot, "Open a chest to collect tools and gear.", new Vector2(304,-298), new Vector2(648,-182), 12, TextAnchor.UpperLeft, true);
+            hud.gearPanel.selectedStats.horizontalOverflow = HorizontalWrapMode.Wrap;
+            hud.gearPanel.selectedStats.verticalOverflow = VerticalWrapMode.Overflow;
+            var equip = Button("Equip Item", gearRoot, new Vector2(0,1), new Vector2(0,1), new Vector2(304,-336), new Vector2(464,-306), "Equip", hud.gearPanel.EquipSelected);
+            hud.gearPanel.equipButton = equip.transform.parent.GetComponent<Button>(); hud.gearPanel.equipButtonLabel = equip;
+            var salvage = Button("Salvage Item", gearRoot, new Vector2(1,1), new Vector2(1,1), new Vector2(-176,-336), new Vector2(-16,-306), "Salvage", hud.gearPanel.SalvageSelected);
+            hud.gearPanel.salvageButton = salvage.transform.parent.GetComponent<Button>();
+            hud.gearPanel.equippedLabel = Text("Equipped Gear", gearRoot, "Equipped", new Vector2(304,-383), new Vector2(648,-344), 10, TextAnchor.UpperLeft, true);
+            hud.gearPanel.equippedLabel.horizontalOverflow = HorizontalWrapMode.Wrap;
+            hud.gearPanel.noticeLabel = Text("Gear Notice", gearRoot, "Choose a tool to equip it.", new Vector2(304,-428), new Vector2(648,-391), 11, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.noticeLabel.horizontalOverflow = HorizontalWrapMode.Wrap;
+            gearRoot.gameObject.SetActive(false);
+
             var shop = Box("Workshop", canvas.transform, Vector2.zero, Vector2.one, new Vector2(8,184), new Vector2(-8,-36), Panel);
             hud.shopPanel = shop.gameObject;
             hud.shopSummary = Text("Heading", shop, "GARDEN WORKSHOP", new Vector2(14,-32), new Vector2(-14,-5), 14, TextAnchor.MiddleLeft, true);

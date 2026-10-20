@@ -48,6 +48,7 @@ namespace IdleGarden
         {
             float dt = Time.unscaledDeltaTime;
             Simulation.Tick(dt * Mathf.Max(0, profile.simulationSpeed));
+            Progression?.TickChestTimer(dt, Simulation.Paused);
             animationTime += dt * profile.simulationSpeed * (Simulation.Paused ? 0 : 1);
             workerTransform.position = new Vector3(Mathf.Round(Simulation.WorkerX * 32) / 32, .09375f, 0);
             workerRenderer.flipX = Simulation.FacingLeft;
@@ -62,7 +63,7 @@ namespace IdleGarden
                 if (pointer.x >= 0 && pointer.x <= Screen.width && pointer.y >= 30 && pointer.y < gardenCamera.pixelHeight)
                     viewX += Mouse.current.scroll.ReadValue().y * -.003f;
             }
-            float gardenHeight = hud && hud.ShopOpen ? Mathf.Min(180, Screen.height) : Screen.height;
+            float gardenHeight = hud && (hud.ShopOpen || hud.GearOpen) ? Mathf.Min(180, Screen.height) : Screen.height;
             gardenCamera.rect = new Rect(0, 0, 1, gardenHeight / Screen.height);
             int pixelScale = Mathf.Max(1, Mathf.FloorToInt(Screen.width / 450f));
             gardenCamera.orthographicSize = gardenHeight / (64f * pixelScale);

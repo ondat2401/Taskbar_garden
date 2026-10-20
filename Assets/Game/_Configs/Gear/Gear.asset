@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5bdb17fe3efea4582392ae0341a074, type: 3}
+  m_Name: Gear
+  m_EditorClassIdentifier: Assembly-CSharp::IdleGarden.GearConfig
+  equipment:
+  - {fileID: 11400000, guid: 74749462e2d3ea246ac1e526f2f05e74, type: 2}
+  - {fileID: 11400000, guid: 2397a76209c7bd84e9420f7addff2270, type: 2}
+  - {fileID: 11400000, guid: e29cc6d71cd2b2a46ba1da67191c6ab9, type: 2}
+  - {fileID: 11400000, guid: 66f0f119da177c94fb64d9c220ff1c48, type: 2}
+  - {fileID: 11400000, guid: 2ee49e9e514ff9742af4403604039ccb, type: 2}
+  - {fileID: 11400000, guid: 451524d711483e7408875dd93b218672, type: 2}
+  rarities:
+  - rarity: 0
+    weight: 55
+    affixCount: 0
+    minimumAffixPercent: 0
+    maximumAffixPercent: 0
+    salvageEssence: 1
+  - rarity: 1
+    weight: 25
+    affixCount: 1
+    minimumAffixPercent: 0.03
+    maximumAffixPercent: 0.07
+    salvageEssence: 2
+  - rarity: 2
+    weight: 15
+    affixCount: 2
+    minimumAffixPercent: 0.05
+    maximumAffixPercent: 0.12
+    salvageEssence: 3
+  - rarity: 3
+    weight: 4
+    affixCount: 3
+    minimumAffixPercent: 0.08
+    maximumAffixPercent: 0.18
+    salvageEssence: 5
+  - rarity: 4
+    weight: 1
+    affixCount: 3
+    minimumAffixPercent: 0.15
+    maximumAffixPercent: 0.25
+    salvageEssence: 8
+  inventoryCapacity: 40
+  chestIntervalSeconds: 600
+  pityThreshold: 20
+  pityEpicWeight: 80
+  pityLegendaryWeight: 20
+  essencePerChest: 10

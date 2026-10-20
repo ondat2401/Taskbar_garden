@@ -25,6 +25,11 @@ namespace IdleGarden
         public string[] themes = Array.Empty<string>();
         public int chests;
         public bool firstHarvestReward;
+        public GearInstance[] gearInventory = Array.Empty<GearInstance>();
+        public EquippedGearSave[] equippedGear = Array.Empty<EquippedGearSave>();
+        public long essence;
+        public int chestPityMisses;
+        public double chestTimerSeconds;
     }
 
     public sealed class GardenSaveStore
@@ -78,6 +83,11 @@ namespace IdleGarden
             try
             {
                 saved = JsonUtility.FromJson<GardenSaveData>(File.ReadAllText(path));
+                if (saved != null)
+                {
+                    if (saved.gearInventory == null) saved.gearInventory = Array.Empty<GearInstance>();
+                    if (saved.equippedGear == null) saved.equippedGear = Array.Empty<EquippedGearSave>();
+                }
                 newer = saved != null && saved.version > 1;
                 return !newer && Valid(saved);
             }
@@ -88,6 +98,8 @@ namespace IdleGarden
         {
             if (data == null || data.version != 1 || !GardenProgression.Finite(data.gold) || data.gold < 0 || !GardenProgression.Finite(data.cycleGold) || data.cycleGold < 0 ||
                 data.seeds < 0 || data.rebirths < 0 || data.inventory == null || data.upgrades == null || data.plots == null ||
+                data.chests < 0 || data.essence < 0 || data.chestPityMisses < 0 || !GardenProgression.Finite(data.chestTimerSeconds) || data.chestTimerSeconds < 0 ||
+                data.gearInventory == null || data.equippedGear == null ||
                 !GardenProgression.Finite(data.workerX) || !GardenProgression.Finite(data.workerWater) || data.workerWater < 0 || data.harvested < 0) return false;
             var ids = new HashSet<string>();
             foreach (var item in data.inventory)
@@ -95,6 +107,22 @@ namespace IdleGarden
             ids.Clear();
             foreach (var item in data.upgrades)
                 if (item == null || string.IsNullOrWhiteSpace(item.id) || item.level < 0 || !ids.Add(item.id)) return false;
+            ids.Clear();
+            foreach (var item in data.gearInventory)
+            {
+                if (item == null || string.IsNullOrWhiteSpace(item.id) || string.IsNullOrWhiteSpace(item.equipmentId) ||
+                    !Enum.IsDefined(typeof(GearRarity), item.rarity) || item.affixes == null || item.affixes.Length > 6 || !ids.Add(item.id)) return false;
+                for (int i = 0; i < item.affixes.Length; i++)
+                {
+                    var affix = item.affixes[i];
+                    if (!Enum.IsDefined(typeof(UpgradeStat), affix.stat) || !GardenProgression.Finite(affix.percentBonus) || affix.percentBonus < 0 || affix.percentBonus > 1) return false;
+                    for (int j = 0; j < i; j++) if (item.affixes[j].stat == affix.stat) return false;
+                }
+            }
+            var equippedSlots = new HashSet<GearSlot>();
+            foreach (var item in data.equippedGear)
+                if (item == null || !Enum.IsDefined(typeof(GearSlot), item.slot) || string.IsNullOrWhiteSpace(item.instanceId) ||
+                    !equippedSlots.Add(item.slot) || !ids.Contains(item.instanceId)) return false;
             foreach (var plot in data.plots)
                 if (plot == null || string.IsNullOrWhiteSpace(plot.cropId) || !GardenProgression.Finite(plot.growth) || plot.growth < 0 || plot.growth > 1 ||
                     !GardenProgression.Finite(plot.water) || plot.water < 0 || plot.harvested < 0) return false;

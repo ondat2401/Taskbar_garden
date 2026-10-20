@@ -28,6 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5077b80d10b37134c86bc2a396e88c2d, type: 2}
   - {fileID: 11400000, guid: f235516254f00844585dc5dbc95a7f99, type: 2}
   - {fileID: 11400000, guid: 78779faddc48f4843abe6eb817743fc4, type: 2}
+  gear: {fileID: 11400000, guid: cc6d24ed9cf3f9c4293873ce41276f31, type: 2}
   startingGold: 30
   autoSellReserve: 4
   rebirthBaseGoal: 1000

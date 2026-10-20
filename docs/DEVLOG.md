@@ -52,10 +52,16 @@ Gặp lỗi Unity fake-null khi thêm collider trong Editor; đổi sang kiểm 
 
 ## 05 — Rương và trang bị
 
-**F04 đang làm.** Thiết kế đã chốt rương theo thời gian, pity, rarity/affix, trang bị và salvage; inventory/gear sẽ mở thành cửa sổ nổi trong game. Chưa ghi kết quả trước khi feature qua kiểm tra.
+**2026-10-20 · F04 · `checkpoint/f04-chests-gear`**
+
+Thêm rương miễn phí mỗi600giây chơi thật, không tăng theo tốc độ simulation và dừng khi pause. Lần mở thứ20 sau chuỗi miss bảo đảm Epic+; gear giữ base stat theo vật liệu, rarity thêm affix riêng. Inventory40 slot; gear mặc được thay theo slot, đồ mặc không salvage, essence đổi lấy rương.
+
+Inventory mở trong cửa sổ nổi cùng Canvas. `GardenFloatingWindow` phụ trách khung/đóng/kéo; `GardenGearPanel` hiển thị và gọi progression; các row đã dựng sẵn trong Editor. Sau khi scene báo dirty, đã sao lưu bằng Editor API trước khi Apply rồi xóa bản sao sau khi scene lưu thành công, giữ nguyên phần scene chưa lưu ban đầu.
+
+**Đã kiểm tra:** compile, F01–F03 regression, seeded timer/pity/drop/affix/capacity/equip/salvage/essence/capture checks; Play Mode mở rương và thao tác qua listener, kiểm tra panel transitions và drag bounds. Đã xem Game View ở510×287. Chưa chạy Windows standalone F04, chưa kiểm DPI/multi-monitor hoặc file I/O save.
 
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-Các mốc sắp tới: F03 giao diện; F04 rương/trang bị; F05 save/tái sinh; F06 cosmetic preview và build. Cập nhật từng mốc khi xong, không tạo sẵn câu chuyện thành công.
+Các mốc sắp tới: F05 save/tái sinh; F06 cosmetic preview và build. Cập nhật từng mốc khi xong, không tạo sẵn câu chuyện thành công.

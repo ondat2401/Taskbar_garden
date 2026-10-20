@@ -61,8 +61,9 @@ Affix chọn không trùng stat trên cùng item. Các stat: tốc độ lớn, 
 
 - ScriptableObject profile/catalog tham chiếu trực tiếp: crops, themes, upgrades, gear, drop rules, cosmetics. IDs ổn định là save key. Mọi weight, range, cost, interval chỉnh bằng Editor.
 - Save plain data có schema version, upgrade migration, temp+flush+replace+backup; giữ file từ version tương lai, không ghi đè khi không đọc được. Lưu cả lựa chọn cây, công cụ/affix, thời gian dư, pity, milestone, theme và cosmetic.
-- UI ngoài chỉ có tiền, Shop và menu. Shop có các trang Garden / Upgrades / Equipment / Skins. Kéo thanh dưới, resize ở grip. Bấm chậu mở đúng lựa chọn của chậu; các trang bên trong không làm tăng số nút thường trực.
-- Tất cả UI/plot GameObject được chuẩn bị bằng Editor; không spawn UI hàng loạt trong runtime, không lookup dependency. Giữ idle30FPS.
+- UI chính chỉ có tiền, Shop và menu. Shop chứa các thao tác vườn/nâng cấp. Inventory, thông tin item và màn phụ mở thành cửa sổ nhỏ nổi cùng kiểu khung game, nằm trong cùng Canvas/process chứ không tạo OS window riêng. Mỗi cửa sổ có thanh tiêu đề, nút đóng và kéo được trong vùng game.
+- Dùng composition theo trách nhiệm: `GardenFloatingWindow` chỉ điều khiển khung/đóng/kéo; `GardenGearPanel` trình bày inventory và gọi API progression; `GardenProgression` giữ dữ liệu và luật. `GardenHud` chỉ quản lý thanh chính và chuyển trạng thái giữa Shop/menu/cửa sổ. Các reference được serialize rõ ràng, không resolve dependency bằng lookup.
+- Tất cả UI/plot GameObject được chuẩn bị bằng Editor; runtime không spawn/destroy UI hoặc lookup dependency. Dùng anchor và CanvasScaler để cửa sổ phụ ở gọn trong cửa sổ game; giữ idle30FPS.
 
 ## Giai đoạn và gate kiểm chứng
 

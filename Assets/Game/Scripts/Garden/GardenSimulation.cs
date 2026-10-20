@@ -35,7 +35,8 @@ namespace IdleGarden
         public bool Paused;
         private float actionElapsed;
         private readonly GardenProgression progression;
-        public float TankCapacity => Profile.worker.tankCapacity * (progression?.Multiplier(UpgradeStat.TankCapacity) ?? 1);
+        public float TankCapacity => (Profile.worker.tankCapacity + (progression?.GearFlatBonus(UpgradeStat.TankCapacity) ?? 0)) *
+                                     (progression?.Multiplier(UpgradeStat.TankCapacity) ?? 1);
         private float WaterPerAction => Profile.worker.waterPerAction;
 
         public GardenSimulation(GardenProfile profile, GardenProgression progression = null)
