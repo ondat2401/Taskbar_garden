@@ -30,5 +30,5 @@ MonoBehaviour:
   soilSprite: {fileID: 21300000, guid: 0e39a9b830df5e04eab2790029314205, type: 3}
   wellSprite: {fileID: 21300000, guid: 53599cbd1c8344745a09e4a2b20bfaf6, type: 3}
   grassSprite: {fileID: 21300000, guid: 757454456f25d2c4197b25f50d9c911a, type: 3}
-  windowSize: {x: 1000, y: 340}
-  minimumWindowSize: {x: 560, y: 260}
+  windowSize: {x: 920, y: 180}
+  minimumWindowSize: {x: 560, y: 150}

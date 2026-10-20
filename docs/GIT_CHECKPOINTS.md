@@ -9,8 +9,9 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/00-import-wip` | Nhập project Unity hiện có, gồm bản nháp F01–F05 và art AI | Lưu nguyên trạng; không phải bản hoàn thiện các feature |
 | `checkpoint/f01-economy` | Kho, vàng, bán tay/tự động; nối thu hoạch trong scene | Hoàn tất 2026-10-19; compile, self-check và Play Mode pass; chưa có standalone build mới |
 | `checkpoint/f02-pot-themes` | Chọn cây riêng từng chậu, theme, sáu nâng cấp | `7d50e26`; kiểm tra logic và regression pass; UI chọn cây tiếp tục ở F03 |
+| `checkpoint/f03-compact-shop` | Cửa sổ compact, workshop và tương tác chậu | Chốt 2026-10-20; click thật, Shop resize, drag/pin/lock và regression Play Mode pass |
 
-Các tag tiếp theo dự kiến: `checkpoint/f03-compact-shop`, `checkpoint/f04-chests-gear`, `checkpoint/f05-save-rebirth`, `checkpoint/f06-prototype`. Chỉ tạo khi phần tương ứng hoàn tất. Thiết kế mới: `docs/GAME_DESIGN.md`; tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md).
+Các tag tiếp theo dự kiến: `checkpoint/f04-chests-gear`, `checkpoint/f05-save-rebirth`, `checkpoint/f06-prototype`. Chỉ tạo khi phần tương ứng hoàn tất. Thiết kế mới: `docs/GAME_DESIGN.md`; tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md).
 
 ## Mở checkpoint để quay mà không đụng thư mục đang làm
 

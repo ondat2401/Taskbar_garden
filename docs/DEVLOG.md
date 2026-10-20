@@ -40,15 +40,19 @@ Thiết kế tiếp: vật liệu của công cụ quyết định chỉ số g�
 
 ## 04 — Thu gọn để sống trên desktop
 
-**2026-10-19 · F03 đang làm · chưa có tag hoàn tất**
+**2026-10-20 · F03 · `checkpoint/f03-compact-shop`**
 
 Thu gọn thanh chính; mở workshop khi chọn chậu, chia trang cây và nâng cấp. Chuẩn bị collider/callback cho chậu và nối atlas cây lửa/băng đã tạo bằng AI. Art hiện là bản nháp có glow, chưa đạt quy chuẩn pixel grid cuối cùng.
 
-Gặp lỗi Unity fake-null khi thêm collider trong Editor; đổi sang kiểm tra null theo Unity. Có lượt chụp ảnh không khớp trạng thái workshop; kiểm tra lại xác nhận Editor đã dừng Play. Chạy Play mới cho ảnh workshop 920×540 đúng, tiền và chậu cập nhật. Chưa kết luận nguyên nhân của lượt dừng trước đó.
+Gặp lỗi Unity fake-null khi thêm collider trong Editor; đổi sang kiểm tra null theo Unity. Có lượt chụp ảnh không khớp trạng thái workshop; kiểm tra lại xác nhận Editor đã dừng Play. Chạy Play mới cho ảnh workshop 920×540 đúng, tiền và chậu cập nhật. Menu từng bị workshop che; mở menu nay tự đóng shop.
 
-**Đã kiểm tra tiếp:** compile pass; Play Mode xác nhận callback đổi cây, chuyển chậu, đổi tab và đóng panel; xem trực tiếp ảnh workshop. Chưa kiểm tra click vật lý lên chậu và drag/resize native. Chưa chốt tag F03.
+**Đã kiểm tra:** compile và F01/F02 regression pass. Windows build nhận click Shop/menu; bung/thu 920×180 ↔ 920×540; pin, lock, drag khi mở khóa và resize phản hồi. Play Mode xác nhận chọn cây, chuyển chậu/tab và menu/shop loại trừ nhau; ảnh cửa sổ và workshop đã xem trực tiếp. Chưa kiểm DPI/multi-monitor. Native test dùng save hiện có; vườn tiếp tục idle và save hiện tại được giữ nguyên.
 
-**Cảnh quay sau khi pass:** dải vườn gọn → bấm chậu → chọn cây → mở theme → xem nâng cấp. Chưa có bản quay/test native mới.
+**Cảnh quay:** dải vườn gọn → bấm chậu → chọn cây → mở theme → xem nâng cấp; mở menu rồi thử pin/lock và kéo cửa sổ.
+
+## 05 — Rương và trang bị
+
+**F04 đang làm.** Thiết kế đã chốt rương theo thời gian, pity, rarity/affix, trang bị và salvage; inventory/gear sẽ mở thành cửa sổ nổi trong game. Chưa ghi kết quả trước khi feature qua kiểm tra.
 
 ## Cách ghi tiếp
 

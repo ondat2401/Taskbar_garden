@@ -1,6 +1,6 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. Trạng thái F01/F02 đã chốt, F03 đang kiểm tra; thiết kế chuẩn docs/GAME_DESIGN.md, tiến độ docs/FEATURE_STATUS.md, hành trình docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng và ghi dev log + commit/tag. Không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F03 đã kiểm tra; F04 đang làm. Thiết kế chuẩn docs/GAME_DESIGN.md, tiến độ docs/FEATURE_STATUS.md, hành trình docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng và ghi dev log + commit/tag. Không nối nhật ký dài vào file này.
 
 ## Project
 
@@ -19,7 +19,7 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 
 ## Verification
 
-F01: 10k giao dịch, giới hạn số học, 1200s sim và Play Mode pass. F02: Pots() + economy + simulation regression pass, mua sáu upgrade không mutate base. Regression 4/8/12 ô từng chạy pass. F03: compile pass; ảnh workshop 920×540 đúng; callback chọn cây/chuyển chậu/tab/đóng pass trong Play mới. Native và build mới chưa verify; executable cũ chỉ có khung.
+F01–F02 verification chạy lại pass: 10k giao dịch, giới hạn số học, 1200s sim, chọn cây riêng từng chậu, mở theme và mua upgrade không sửa base. F03: click Shop/menu, 920×180 ↔ 920×540, pin/lock, drag khi mở khóa và resize đã kiểm tra trên Windows build. Menu tự đóng Shop khi mở để không bị che; Play Mode và ảnh sau sửa pass. Chưa kiểm DPI/multi-monitor.
 
 ## Workflow
 

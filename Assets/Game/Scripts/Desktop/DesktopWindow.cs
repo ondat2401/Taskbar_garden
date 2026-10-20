@@ -94,7 +94,7 @@ namespace IdleGarden
             if (expanded)
             {
                 collapsedSize = window.windowSize;
-                window.windowSize = new Vector2(Mathf.Max(620, collapsedSize.x), Mathf.Max(460, collapsedSize.y));
+                window.windowSize = new Vector2(Mathf.Max(620, collapsedSize.x), Mathf.Max(540, collapsedSize.y));
             }
             else window.windowSize = collapsedSize;
 #endif

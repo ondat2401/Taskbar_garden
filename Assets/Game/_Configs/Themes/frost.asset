@@ -15,4 +15,4 @@ MonoBehaviour:
   id: frost
   displayName: Frost
   unlockGold: 500
-  cropTint: {r: 0.45, g: 0.8, b: 1, a: 1}
+  cropTint: {r: 1, g: 1, b: 1, a: 1}

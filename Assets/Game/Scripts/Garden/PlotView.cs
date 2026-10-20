@@ -1,13 +1,20 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace IdleGarden
 {
-    public sealed class PlotView : MonoBehaviour
+    public sealed class PlotView : MonoBehaviour, IPointerClickHandler
     {
         public SpriteRenderer cropRenderer;
         public Transform growthFill;
         public Transform waterFill;
         public SpriteRenderer soilRenderer;
+        public GardenController garden;
+        public int plotIndex;
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if(eventData.button==PointerEventData.InputButton.Left && garden && garden.hud) garden.hud.OpenPot(plotIndex);
+        }
 
         public void Render(PlotState state)
         {

@@ -102,6 +102,9 @@ namespace IdleGarden.Editor
                 instance.name = $"Plot {i + 1:00}"; instance.transform.localPosition = new Vector3(i * profile.plotSpacing, 0, 0);
                 var view = instance.GetComponent<PlotView>(); view.soilRenderer.sprite = profile.soilSprite;
                 view.cropRenderer.sprite = profile.plots[i].crop.stages[0]; controller.plots[i] = view;
+                view.garden=controller; view.plotIndex=i;
+                var collider=instance.GetComponent<BoxCollider2D>(); if(!collider) collider=instance.AddComponent<BoxCollider2D>();
+                collider.offset=new Vector2(0,.35f); collider.size=new Vector2(1.2f,1.5f);
                 view.growthFill.gameObject.SetActive(profile.showPlotMeters);
                 view.waterFill.gameObject.SetActive(profile.showPlotMeters);
                 var growthTrack = instance.transform.Find("Growth Track"); if (growthTrack) growthTrack.gameObject.SetActive(profile.showPlotMeters);

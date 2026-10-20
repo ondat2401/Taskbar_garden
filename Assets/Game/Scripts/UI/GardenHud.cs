@@ -12,6 +12,11 @@ namespace IdleGarden
         public Text moneyLabel, shopSummary, inventoryLabel, autoSellLabel, rebirthLabel, pinLabel, lockLabel, pauseLabel, shopButtonLabel, noticeLabel;
         public Button rebirthButton;
         public ShopUpgradeRow[] rows;
+        public GameObject gardenPage, upgradesPage;
+        public Text potLabel, cropLabel, themeLabel;
+        public Button plantButton, unlockThemeButton;
+        public int SelectedPot { get; private set; }
+        private int selectedCrop;
         public bool ShopOpen => shopPanel && shopPanel.activeSelf;
         private bool rebirthArmed;
         private string notice;
@@ -22,7 +27,40 @@ namespace IdleGarden
             shopPanel.SetActive(open); menuPanel.SetActive(false);
             desktop.SetPanelExpanded(open); rebirthArmed = false; Refresh();
         }
-        public void ToggleMenu() { menuPanel.SetActive(!menuPanel.activeSelf); }
+        public void ShowGarden() { gardenPage.SetActive(true); upgradesPage.SetActive(false); Refresh(); }
+        public void ShowUpgrades() { gardenPage.SetActive(false); upgradesPage.SetActive(true); Refresh(); }
+        public void OpenPot(int index)
+        {
+            if(garden.Simulation==null) return;
+            SelectedPot=Mathf.Clamp(index,0,garden.Simulation.Plots.Length-1);
+            var crops=garden.Progression.Config.crops;
+            for(int i=0;i<crops.Length;i++) if(crops[i]==garden.Simulation.Plots[SelectedPot].SelectedCrop) selectedCrop=i;
+            if(!ShopOpen) ToggleShop(); ShowGarden();
+        }
+        public void PreviousPot() { OpenPot((SelectedPot+garden.Simulation.Plots.Length-1)%garden.Simulation.Plots.Length); }
+        public void NextPot() { OpenPot((SelectedPot+1)%garden.Simulation.Plots.Length); }
+        public void NextCrop() { selectedCrop=(selectedCrop+1)%garden.Progression.Config.crops.Length; Refresh(); }
+        public void PlantSelected()
+        {
+            bool changed=garden.Simulation.SelectCrop(SelectedPot,garden.Progression.Config.crops[selectedCrop]);
+            notice=changed?"Selection saved. A growing crop finishes before switching.":"Unlock this theme first.";
+            garden.SaveGame(); Refresh();
+        }
+        public void UnlockSelectedTheme()
+        {
+            notice=garden.Progression.UnlockTheme(garden.Progression.Config.crops[selectedCrop].theme)?"Theme unlocked. One chest earned.":"Already unlocked or not enough gold.";
+            garden.SaveGame(); Refresh();
+        }
+        public void ToggleMenu()
+        {
+            bool open = !menuPanel.activeSelf;
+            if (open)
+            {
+                shopPanel.SetActive(false);
+                desktop.SetPanelExpanded(false);
+            }
+            menuPanel.SetActive(open);
+        }
         public void ToggleAutoSell() { garden.Progression.AutoSell = !garden.Progression.AutoSell; garden.SaveGame(); Refresh(); }
         public void SellSurplus() { notice = "Sold surplus: " + GardenProgression.Number(garden.Progression.SellSurplus()) + " gold"; garden.SaveGame(); Refresh(); }
         public void Buy(int index)
@@ -56,6 +94,18 @@ namespace IdleGarden
             lockLabel.text = desktop.locked ? "Position lock: ON" : "Position lock: OFF";
             pauseLabel.text = garden.Simulation.Paused ? "Resume garden" : "Pause garden";
             if (!ShopOpen) return;
+            if(gardenPage)
+            {
+                SelectedPot=Mathf.Clamp(SelectedPot,0,garden.Simulation.Plots.Length-1);
+                selectedCrop=Mathf.Clamp(selectedCrop,0,progress.Config.crops.Length-1);
+                var plot=garden.Simulation.Plots[SelectedPot]; var crop=progress.Config.crops[selectedCrop];
+                potLabel.text=$"POT {SelectedPot+1}    Current: {plot.Crop.displayName}    Selected: {plot.SelectedCrop.displayName}";
+                cropLabel.text=$"Choose: {crop.displayName}  |  {crop.growSeconds:0}s  |  {crop.sellPrice} gold  |  {(crop.theme?crop.theme.displayName:"Meadow")}";
+                plantButton.interactable=progress.CropUnlocked(crop);
+                bool locked=crop.theme && !progress.ThemeUnlocked(crop.theme);
+                unlockThemeButton.interactable=locked && progress.Gold>=crop.theme.unlockGold;
+                themeLabel.text=locked?"Unlock "+crop.theme.displayName+" · "+GardenProgression.Number(crop.theme.unlockGold)+" gold (+1 chest)":"Theme unlocked · cycles repeat automatically";
+            }
             shopSummary.text = "GARDEN WORKSHOP    /    " + GardenProgression.Number(progress.Gold) + " gold    /    Gold ×" + progress.GoldMultiplier.ToString("0.##");
             var text = new StringBuilder("Stock  ");
             foreach (var crop in progress.Config.crops) text.Append(crop.displayName).Append(": ").Append(GardenProgression.Number(progress.Count(crop))).Append("   ");

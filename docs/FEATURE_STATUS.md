@@ -6,8 +6,8 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 |---|---|---|
 | F01 economy | Đã push | 8cb0f89, transaction + simulation + Play Mode |
 | F02 pot/themes/upgrades | Đã kiểm tra | Compile; Pots(), Verify Economy F01, Verify Simulation pass. Đổi giữa vụ giữ cây, không ảnh hưởng chậu khác, theme không trừ tiền/cho rương hai lần; mua rank tính đúng giá và không mutate base data. 6 rank upgrades, 3 theme, 4 crop. |
-| F03 compact shop | Đang làm | Chưa được tính là pass |
-| F04 chests/gear | Chờ | — |
+| F03 compact shop | Đã kiểm tra | Windows build: click Shop/menu, bung/thu 920×180 ↔ 920×540, pin, lock, drag và resize; Play Mode regression pass. Menu đóng Shop để không che nhau. Chưa kiểm DPI/multi-monitor. |
+| F04 chests/gear | Đang làm | Chưa có code/scene tích hợp. |
 | F05 save/rebirth | Chờ | — |
 | F06 cosmetic/build | Chờ | — |
 

@@ -15,4 +15,4 @@ MonoBehaviour:
   id: ember
   displayName: Ember
   unlockGold: 250
-  cropTint: {r: 1, g: 0.6, b: 0.4, a: 1}
+  cropTint: {r: 1, g: 1, b: 1, a: 1}
