@@ -7,7 +7,6 @@ namespace IdleGarden
     {
         public GardenCosmeticPanel owner;
         public Button button;
-        public Image background;
         public Image swatch;
         public Text label;
         public int index;
@@ -17,7 +16,7 @@ namespace IdleGarden
         public void Refresh(GardenCosmeticDefinition item, bool selected, bool equipped)
         {
             button.interactable = item != null;
-            background.color = selected ? new Color(.25f, .39f, .28f) : new Color(.14f, .21f, .16f);
+            GardenUiPalette.StyleButton(button, selected && item != null);
             if (item == null)
             {
                 label.text = string.Empty;

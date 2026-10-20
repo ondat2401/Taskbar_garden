@@ -11,7 +11,8 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F05 save/rebirth | Đã kiểm tra | `checkpoint/f05-save-rebirth`; schema v2 migrate v1, atomic repeated-save/backup recovery, chặn save tương lai/lỗi; isolated disk round-trip và Play Mode rebirth giữ gear/theme/rương/lựa chọn cây, reset vàng/stock/rank/vụ đang trồng. Chưa kiểm standalone restart. |
 | F06 cosmetic/build | Đã push | `checkpoint/f06-prototype`; schema v3 migrate v1/v2; ba cosmetic miễn phí equip/lưu, hai premium và một bundle chỉ preview; F01–F06 verification và Play Mode tint/rollback/save capture pass; Windows BuildReport Succeeded, standalone QA ghi save v3 trong profile cô lập. Chưa kiểm restart sau equip, DPI/multi-monitor hoặc gamepad. |
 | F06 follow-up: grounding/watering | Đã kiểm tra | `checkpoint/f06-worker-grounding`; worker/well/crop đặt đúng baseline, worker vẽ sau cây; tưới khi khô, trồng/tưới luân phiên và quay vòng chậu; F01–F06 Editor verification, Play Mode và Game View pass. Chưa build standalone lại. |
+| F07 UI polish | Đã kiểm tra | `checkpoint/f07-ui-polish`; palette dùng chung, viền mảnh, chữ/accent phân cấp, hover/pressed/disabled/selected; áp dụng workshop, inventory, cosmetics. Compile, F01–F06 Editor verifications và Play Mode/Game View bốn UI pass. Chưa build standalone riêng hoặc kiểm DPI/multi-monitor/gamepad. |
 
-F07 UI/art polish là bước tiếp theo, chưa bắt đầu.
+Checkpoint tiếp theo chưa được chọn.
 
 AI assets: `theme-growth-ai.png` (built-in Imagegen, 2026-10-19), 3×2 fire/frost growth stages, Point/uncompressed, PPU400, pivot(.5,.1). Draft có glow; chưa gọi là strict32px palette. `garden-icons-ai.png` là atlas4 icon đã có từ baseline.

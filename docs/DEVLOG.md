@@ -88,6 +88,16 @@ Hạ worker và giếng về cùng ground baseline; đặt cây trên mặt đ�
 
 Regression 12 chậu phát hiện ưu tiên tuyệt đối khiến một số chậu bị bỏ đói. Scheduler nay luân phiên trồng/tưới và quay vòng vị trí, vẫn giữ thu hoạch ưu tiên cao. Compile, F01–F06 verifications, Play Mode và Game View 510×287 pass; chưa build standalone lại.
 
+### F07 — polish UI
+
+**2026-10-20 · `checkpoint/f07-ui-polish`**
+
+Chuẩn hóa workshop, inventory và cosmetics bằng palette xanh rêu tối, chữ parchment, accent brass, viền mảnh và trạng thái nút hover/pressed/disabled/selected. Tab và dòng đang chọn được nhấn rõ hơn; giá dùng accent, mô tả phụ giảm độ sáng. Giữ transparency của nền game để desktop click-through; không đổi world art hay thêm asset.
+
+Compile, sáu F01–F06 Editor verifications, Play Mode và Game View 510×287 pass. Đã xem trạng thái Garden, Upgrades, Inventory và Cosmetics; ép Canvas repaint sau chuyển panel để ảnh phản ánh đúng trạng thái. Chưa build standalone riêng, chưa kiểm DPI/multi-monitor/gamepad.
+
+**Cảnh quay:** mở Shop và đổi Pots/Upgrades, mở Inventory, sau đó Menu → Cosmetics; rê chuột qua nút để thấy trạng thái hover và chọn cosmetic để thấy selected.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.

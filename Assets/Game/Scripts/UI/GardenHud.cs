@@ -14,6 +14,7 @@ namespace IdleGarden
         public GardenFloatingWindow cosmeticWindow;
         public GardenCosmeticPanel cosmeticPanel;
         public Text moneyLabel, shopSummary, inventoryLabel, autoSellLabel, rebirthLabel, pinLabel, lockLabel, pauseLabel, shopButtonLabel, gearButtonLabel, noticeLabel;
+        public Text gardenTabLabel, upgradesTabLabel;
         public Button rebirthButton;
         public ShopUpgradeRow[] rows;
         public GameObject gardenPage, upgradesPage;
@@ -131,6 +132,8 @@ namespace IdleGarden
         // Called by the controller's throttled UI timer, never from the frame loop.
         public void Refresh()
         {
+            SetTabLabel(gardenTabLabel, gardenPage && gardenPage.activeSelf);
+            SetTabLabel(upgradesTabLabel, upgradesPage && upgradesPage.activeSelf);
             var progress = garden.Progression;
             if (progress == null || garden.Simulation == null) return;
             moneyLabel.text = GardenProgression.Number(progress.Gold) + " gold   ·   " + progress.Seeds + " seeds";
@@ -162,6 +165,15 @@ namespace IdleGarden
             rebirthButton.interactable = progress.CanRebirth;
             rebirthLabel.text = rebirthArmed ? "Confirm rebirth (+1 seed)" : "Rebirth +1 seed  ·  " + GardenProgression.Number(progress.CycleGold) + " / " + GardenProgression.Number(progress.RebirthGoal);
             noticeLabel.text = notice ?? ("Auto-sell keeps " + progress.Config.autoSellReserve + " of each crop for upgrades. Turn it off to stockpile more.");
+        }
+
+        private static void SetTabLabel(Text label, bool selected)
+        {
+            if (!label) return;
+            var color = selected ? GardenUiPalette.Accent : GardenUiPalette.TextMuted;
+            var style = selected ? FontStyle.Bold : FontStyle.Normal;
+            if (label.color != color) label.color = color;
+            if (label.fontStyle != style) label.fontStyle = style;
         }
     }
 }

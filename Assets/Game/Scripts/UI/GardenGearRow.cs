@@ -18,6 +18,7 @@ namespace IdleGarden
         public void Refresh(GearInstance item, bool selected, string displayName)
         {
             button.interactable = item != null;
+            GardenUiPalette.StyleButton(button, selected && item != null);
             label.text = item == null ? "—" : (selected ? "▶ " : "") + item.rarity + "  ·  " + displayName;
         }
     }

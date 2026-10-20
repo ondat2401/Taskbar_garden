@@ -11,8 +11,6 @@ namespace IdleGarden.Editor
 {
     public static class GardenProgressionSetup
     {
-        private static readonly Color Panel = new Color(.075f, .12f, .1f, .98f);
-        private static readonly Color ButtonColor = new Color(.22f, .32f, .23f);
         private const string AtlasPath = "Assets/Game/Textures/UI/garden-icons-ai.png";
 
         [MenuItem("Tools/Idle Garden/Apply Compact Garden and Progression")]
@@ -153,25 +151,26 @@ namespace IdleGarden.Editor
             var scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(920, 540); scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight; scaler.matchWidthOrHeight = 0;
             var hud = canvasObject.AddComponent<GardenHud>(); hud.garden = controller; hud.desktop = desktop; controller.hud = hud;
-            var bar = Box("Garden Bar", canvas.transform, new Vector2(0,1), Vector2.one, new Vector2(6,-32), new Vector2(-6,-4), Panel);
+            var bar = Box("Garden Bar", canvas.transform, new Vector2(0,1), Vector2.one, new Vector2(6,-32), new Vector2(-6,-4), GardenUiPalette.Panel);
             var drag = bar.gameObject.AddComponent<WindowHandle>(); drag.window = desktop;
             hud.moneyLabel = Text("Balance", bar, "IDLE GARDEN", new Vector2(9,0), new Vector2(-194,0), 12);
             hud.moneyLabel.rectTransform.anchorMax = Vector2.one;
+            hud.moneyLabel.color = GardenUiPalette.Accent;
             hud.gearButtonLabel = Button("Gear", bar, new Vector2(1,0), Vector2.one, new Vector2(-188,2), new Vector2(-116,-2), "Gear", hud.ToggleGear);
             hud.shopButtonLabel = Button("Shop", bar, new Vector2(1,0), Vector2.one, new Vector2(-112,2), new Vector2(-40,-2), "Shop", hud.ToggleShop);
             Button("Menu", bar, new Vector2(1,0), Vector2.one, new Vector2(-36,2), new Vector2(-18,-2), ":", hud.ToggleMenu);
-            var grip = Box("Resize", bar, new Vector2(1,0), Vector2.one, new Vector2(-16,1), new Vector2(-1,-1), new Color(.32f,.42f,.28f));
+            var grip = Box("Resize", bar, new Vector2(1,0), Vector2.one, new Vector2(-16,1), new Vector2(-1,-1), GardenUiPalette.Header);
             Text("Grip", grip, "/", Vector2.zero, Vector2.zero, 12, TextAnchor.MiddleCenter).Stretch();
             var handle = grip.gameObject.AddComponent<WindowHandle>(); handle.window = desktop; handle.resize = true;
-            var menu = Box("Window Menu", canvas.transform, Vector2.one, Vector2.one, new Vector2(-210,-176), new Vector2(-8,-36), Panel);
+            var menu = Box("Window Menu", canvas.transform, Vector2.one, Vector2.one, new Vector2(-210,-176), new Vector2(-8,-36), GardenUiPalette.Panel);
             hud.menuPanel = menu.gameObject;
             hud.pinLabel = Button("Pin", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-32), new Vector2(-6,-5), "Always on top", hud.TogglePin);
             hud.lockLabel = Button("Lock", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-66), new Vector2(-6,-36), "Position lock", hud.ToggleLock);
             hud.pauseLabel = Button("Pause", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-100), new Vector2(-6,-70), "Pause garden", hud.TogglePause);
             Button("Exit", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-134), new Vector2(-6,-104), "Exit", desktop.Quit);
             menu.gameObject.SetActive(false);
-            var gearRoot = Box("Gear Inventory Window", canvas.transform, new Vector2(.5f,.5f), new Vector2(.5f,.5f), new Vector2(-330,-220), new Vector2(330,220), Panel);
-            var header = Box("Gear Window Header", gearRoot, new Vector2(0,1), Vector2.one, new Vector2(0,-32), Vector2.zero, ButtonColor);
+            var gearRoot = Box("Gear Inventory Window", canvas.transform, new Vector2(.5f,.5f), new Vector2(.5f,.5f), new Vector2(-330,-220), new Vector2(330,220), GardenUiPalette.Panel);
+            var header = Box("Gear Window Header", gearRoot, new Vector2(0,1), Vector2.one, new Vector2(0,-32), Vector2.zero, GardenUiPalette.Header);
             hud.gearWindow = header.gameObject.AddComponent<GardenFloatingWindow>();
             hud.gearWindow.panel = gearRoot;
             hud.gearWindow.canvasRect = canvasObject.GetComponent<RectTransform>();
@@ -182,8 +181,11 @@ namespace IdleGarden.Editor
             hud.gearPanel.garden = controller;
             hud.gearPanel.inventoryLabel = Text("Gear Summary", gearRoot, "Inventory", new Vector2(12,-56), new Vector2(-220,-34), 12, TextAnchor.MiddleLeft, true);
             hud.gearPanel.timerLabel = Text("Chest Timer", gearRoot, "Next free chest", new Vector2(12,-80), new Vector2(-220,-58), 11, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.timerLabel.color = GardenUiPalette.TextMuted;
             hud.gearPanel.pityLabel = Text("Pity", gearRoot, "Pity", new Vector2(12,-104), new Vector2(-220,-82), 11, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.pityLabel.color = GardenUiPalette.TextMuted;
             hud.gearPanel.ratesLabel = Text("Drop Rates", gearRoot, "Base drops", new Vector2(12,-129), new Vector2(-12,-106), 10, TextAnchor.MiddleLeft, true);
+            hud.gearPanel.ratesLabel.color = GardenUiPalette.TextMuted;
             hud.gearPanel.ratesLabel.horizontalOverflow = HorizontalWrapMode.Wrap;
             var openChest = Button("Open Chest", gearRoot, new Vector2(1,1), Vector2.one, new Vector2(-212,-70), new Vector2(-12,-42), "Open chest", hud.gearPanel.OpenChest);
             hud.gearPanel.openChestButton = openChest.transform.parent.GetComponent<Button>();
@@ -191,7 +193,7 @@ namespace IdleGarden.Editor
             hud.gearPanel.buyChestButton = exchange.transform.parent.GetComponent<Button>();
             hud.gearPanel.essenceLabel = Text("Essence", gearRoot, "Essence", new Vector2(-212,-125), new Vector2(-12,-103), 11, TextAnchor.MiddleCenter, true, true);
 
-            var gearViewport = Box("Gear List Viewport", gearRoot, new Vector2(0,1), new Vector2(0,1), new Vector2(12,-428), new Vector2(288,-142), new Color(.1f,.15f,.12f));
+            var gearViewport = Box("Gear List Viewport", gearRoot, new Vector2(0,1), new Vector2(0,1), new Vector2(12,-428), new Vector2(288,-142), GardenUiPalette.Surface);
             gearViewport.gameObject.AddComponent<RectMask2D>();
             int gearRows = controller.profile.progression.gear.inventoryCapacity;
             var gearContent = Rect("Gear List", gearViewport, new Vector2(0,1), Vector2.one, new Vector2(0,-gearRows*28), Vector2.zero);
@@ -201,8 +203,9 @@ namespace IdleGarden.Editor
             hud.gearPanel.rows = new GardenGearRow[gearRows];
             for (int i = 0; i < gearRows; i++)
             {
-                var row = Box("Gear " + i, gearContent, new Vector2(0,1), Vector2.one, new Vector2(2,-(i+1)*28+1), new Vector2(-2,-i*28-1), new Color(.14f,.21f,.16f));
+                var row = Box("Gear " + i, gearContent, new Vector2(0,1), Vector2.one, new Vector2(2,-(i+1)*28+1), new Vector2(-2,-i*28-1), GardenUiPalette.Row);
                 var button = row.gameObject.AddComponent<Button>(); button.targetGraphic = row.GetComponent<Image>();
+                GardenUiPalette.StyleButton(button);
                 var view = row.gameObject.AddComponent<GardenGearRow>(); view.owner = hud.gearPanel; view.button = button; view.index = i;
                 view.label = Text("Item", row, "—", new Vector2(8,0), new Vector2(-8,0), 11, TextAnchor.MiddleLeft).Stretch();
                 UnityEditor.Events.UnityEventTools.AddPersistentListener(button.onClick, view.Select);
@@ -210,6 +213,7 @@ namespace IdleGarden.Editor
             }
             hud.gearPanel.selectedTitle = Text("Selected Item", gearRoot, "Select an item", new Vector2(304,-176), new Vector2(648,-144), 13, TextAnchor.MiddleLeft, true);
             hud.gearPanel.selectedStats = Text("Item Stats", gearRoot, "Open a chest to collect tools and gear.", new Vector2(304,-298), new Vector2(648,-182), 12, TextAnchor.UpperLeft, true);
+            hud.gearPanel.selectedStats.color = GardenUiPalette.TextMuted;
             hud.gearPanel.selectedStats.horizontalOverflow = HorizontalWrapMode.Wrap;
             hud.gearPanel.selectedStats.verticalOverflow = VerticalWrapMode.Overflow;
             var equip = Button("Equip Item", gearRoot, new Vector2(0,1), new Vector2(0,1), new Vector2(304,-336), new Vector2(464,-306), "Equip", hud.gearPanel.EquipSelected);
@@ -222,14 +226,14 @@ namespace IdleGarden.Editor
             hud.gearPanel.noticeLabel.horizontalOverflow = HorizontalWrapMode.Wrap;
             gearRoot.gameObject.SetActive(false);
 
-            var shop = Box("Workshop", canvas.transform, Vector2.zero, Vector2.one, new Vector2(8,184), new Vector2(-8,-36), Panel);
+            var shop = Box("Workshop", canvas.transform, Vector2.zero, Vector2.one, new Vector2(8,184), new Vector2(-8,-36), GardenUiPalette.Panel);
             hud.shopPanel = shop.gameObject;
             hud.shopSummary = Text("Heading", shop, "GARDEN WORKSHOP", new Vector2(14,-32), new Vector2(-14,-5), 14, TextAnchor.MiddleLeft, true);
             hud.inventoryLabel = Text("Inventory", shop, "Stock", new Vector2(14,-57), new Vector2(-285,-33), 11, TextAnchor.MiddleLeft, true);
             hud.autoSellLabel = Button("Auto Sell", shop, new Vector2(1,1), Vector2.one, new Vector2(-280,-57), new Vector2(-144,-33), "Auto-sell", hud.ToggleAutoSell);
             Button("Sell", shop, new Vector2(1,1), Vector2.one, new Vector2(-138,-57), new Vector2(-10,-33), "Sell surplus", hud.SellSurplus);
-            Button("Garden Tab",shop,new Vector2(0,1),new Vector2(0,1),new Vector2(12,-88),new Vector2(116,-62),"Pots",hud.ShowGarden);
-            Button("Upgrades Tab",shop,new Vector2(0,1),new Vector2(0,1),new Vector2(122,-88),new Vector2(240,-62),"Upgrades",hud.ShowUpgrades);
+            hud.gardenTabLabel = Button("Garden Tab",shop,new Vector2(0,1),new Vector2(0,1),new Vector2(12,-88),new Vector2(116,-62),"Pots",hud.ShowGarden);
+            hud.upgradesTabLabel = Button("Upgrades Tab",shop,new Vector2(0,1),new Vector2(0,1),new Vector2(122,-88),new Vector2(240,-62),"Upgrades",hud.ShowUpgrades);
             var gardenPage=Rect("Pot Selection",shop,Vector2.zero,Vector2.one,new Vector2(12,78),new Vector2(-12,-94));
             hud.gardenPage=gardenPage.gameObject;
             hud.potLabel=Text("Pot",gardenPage,"Pot",new Vector2(0,-25),new Vector2(0,0),12,TextAnchor.MiddleLeft,true);
@@ -240,7 +244,7 @@ namespace IdleGarden.Editor
             hud.plantButton=Button("Plant",gardenPage,new Vector2(0,1),new Vector2(0,1),new Vector2(310,-84),new Vector2(466,-57),"Plant next cycle",hud.PlantSelected).transform.parent.GetComponent<Button>();
             hud.themeLabel=Button("Theme",gardenPage,new Vector2(0,1),Vector2.one,new Vector2(0,-118),new Vector2(0,-91),"Theme",hud.UnlockSelectedTheme);
             hud.unlockThemeButton=hud.themeLabel.transform.parent.GetComponent<Button>();
-            var viewport = Box("Upgrade Viewport", shop, Vector2.zero, Vector2.one, new Vector2(10,78), new Vector2(-10,-94), new Color(.1f,.15f,.12f));
+            var viewport = Box("Upgrade Viewport", shop, Vector2.zero, Vector2.one, new Vector2(10,78), new Vector2(-10,-94), GardenUiPalette.Surface);
             hud.upgradesPage=viewport.gameObject;
             viewport.gameObject.AddComponent<RectMask2D>();
             int count = controller.profile.progression.upgrades.Length;
@@ -251,13 +255,15 @@ namespace IdleGarden.Editor
             hud.rows = new ShopUpgradeRow[count];
             for (int i = 0; i < count; i++)
             {
-                var row = Box("Upgrade " + i, content, new Vector2(0,1), Vector2.one, new Vector2(4,-(i+1)*64+3), new Vector2(-4,-i*64-3), new Color(.14f,.21f,.16f));
+                var row = Box("Upgrade " + i, content, new Vector2(0,1), Vector2.one, new Vector2(4,-(i+1)*64+3), new Vector2(-4,-i*64-3), GardenUiPalette.Row);
                 var view = row.gameObject.AddComponent<ShopUpgradeRow>(); view.owner = hud; view.upgradeIndex = i; hud.rows[i] = view;
                 var icon = Rect("Icon", row, Vector2.zero, new Vector2(0,1), new Vector2(6,6), new Vector2(50,-6));
                 view.icon = icon.gameObject.AddComponent<Image>(); view.icon.preserveAspect = true; view.icon.raycastTarget = false;
                 view.title = Text("Title", row, "Upgrade", new Vector2(58,-27), new Vector2(-180,-3), 13, TextAnchor.MiddleLeft, true);
                 view.description = Text("Effect", row, "Effect", new Vector2(58,3), new Vector2(-180,29), 11);
+                view.description.color = GardenUiPalette.TextMuted;
                 view.price = Text("Price", row, "Price", new Vector2(-182,-23), new Vector2(-8,-2), 11, TextAnchor.MiddleRight, true, true);
+                view.price.color = GardenUiPalette.Accent;
                 var buyLabel = Button("Buy", row, new Vector2(1,0), new Vector2(1,0), new Vector2(-170,5), new Vector2(-8,29), "Upgrade", view.Buy);
                 view.buyButton = buyLabel.transform.parent.GetComponent<Button>();
             }
@@ -267,6 +273,7 @@ namespace IdleGarden.Editor
             hud.rebirthButton = hud.rebirthLabel.transform.parent.GetComponent<Button>();
             viewport.gameObject.SetActive(false);
             shop.gameObject.SetActive(false);
+            hud.ShowGarden();
             controller.statusLabel = hud.moneyLabel; controller.harvestLabel = hud.moneyLabel;
             EditorUtility.SetDirty(controller);
         }
@@ -278,7 +285,8 @@ namespace IdleGarden.Editor
         }
         private static RectTransform Box(string name, Transform parent, Vector2 a, Vector2 b, Vector2 min, Vector2 max, Color color)
         {
-            var rect = Rect(name,parent,a,b,min,max); rect.gameObject.AddComponent<Image>().color=color; return rect;
+            var rect = Rect(name,parent,a,b,min,max); var image = rect.gameObject.AddComponent<Image>(); image.color = color;
+            GardenUiPalette.AddBorder(image); return rect;
         }
         private static Text Text(string name, Transform parent, string value, Vector2 min, Vector2 max, int size, TextAnchor alignment=TextAnchor.MiddleLeft, bool top=false, bool right=false)
         {
@@ -286,14 +294,17 @@ namespace IdleGarden.Editor
             Vector2 b = top ? Vector2.one : new Vector2(1,0);
             var rect = Rect(name,parent,a,b,min,max);
             var text=rect.gameObject.AddComponent<Text>(); text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            text.text=value; text.fontSize=size; text.alignment=alignment; text.color=new Color(.9f,.93f,.81f); text.raycastTarget=false;
+            text.text=value; text.fontSize=size; text.alignment=alignment; text.color=GardenUiPalette.TextPrimary;
+            text.fontStyle = size >= 13 ? FontStyle.Bold : FontStyle.Normal; text.raycastTarget=false;
             return text;
         }
         private static Text Button(string name, Transform parent, Vector2 a, Vector2 b, Vector2 min, Vector2 max, string title, UnityAction action)
         {
-            var rect=Box(name,parent,a,b,min,max,ButtonColor); var button=rect.gameObject.AddComponent<Button>(); button.targetGraphic=rect.GetComponent<Image>();
+            var rect=Box(name,parent,a,b,min,max,GardenUiPalette.Button); var button=rect.gameObject.AddComponent<Button>(); button.targetGraphic=rect.GetComponent<Image>();
+            GardenUiPalette.StyleButton(button);
             UnityEditor.Events.UnityEventTools.AddPersistentListener(button.onClick,action);
-            return Text("Label",rect,title,new Vector2(4,0),new Vector2(-4,0),12,TextAnchor.MiddleCenter,false,false).Stretch();
+            var label = Text("Label",rect,title,new Vector2(4,0),new Vector2(-4,0),12,TextAnchor.MiddleCenter,false,false).Stretch();
+            label.fontStyle = FontStyle.Bold; return label;
         }
         private static Text Stretch(this Text text)
         {

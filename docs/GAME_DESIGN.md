@@ -62,6 +62,7 @@ Affix chọn không trùng stat trên cùng item. Các stat: tốc độ lớn, 
 - ScriptableObject profile/catalog tham chiếu trực tiếp: crops, themes, upgrades, gear, drop rules, cosmetics. IDs ổn định là save key. Mọi weight, range, cost, interval chỉnh bằng Editor.
 - Save plain data có schema version, migration, temp+flush+replace+backup; giữ file từ version tương lai, không ghi đè khi không đọc được. Schema hiện tại v3 migrate v1/v2. Lưu cả lựa chọn cây, công cụ/affix, thời gian dư, pity, milestone, theme và cosmetic.
 - UI chính chỉ có tiền, Shop và menu. Shop chứa các thao tác vườn/nâng cấp. Inventory, thông tin item và màn phụ mở thành cửa sổ nhỏ nổi cùng kiểu khung game, nằm trong cùng Canvas/process chứ không tạo OS window riêng. Mỗi cửa sổ có thanh tiêu đề, nút đóng và kéo được trong vùng game.
+- UI dùng nền xanh rêu tối, chữ parchment, accent brass cho tab/giá/selection và viền than mảnh; trạng thái hover, pressed và disabled phải phân biệt rõ. Giữ alpha của nền thế giới để cửa sổ desktop tiếp tục click-through.
 - Dùng composition theo trách nhiệm: `GardenFloatingWindow` chỉ điều khiển khung/đóng/kéo; `GardenGearPanel` trình bày inventory và gọi progression; `GardenCosmeticPanel` trình bày catalog/preview và gọi `GardenCosmeticController`; controller áp tint và giữ loadout, còn catalog là ScriptableObject. `GardenHud` chỉ quản lý thanh chính và chuyển trạng thái giữa Shop/menu/cửa sổ. Các reference được serialize rõ ràng, không resolve dependency bằng lookup.
 - Tất cả UI/plot GameObject được chuẩn bị bằng Editor; runtime không spawn/destroy UI hoặc lookup dependency. Dùng anchor và CanvasScaler để cửa sổ phụ ở gọn trong cửa sổ game; giữ idle30FPS.
 
@@ -74,5 +75,6 @@ Affix chọn không trùng stat trên cùng item. Các stat: tốc độ lớn, 
 | checkpoint/f04-chests-gear | Rương thời gian/mốc, rarity affix, equip/salvage | RNG seeded, bounds/stat không trùng, pity, không double reward, effect simulation |
 | checkpoint/f05-save-rebirth | Persistence hoàn chỉnh, migration, reset giữ đúng | File I/O, corrupt/future/backup, restart, giữ gear/theme/lựa chọn sau rebirth |
 | checkpoint/f06-prototype | Cosmetic catalog/preview, regression + Windows build | Không phát premium giả, tests+Play+build, ghi giới hạn commerce rõ |
+| checkpoint/f07-ui-polish | Đồng bộ visual cho workshop và cửa sổ phụ | Play Mode kiểm Garden/Upgrades/Inventory/Cosmetics, đọc được trạng thái tab/nút, giữ nền click-through |
 
 Sau mỗi gate: cập nhật CHECKPOINT.md, commit, annotated tag mới và push. Giữ các checkpoint F01/import cũ nguyên vẹn; các tên F04/F05 ở kế hoạch cũ được thay bằng bảng này trước khi chúng từng được tạo.

@@ -10,9 +10,6 @@ namespace IdleGarden.Editor
     public static class GardenCosmeticSetup
     {
         private const string CatalogPath = "Assets/Game/_Configs/Cosmetics/GardenCosmetics.asset";
-        private static readonly Color PanelColor = new Color(.075f, .12f, .1f, .98f);
-        private static readonly Color ButtonColor = new Color(.22f, .32f, .23f);
-
         [MenuItem("Tools/Idle Garden/Setup F06 Cosmetic Preview")]
         public static void Apply()
         {
@@ -89,9 +86,9 @@ namespace IdleGarden.Editor
         private static void BuildWindow(Transform canvas, RectTransform canvasRect, GardenController garden, GardenHud hud)
         {
             var root = Box("Cosmetic Catalog Window", canvas, new Vector2(.5f,.5f), new Vector2(.5f,.5f),
-                new Vector2(-320,-210), new Vector2(320,210), PanelColor);
+                new Vector2(-320,-210), new Vector2(320,210), GardenUiPalette.Panel);
             var header = Box("Cosmetic Window Header", root, new Vector2(0,1), Vector2.one,
-                new Vector2(0,-32), Vector2.zero, ButtonColor);
+                new Vector2(0,-32), Vector2.zero, GardenUiPalette.Header);
             hud.cosmeticWindow = header.gameObject.AddComponent<GardenFloatingWindow>();
             hud.cosmeticWindow.panel = root;
             hud.cosmeticWindow.canvasRect = canvasRect;
@@ -104,10 +101,11 @@ namespace IdleGarden.Editor
             hud.cosmeticPanel.equippedLabel = MakeText("Equipped Cosmetics", root, "Equipped", new Vector2(264,-58), new Vector2(-12,-36), 11, TextAnchor.MiddleLeft, true);
             hud.cosmeticPanel.selectedTitle = MakeText("Selected Cosmetic", root, "Choose a look", new Vector2(264,-88), new Vector2(-12,-64), 13, TextAnchor.MiddleLeft, true);
             hud.cosmeticPanel.description = MakeText("Cosmetic Description", root, "Preview a cosmetic on the live garden.", new Vector2(264,-144), new Vector2(-12,-94), 12, TextAnchor.UpperLeft, true);
+            hud.cosmeticPanel.description.color = GardenUiPalette.TextMuted;
             hud.cosmeticPanel.description.horizontalOverflow = HorizontalWrapMode.Wrap;
 
             var viewport = Box("Cosmetic Catalog Viewport", root, new Vector2(0,1), new Vector2(0,1),
-                new Vector2(12,-402), new Vector2(250,-66), new Color(.1f,.15f,.12f));
+                new Vector2(12,-402), new Vector2(250,-66), GardenUiPalette.Surface);
             viewport.gameObject.AddComponent<RectMask2D>();
             int count = garden.cosmetics.catalog.items.Length;
             var content = Rect("Cosmetic Catalog Rows", viewport, new Vector2(0,1), Vector2.one,
@@ -120,10 +118,11 @@ namespace IdleGarden.Editor
             for (int i = 0; i < count; i++)
             {
                 var row = Box("Cosmetic " + i, content, new Vector2(0,1), Vector2.one,
-                    new Vector2(2,-(i + 1) * 44 + 2), new Vector2(-2,-i * 44 - 2), new Color(.14f,.21f,.16f));
+                    new Vector2(2,-(i + 1) * 44 + 2), new Vector2(-2,-i * 44 - 2), GardenUiPalette.Row);
                 var button = row.gameObject.AddComponent<Button>(); button.targetGraphic = row.GetComponent<Image>();
+                GardenUiPalette.StyleButton(button);
                 var view = row.gameObject.AddComponent<GardenCosmeticRow>();
-                view.owner = hud.cosmeticPanel; view.button = button; view.background = row.GetComponent<Image>(); view.index = i;
+                view.owner = hud.cosmeticPanel; view.button = button; view.index = i;
                 view.label = MakeText("Cosmetic Name", row, "Cosmetic", new Vector2(8,0), new Vector2(-42,0), 11, TextAnchor.MiddleLeft, false);
                 var swatch = Box("Color Swatch", row, new Vector2(1,.5f), new Vector2(1,.5f),
                     new Vector2(-30,-10), new Vector2(-8,10), Color.white);
@@ -156,7 +155,8 @@ namespace IdleGarden.Editor
             Vector2 offsetMin, Vector2 offsetMax, Color color)
         {
             var rect = Rect(name, parent, anchorMin, anchorMax, offsetMin, offsetMax);
-            rect.gameObject.AddComponent<Image>().color = color;
+            var image = rect.gameObject.AddComponent<Image>(); image.color = color;
+            GardenUiPalette.AddBorder(image);
             return rect;
         }
 
@@ -168,17 +168,20 @@ namespace IdleGarden.Editor
             var rect = Rect(name, parent, anchorMin, anchorMax, offsetMin, offsetMax);
             var text = rect.gameObject.AddComponent<Text>();
             text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); text.text = value; text.fontSize = size;
-            text.alignment = alignment; text.color = new Color(.9f,.93f,.81f); text.raycastTarget = false;
+            text.alignment = alignment; text.color = GardenUiPalette.TextPrimary;
+            text.fontStyle = size >= 13 ? FontStyle.Bold : FontStyle.Normal; text.raycastTarget = false;
             return text;
         }
 
         private static Text MakeButton(string name, Transform parent, Vector2 anchorMin, Vector2 anchorMax,
             Vector2 offsetMin, Vector2 offsetMax, string title, UnityAction action)
         {
-            var rect = Box(name, parent, anchorMin, anchorMax, offsetMin, offsetMax, ButtonColor);
+            var rect = Box(name, parent, anchorMin, anchorMax, offsetMin, offsetMax, GardenUiPalette.Button);
             var button = rect.gameObject.AddComponent<Button>(); button.targetGraphic = rect.GetComponent<Image>();
+            GardenUiPalette.StyleButton(button);
             UnityEditor.Events.UnityEventTools.AddPersistentListener(button.onClick, action);
             var label = MakeText("Label", rect, title, new Vector2(4,0), new Vector2(-4,0), 12, TextAnchor.MiddleCenter, false);
+            label.fontStyle = FontStyle.Bold;
             label.rectTransform.anchorMin = Vector2.zero; label.rectTransform.anchorMax = Vector2.one;
             label.rectTransform.offsetMin = new Vector2(4,0); label.rectTransform.offsetMax = new Vector2(-4,0);
             return label;
