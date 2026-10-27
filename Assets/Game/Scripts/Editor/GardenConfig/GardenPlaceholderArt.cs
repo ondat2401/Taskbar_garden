@@ -8,6 +8,7 @@ namespace IdleGarden.Editor
     // Editor-only fallback sprites; the configured atlas supplies the active art.
     public static class GardenPlaceholderArt
     {
+        private const int PixelBlockSize = 8;
         private static Texture2D canvas;
         private static void Box(int x, int y, int width, int height, string hex)
         {
@@ -25,11 +26,28 @@ namespace IdleGarden.Editor
         private static Sprite Save(string category, string name, Vector2 pivot, float ppu = 32)
         {
             string path = $"Assets/Game/Textures/{category}/{name}.png";
-            File.WriteAllBytes(path, canvas.EncodeToPNG()); Object.DestroyImmediate(canvas);
+            int scaledWidth = canvas.width * PixelBlockSize;
+            int scaledHeight = canvas.height * PixelBlockSize;
+            var sourcePixels = canvas.GetPixels32();
+            var scaledPixels = new Color32[scaledWidth * scaledHeight];
+            for (int y = 0; y < canvas.height; y++)
+                for (int x = 0; x < canvas.width; x++)
+                {
+                    Color32 color = sourcePixels[y * canvas.width + x];
+                    for (int row = 0; row < PixelBlockSize; row++)
+                        for (int col = 0; col < PixelBlockSize; col++)
+                            scaledPixels[(y * PixelBlockSize + row) * scaledWidth + x * PixelBlockSize + col] = color;
+                }
+            var exportCanvas = new Texture2D(scaledWidth, scaledHeight, TextureFormat.RGBA32, false);
+            exportCanvas.SetPixels32(scaledPixels);
+            exportCanvas.Apply(false, false);
+            File.WriteAllBytes(path, exportCanvas.EncodeToPNG());
+            Object.DestroyImmediate(exportCanvas);
+            Object.DestroyImmediate(canvas);
             AssetDatabase.ImportAsset(path);
             var importer = (TextureImporter)AssetImporter.GetAtPath(path);
             importer.textureType = TextureImporterType.Sprite; importer.spriteImportMode = SpriteImportMode.Single;
-            importer.spritePixelsPerUnit = ppu; importer.filterMode = FilterMode.Point; importer.mipmapEnabled = false;
+            importer.spritePixelsPerUnit = ppu * PixelBlockSize; importer.filterMode = FilterMode.Point; importer.mipmapEnabled = false;
             importer.textureCompression = TextureImporterCompression.Uncompressed; importer.alphaIsTransparency = true;
             var settings = new TextureImporterSettings(); importer.ReadTextureSettings(settings);
             settings.spriteAlignment = (int)SpriteAlignment.Custom; settings.spritePivot = pivot; importer.SetTextureSettings(settings);

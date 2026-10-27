@@ -156,8 +156,22 @@ F01–F06 Editor verifications pass. Save schema v3 trong profile QA cô lập c
 
 **Cảnh quay:** ở 920×180 mở menu rồi Cosmetics, sau đó mở Shop/Upgrades; có thể xác nhận save còn sau khi khởi động lại.
 
+### F13 — quy chuẩn pixel art và texture mẫu
+
+**2026-10-27 · `checkpoint/f13-art-review` · chờ đánh giá**
+
+Thay quy chuẩn tạo asset bằng palette 8×8 gồm 64 màu sáng hơn và block pixel 8×8 texel. Giữ nguyên 22 màu đang dùng để atlas/UI hiện tại không bị lệch; thêm màu tươi cho asset mới. Helper fallback trong Editor xuất block 8×8 và tăng PPU cùng hệ số để giữ kích thước world.
+
+Tạo palette board 128×128 và một mẫu hoa 256×256 từ draft Imagegen. Mẫu được cắt theo alpha, snap về palette, alpha nhị phân, rồi upscale nearest-neighbor; chưa nối vào scene/config và atlas đang chạy vẫn giữ nguyên. Raster check xác nhận 64 swatch duy nhất, 19 màu opaque trong mẫu, cùng một màu trong từng block 8×8. Unity compile pass; importer của ảnh đặt Point, không mipmap, không compression. Chờ duyệt mẫu trước khi làm lại atlas.
+
+**Cảnh quay:** mở palette 8×8 cạnh texture hoa ở 256×256 để xem độ sáng, độ đọc và kích thước pixel.
+
+### F14 — đồng bộ thời tiết (phase kế tiếp, đã lên kế hoạch)
+
+Sau khi asset được chốt, xác minh nguồn thời tiết đang dùng trên máy (Google/Microsoft hoặc API khả dụng), liệt kê điều kiện mà nguồn trả về và lập bảng ánh xạ sang thời tiết trong game. Chưa triển khai hoặc chọn provider.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-F01–F12 đã có checkpoint. Bước tiếp theo chưa được chốt; art hiện tại vẫn là placeholder v1.
+F01–F12 đã có checkpoint. F13 đang chờ đánh giá mẫu art; F14 weather sync đã lên kế hoạch cho phase sau asset. Art active hiện vẫn là placeholder v1.

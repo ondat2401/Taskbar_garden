@@ -1,6 +1,6 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. F01–F12 và follow-up đã tích hợp/QA; F09 active atlas là `garden-art-polished-v1.png` (19 slices/22 màu). F10 thêm pulse nhãn vàng; F11 sửa menu compact để mở được Cosmetics ở 920×180; F12 xác nhận Windows build, UI chính và save schema v3 qua lần restart trong profile QA riêng. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F12 đã tích hợp/QA; F13 đang chờ đánh giá texture mẫu theo palette 8×8 (64 màu), chưa nối vào scene; atlas active vẫn là `garden-art-polished-v1.png` (19 slices/22 màu). F14 weather sync được xếp sau phase asset. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
 
 ## Project
 
@@ -15,13 +15,13 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 - Cosmetics/GardenCosmeticCatalog.cs và GardenCosmeticController.cs: catalog, loadout miễn phí, tint preview tạm thời và Capture/Restore.
 - Crops/CropDefinition.cs, GardenTheme.cs: cây và theme. Worker/WorkerConfig.cs: chỉ số gốc.
 - UI/GardenHud.cs: callback chậu/cây/theme/tab/shop và chuyển cửa sổ. GardenFloatingWindow chỉ quản lý khung; GardenGearPanel và GardenCosmeticPanel giữ presentation riêng; row và cửa sổ được dựng sẵn bằng Editor.
-- UI/GardenUiPalette.cs: palette 22 màu dùng chung cho HUD và sprite; atlas đang dùng là `Textures/Palette/garden-art-polished-v1.png`.
+- UI/GardenUiPalette.cs: 64 swatch màu cho snapping art; UI style colors giữ nguyên. `GardenPlaceholderArt` fallback xuất block 8×8 và giữ world size qua PPU; atlas đang dùng là `Textures/Palette/garden-art-polished-v1.png`.
 - Desktop/DesktopWindow.cs, WindowHandle.cs: native drag/resize/menu, Windows standalone.
 - Editor/GardenConfig/: GardenPrototypeBuilder, GardenProgressionSetup dựng scene/HUD; GardenCosmeticSetup tạo catalog/cửa sổ; các *Verification kiểm tra feature.
 
 ## Verification
 
-F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View pass; worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07/F08 verifications và UI pass đã ghi dưới các tag tương ứng. F09 atlas xác nhận 19 slices, 22 màu, alpha/silhouette gốc; profile validation, F01–F06 Editor verifications và Game View 920×180 pass. F10 Play Mode xác nhận vàng 30→158 và nhãn scale 1→1.12→1. F12: Windows QA build thành công; F01–F06 Editor verifications pass; standalone 920×180 hiển thị đủ 5 mục menu, Cosmetics mở/đóng, Shop/Upgrades hoạt động; Inventory/Gear đã smoke-test ở các lượt trước. Save v3 trong profile QA riêng còn nguyên sau restart (đọc lại gold 86). Chưa kiểm DPI/multi-monitor hoặc gamepad.
+F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View pass; worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07/F08 verifications và UI pass đã ghi dưới các tag tương ứng. F09 atlas xác nhận 19 slices, 22 màu, alpha/silhouette gốc; profile validation, F01–F06 Editor verifications và Game View 920×180 pass. F10 Play Mode xác nhận vàng 30→158 và nhãn scale 1→1.12→1. F12: Windows QA build thành công; F01–F06 Editor verifications pass; standalone 920×180 hiển thị đủ 5 mục menu, Cosmetics mở/đóng, Shop/Upgrades hoạt động; Inventory/Gear đã smoke-test ở các lượt trước. Save v3 trong profile QA riêng còn nguyên sau restart (đọc lại gold 86). F13: palette 64 màu và preview 256×256 dùng 19 màu; mọi khối 8×8 phẳng, alpha nhị phân. Unity compile pass; importer Point/no mipmaps/uncompressed đã kiểm tra. Mẫu chưa nối vào scene. Chưa kiểm DPI/multi-monitor hoặc gamepad.
 
 ## Workflow
 

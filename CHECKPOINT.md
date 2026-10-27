@@ -1,6 +1,14 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-27. F01–F12 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window; F12 xác nhận Windows QA build, UI compact và save v3 qua restart trong profile QA riêng. Người dùng cho phép tự làm, test và commit từng giai đoạn.
+Cập nhật 2026-10-27. F01–F12 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window; F12 xác nhận Windows QA build, UI compact và save v3 qua restart trong profile QA riêng. F13 chuẩn hóa rule pixel art và có texture mẫu đang chờ đánh giá; F14 weather sync là phase tiếp theo sau asset. Người dùng cho phép tự làm, test và commit từng giai đoạn.
+
+## Phase hiện tại — F13 art rule (chờ đánh giá)
+
+- Mốc lưu: `checkpoint/f13-art-review`.
+- Palette 8×8/64 màu ở `Assets/Game/Textures/Palette/garden-art-palette-8x8.png`; sample hoa ở `garden-flower-palette8-preview.png`, 256×256 px, pixel block 8×8, chưa tích hợp.
+- `GardenUiPalette.SharedColors` giữ đủ 22 màu hiện tại và thêm màu sáng; helper fallback Editor upscale grid 8×8, PPU tăng tương ứng để không đổi kích thước world.
+- Đã kiểm raster palette/block/màu; Unity compile pass, importer Point/no mipmaps/uncompressed xác nhận. Atlas F09 vẫn là art active đến khi sample được duyệt.
+- Phase kế tiếp sau asset: F14 khảo sát nguồn thời tiết đang dùng trên máy, điều kiện/API và ánh xạ sang game; chưa chọn provider.
 
 ## Đã chốt
 
