@@ -14,6 +14,7 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F07 UI polish | Đã kiểm tra | `checkpoint/f07-ui-polish`; QA follow-up `checkpoint/f07-cosmetic-label-fix` sửa sáu nhãn offer cao 0px thành 40px. Play Mode xác nhận nhãn, chọn dòng/đóng cửa sổ và 78 nút theo palette; F01–F06 Editor verifications pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad. |
 | F08 shared art palette | Đã kiểm tra | `checkpoint/f08-shared-art-palette`; atlas 19 sprite cho worker, giếng, ground và 4 cây/3 giai đoạn, UI icon và world art dùng chung 22 màu; scene/prefab/config đã nối sprite, player 4 > soil 2, crop 5. Compile, mapping/theme setup, F01–F06 Editor verifications và Play Mode/Game View Upgrades pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad. |
 | F09 art pass | Đã tích hợp | `checkpoint/f09-art-pass`; sibling atlas polished v1, 19 slice, 22 màu và alpha/silhouette gốc; config/prefab/scene và Garden Config lookup đã trỏ art mới. Profile validation, F01–F06 verifications, Game View 920×180 và Windows build pass. Vẫn là placeholder. |
+| F10 game feel | Đã kiểm tra | Nhãn vàng pulse 12% trong 0.24 giây khi vàng tăng, rồi về scale ban đầu. Play Mode self-check: 30→158 vàng, scale 1→1.12→1; không thêm object hay allocation mỗi frame. |
 
 Checkpoint tiếp theo chưa được chọn.
 

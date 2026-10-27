@@ -18,6 +18,7 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f08-shared-art-palette` | Sprite atlas placeholder và palette chung cho world art/UI | Compile, map 19 sprite, F01–F06 verifications, sorting player/soil/crop và Play Mode Upgrades pass; chưa build standalone riêng |
 | `checkpoint/f07-cosmetic-label-fix` | QA follow-up sau F08: sửa RectTransform 0px cho sáu nhãn offer Cosmetics | Play Mode xác nhận sáu nhãn, chọn/đóng hoạt động, 78 nút đúng palette; F01–F06 Editor verifications pass; chưa build standalone riêng |
 | `checkpoint/f09-art-pass` | Polish atlas pixel art, giữ silhouette/alpha và palette chung; nối lại toàn bộ reference | 19 slices, 22 màu, profile/config/prefab/scene mapping, F01–F06 verifications, Game View và Windows build pass; placeholder tiếp tục thay được |
+| `checkpoint/f10-gold-feedback` | Pulse nhẹ nhãn vàng sau khi số vàng tăng | Play Mode self-check: vàng 30→158, label scale 1→1.12→1; trở về scale nghỉ, không tạo object runtime |
 
 Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). Checkpoint tiếp theo chưa được chọn.
 

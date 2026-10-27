@@ -126,6 +126,16 @@ Kiểm tra 1536×1024, alpha trong suốt, 22 màu, đủ 19 sprite; profile vis
 
 **Cảnh quay:** mở game window 920×180 để thấy worker/giếng/4 luống, sau đó mở Shop và Inventory.
 
+### F10 — nhịp thưởng vàng
+
+**2026-10-27 · `checkpoint/f10-gold-feedback`**
+
+Khi vàng tăng, nhãn balance phóng nhẹ 12% rồi dịu về kích thước cũ trong 0.24 giây. Tận dụng label sẵn có và timer trong `GardenHud`; không thêm prefab, particle hoặc âm thanh.
+
+Play Mode self-check dùng thu hoạch tăng vàng 30→158; scale nhãn 1→1.12→1, sau đó scene thoát Play Mode và không ghi save. Compile và F01–F06 Editor verifications pass.
+
+**Cảnh quay:** mở Shop, chờ thu hoạch tự động bán; nhìn số vàng nảy nhẹ một lần khi số tăng.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.

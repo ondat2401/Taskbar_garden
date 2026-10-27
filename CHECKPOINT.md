@@ -1,6 +1,6 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-27. F01–F08 và follow-up đã tích hợp. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette; đang hoàn thiện hiệu ứng vàng và final UI/standalone QA. User cho phép tự làm, test và commit từng giai đoạn.
+Cập nhật 2026-10-27. F01–F10 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette. F10 thêm phản hồi pulse khi vàng tăng; đang chốt final UI compact và standalone QA. User cho phép tự làm, test và commit từng giai đoạn.
 
 ## Đã chốt
 
@@ -14,6 +14,7 @@ Cập nhật 2026-10-27. F01–F08 và follow-up đã tích hợp. F09 polished 
 - F07 UI polish: tag `checkpoint/f07-ui-polish`. Giao diện dùng palette xanh rêu tối, chữ parchment, accent brass, viền mảnh và trạng thái hover/pressed/disabled/selected. Áp dụng cho workshop, inventory và cosmetics; giữ nền game trong suốt để cửa sổ desktop tiếp tục click-through. Compile, sáu F01–F06 Editor verifications và Play Mode/Game View cho bốn cửa sổ pass. Chưa build standalone riêng hoặc kiểm DPI/multi-monitor/gamepad.
 - F08 shared art palette: tag `checkpoint/f08-shared-art-palette`. Tạo sprite atlas placeholder cho worker, giếng, nền cỏ/đất và ba giai đoạn của bốn cây; áp 22 màu từ `GardenUiPalette.SharedColors` cho world art và icon UI. Config, prefab và scene trỏ đến sprite mới; player vẫn sortingOrder 4, soil 2, crop 5. Compile, 19-sprite mapping, F01–F06 verifications và Play Mode/Game View Upgrades pass. Chưa build standalone riêng hoặc kiểm DPI/multi-monitor/gamepad.
 - F09 art pass: `checkpoint/f09-art-pass`. Atlas polished v1 được chuẩn hóa bằng alpha/slice gốc và palette 22 màu; 19 sprite mới đã nối vào worker/crop/garden config, prefab và scene. `GardenPlaceholderArt.Generate()` trỏ vào atlas mới để Apply Layout không quay lại art cũ. Profile validation, F01–F06 verifications, Game View và Windows build pass; atlas vẫn là placeholder.
+- F10 game feel: nhãn vàng scale lên 12% trong 0.24 giây khi currency tăng, sau đó trả về scale gốc. Play Mode self-check tạo thu hoạch, xác nhận vàng 30→158 và scale 1→1.12→1; không tạo object runtime.
 - Follow-up QA F07: tag `checkpoint/f07-cosmetic-label-fix`. Sáu tên offer bị vô hình do RectTransform cao 0px; sửa cấu hình Editor và scene thành 40px. Play Mode xác nhận đủ tên, chọn offer/đóng cửa sổ, 78 nút đúng palette; F01–F06 Editor verifications pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad.
 - Thiết kế mới: `docs/GAME_DESIGN.md`. Tiến độ: `docs/FEATURE_STATUS.md`. Hành trình để dựng video: `docs/DEVLOG.md`; quy trình tag: `docs/GIT_CHECKPOINTS.md`.
 

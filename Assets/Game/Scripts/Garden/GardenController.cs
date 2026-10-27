@@ -39,6 +39,7 @@ namespace IdleGarden
             Simulation = new GardenSimulation(profile, Progression);
             if (saved != null) Simulation.Restore(saved);
             if (cosmetics) cosmetics.Restore(saved != null ? saved.cosmetics : null);
+            if (hud) hud.CacheEffectRestState();
             viewX = (Simulation.WellX + Simulation.RightEdge) * .5f;
             Application.runInBackground = true;
             Application.targetFrameRate = 30;
@@ -49,6 +50,7 @@ namespace IdleGarden
         private void Update()
         {
             float dt = Time.unscaledDeltaTime;
+            if (hud) hud.TickEffects(dt);
             Simulation.Tick(dt * Mathf.Max(0, profile.simulationSpeed));
             Progression?.TickChestTimer(dt, Simulation.Paused);
             animationTime += dt * profile.simulationSpeed * (Simulation.Paused ? 0 : 1);

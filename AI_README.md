@@ -1,6 +1,6 @@
 # AI handoff — Idle Garden
 
-Đọc CHECKPOINT.md trước. F01–F08 và follow-up đã tích hợp; F09 polished placeholder atlas đang dùng `garden-art-polished-v1.png` với 19 slices/22 màu. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
+Đọc CHECKPOINT.md trước. F01–F09 và follow-up đã tích hợp; F09 active atlas là `garden-art-polished-v1.png` (19 slices/22 màu). F10 thêm nhịp pulse ngắn cho nhãn vàng khi vàng tăng. Tiến độ ở docs/FEATURE_STATUS.md, hành trình ở docs/DEVLOG.md. Sau mỗi feature cập nhật hiện trạng, dev log và commit/tag; không nối nhật ký dài vào file này.
 
 ## Project
 
@@ -21,7 +21,7 @@ Player chọn cây cho từng chậu, nhân vật tự trồng/tưới/thu hoạ
 
 ## Verification
 
-F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View pass; worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07/F08 verifications và UI pass đã ghi dưới các tag tương ứng. F09 atlas xác nhận 19 slices, 22 màu, alpha/silhouette gốc; profile validation, F01–F06 Editor verifications và Game View 920×180 pass. Windows QA build thành công trong profile cô lập; standalone Shop, Upgrades, Inventory, Cosmetics và restart/save được kiểm tra. Chưa kiểm DPI/multi-monitor hoặc gamepad.
+F01–F06 regression pass: 10k giao dịch, giới hạn số học, 1200s sim, pots/themes/upgrades, chest/gear, migration v1/v2, I/O, recovery và rebirth. Follow-up worker: compile, verifications F01–F06, Play Mode và Game View pass; worker/well chạm ground baseline, crop chạm mặt đất, worker sortingOrder 4 sau crop 5, và chỉ tưới khi chậu khô. F07/F08 verifications và UI pass đã ghi dưới các tag tương ứng. F09 atlas xác nhận 19 slices, 22 màu, alpha/silhouette gốc; profile validation, F01–F06 Editor verifications và Game View 920×180 pass. Windows QA build thành công trong profile cô lập; standalone Shop, Upgrades, Inventory, Cosmetics và restart/save được kiểm tra. F10 Play Mode xác nhận vàng tăng từ 30 lên 158 làm nhãn scale 1→1.12→1 trong 0.24 giây. Chưa kiểm DPI/multi-monitor hoặc gamepad.
 
 ## Workflow
 

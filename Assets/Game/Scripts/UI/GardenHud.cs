@@ -27,6 +27,26 @@ namespace IdleGarden
         public bool CosmeticsOpen => cosmeticWindow && cosmeticWindow.IsOpen;
         private bool rebirthArmed;
         private string notice;
+        private const float GoldPulseDuration = .24f;
+        private float goldPulseRemaining;
+        private double previousGold;
+        private bool hasPreviousGold;
+        private Vector3 moneyLabelRestScale = Vector3.one;
+
+        public void CacheEffectRestState()
+        {
+            if (moneyLabel) moneyLabelRestScale = moneyLabel.rectTransform.localScale;
+        }
+
+        public void TickEffects(float deltaTime)
+        {
+            if (!moneyLabel || goldPulseRemaining <= 0) return;
+            goldPulseRemaining = Mathf.Max(0, goldPulseRemaining - deltaTime);
+            float progress = 1 - goldPulseRemaining / GoldPulseDuration;
+            float scale = 1 + .12f * Mathf.Sin(progress * Mathf.PI);
+            moneyLabel.rectTransform.localScale = moneyLabelRestScale * scale;
+            if (goldPulseRemaining == 0) moneyLabel.rectTransform.localScale = moneyLabelRestScale;
+        }
 
         public void ToggleShop()
         {
@@ -136,6 +156,9 @@ namespace IdleGarden
             SetTabLabel(upgradesTabLabel, upgradesPage && upgradesPage.activeSelf);
             var progress = garden.Progression;
             if (progress == null || garden.Simulation == null) return;
+            if (!hasPreviousGold) hasPreviousGold = true;
+            else if (progress.Gold > previousGold) goldPulseRemaining = GoldPulseDuration;
+            previousGold = progress.Gold;
             moneyLabel.text = GardenProgression.Number(progress.Gold) + " gold   ·   " + progress.Seeds + " seeds";
             shopButtonLabel.text = ShopOpen ? "Garden" : "Shop";
             if (gearButtonLabel) gearButtonLabel.text = GearOpen ? "Close" : "Gear";
