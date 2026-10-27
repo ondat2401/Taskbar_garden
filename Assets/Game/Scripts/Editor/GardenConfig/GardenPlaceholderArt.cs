@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace IdleGarden.Editor
 {
-    // Editor-only pixel placeholders; replace assets through Garden Config later.
+    // Editor-only fallback sprites; the configured atlas supplies the active art.
     public static class GardenPlaceholderArt
     {
         private static Texture2D canvas;
@@ -38,7 +38,7 @@ namespace IdleGarden.Editor
         public static Dictionary<string, Sprite> Generate()
         {
             var sprites = new Dictionary<string, Sprite>();
-            const string atlasPath = "Assets/Game/Textures/Palette/garden-placeholder-atlas.png";
+            const string atlasPath = "Assets/Game/Textures/Palette/garden-art-polished-v1.png";
             foreach (Object asset in AssetDatabase.LoadAllAssetsAtPath(atlasPath))
                 if (asset is Sprite sprite) sprites[sprite.name] = sprite;
             if (sprites.Count == 19) return sprites;

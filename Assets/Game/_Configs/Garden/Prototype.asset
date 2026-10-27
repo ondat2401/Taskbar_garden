@@ -27,8 +27,8 @@ MonoBehaviour:
   plotSpacing: 1.6
   wellDistance: 1.5
   simulationSpeed: 1
-  soilSprite: {fileID: 2034330793, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
-  wellSprite: {fileID: 268725722, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
-  grassSprite: {fileID: -926374534, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
+  soilSprite: {fileID: -243525171935882092, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  wellSprite: {fileID: 7032131227818722396, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  grassSprite: {fileID: 8648822512753860137, guid: 1ff804707905cf748b258f25955248ef, type: 3}
   windowSize: {x: 920, y: 180}
   minimumWindowSize: {x: 560, y: 150}

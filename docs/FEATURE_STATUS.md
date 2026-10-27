@@ -13,7 +13,8 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F06 follow-up: grounding/watering | Đã kiểm tra | `checkpoint/f06-worker-grounding`; worker/well/crop đặt đúng baseline, worker vẽ sau cây; tưới khi khô, trồng/tưới luân phiên và quay vòng chậu; F01–F06 Editor verification, Play Mode và Game View pass. Chưa build standalone lại. |
 | F07 UI polish | Đã kiểm tra | `checkpoint/f07-ui-polish`; QA follow-up `checkpoint/f07-cosmetic-label-fix` sửa sáu nhãn offer cao 0px thành 40px. Play Mode xác nhận nhãn, chọn dòng/đóng cửa sổ và 78 nút theo palette; F01–F06 Editor verifications pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad. |
 | F08 shared art palette | Đã kiểm tra | `checkpoint/f08-shared-art-palette`; atlas 19 sprite cho worker, giếng, ground và 4 cây/3 giai đoạn, UI icon và world art dùng chung 22 màu; scene/prefab/config đã nối sprite, player 4 > soil 2, crop 5. Compile, mapping/theme setup, F01–F06 Editor verifications và Play Mode/Game View Upgrades pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad. |
+| F09 art pass | Đã tích hợp | `checkpoint/f09-art-pass`; sibling atlas polished v1, 19 slice, 22 màu và alpha/silhouette gốc; config/prefab/scene và Garden Config lookup đã trỏ art mới. Profile validation, F01–F06 verifications, Game View 920×180 và Windows build pass. Vẫn là placeholder. |
 
 Checkpoint tiếp theo chưa được chọn.
 
-AI assets: `theme-growth-ai.png` còn trong project nhưng prototype dùng `Textures/Palette/garden-placeholder-atlas.png`; nguồn và prompt ở [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md). `garden-icons-ai.png` được remap về tập màu chung.
+AI assets: `theme-growth-ai.png` còn trong project; prototype dùng `Textures/Palette/garden-art-polished-v1.png`, còn atlas cũ được giữ để đối chiếu. Nguồn, chuẩn hóa và prompt ở [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md). `garden-icons-ai.png` được remap về tập màu chung.

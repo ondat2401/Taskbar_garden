@@ -116,8 +116,18 @@ Play Mode hiển thị đủ sáu tên, chọn Blue Glaze cập nhật phần ch
 
 **Cảnh quay:** mở Menu → Cosmetics, xác nhận sáu offer hiện tên rồi chọn Blue Glaze.
 
+### F09 — polished placeholder atlas
+
+**2026-10-27 · `checkpoint/f09-art-pass`**
+
+Tạo bản atlas pixel-art polished v1 làm sibling asset. Imagegen raw có glow và màu ngoài palette nên không dùng trực tiếp; Editor dùng alpha/silhouette gốc làm khuôn, snap pixel nhìn thấy về `GardenUiPalette.SharedColors`, rồi giữ 19 tên/slice custom và importer Point. Config worker/crop/garden, prefab, scene và `GardenPlaceholderArt.Generate()` đều chuyển sang atlas mới. Art vẫn là placeholder.
+
+Kiểm tra 1536×1024, alpha trong suốt, 22 màu, đủ 19 sprite; profile visual validation và F01–F06 Editor verifications pass. Game View 920×180 và Windows build hiển thị atlas mới. F11 standalone QA sau đó xác nhận Shop, Upgrades và Cosmetics; Inventory đã mở được ở standalone QA. Chưa kiểm DPI/multi-monitor/gamepad.
+
+**Cảnh quay:** mở game window 920×180 để thấy worker/giếng/4 luống, sau đó mở Shop và Inventory.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-Checkpoint tiếp theo chưa xác định; cập nhật sau khi chốt feature kế tiếp, không tạo sẵn câu chuyện thành công.
+Tiếp theo: F10 feedback nhỏ khi vàng tăng; rồi chốt menu/UI compact và kiểm standalone/save.

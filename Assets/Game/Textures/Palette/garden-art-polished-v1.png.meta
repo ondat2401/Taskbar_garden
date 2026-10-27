@@ -1,0 +1,707 @@
+fileFormatVersion: 2
+guid: 1ff804707905cf748b258f25955248ef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5169872500343965406
+    second: garden-art-polished-v1_0
+  - first:
+      213: -4244689430714532724
+    second: garden-art-polished-v1_1
+  - first:
+      213: 2761126539632905678
+    second: garden-art-polished-v1_2
+  - first:
+      213: 7770662954528412913
+    second: garden-art-polished-v1_3
+  - first:
+      213: -9112234809790230155
+    second: garden-art-polished-v1_4
+  - first:
+      213: 8695728694740294741
+    second: garden-art-polished-v1_5
+  - first:
+      213: -1320145861858324378
+    second: garden-art-polished-v1_6
+  - first:
+      213: -5461305832621592137
+    second: garden-art-polished-v1_7
+  - first:
+      213: 6865506604429558967
+    second: garden-art-polished-v1_8
+  - first:
+      213: 2716369239815590114
+    second: garden-art-polished-v1_9
+  - first:
+      213: 8291188892206681163
+    second: garden-art-polished-v1_10
+  - first:
+      213: -6745679754766713883
+    second: garden-art-polished-v1_11
+  - first:
+      213: 1674702323251124168
+    second: garden-art-polished-v1_12
+  - first:
+      213: -8904863511107828668
+    second: garden-art-polished-v1_13
+  - first:
+      213: -2690721406300009995
+    second: garden-art-polished-v1_14
+  - first:
+      213: -2640990029000338101
+    second: garden-art-polished-v1_15
+  - first:
+      213: -5938524517964835818
+    second: garden-art-polished-v1_16
+  - first:
+      213: -4437871879004135912
+    second: garden-art-polished-v1_17
+  - first:
+      213: -6262931256635040960
+    second: garden-art-polished-v1_18
+  - first:
+      213: -1575910046944229435
+    second: garden-art-polished-v1_19
+  - first:
+      213: 37530863181737824
+    second: garden-art-polished-v1_20
+  - first:
+      213: 853996796439685790
+    second: garden-art-polished-v1_21
+  - first:
+      213: -8451271467927068186
+    second: garden-art-polished-v1_22
+  - first:
+      213: 4955166245259746015
+    second: garden-art-polished-v1_23
+  - first:
+      213: -782699516307597908
+    second: worker0
+  - first:
+      213: -7112616183496871129
+    second: worker1
+  - first:
+      213: -4621786969421247497
+    second: worker2
+  - first:
+      213: 7003672890920608587
+    second: worker3
+  - first:
+      213: 7032131227818722396
+    second: well
+  - first:
+      213: 8648822512753860137
+    second: grass
+  - first:
+      213: -243525171935882092
+    second: soil
+  - first:
+      213: 4978031396948643067
+    second: carrot0
+  - first:
+      213: 8911945515059208021
+    second: carrot1
+  - first:
+      213: -174384406216308394
+    second: carrot2
+  - first:
+      213: 6166284107870342428
+    second: radish0
+  - first:
+      213: -88632146512149221
+    second: radish1
+  - first:
+      213: -5774380144165713242
+    second: radish2
+  - first:
+      213: -1292461377496998411
+    second: fire0
+  - first:
+      213: 1344034503708552040
+    second: fire1
+  - first:
+      213: -904066617910761335
+    second: fire2
+  - first:
+      213: 4196280093119473595
+    second: frost0
+  - first:
+      213: 9086137517816353304
+    second: frost1
+  - first:
+      213: -2941178841591143321
+    second: frost2
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 170
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: worker0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca59d94dfea4325f0800000000000000
+      internalID: -782699516307597908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72379fee349ea4d90800000000000000
+      internalID: -7112616183496871129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb0e141d3d1cdfb0800000000000000
+      internalID: -4621786969421247497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b432b52236b023160800000000000000
+      internalID: 7003672890920608587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: well
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5401180816279160800000000000000
+      internalID: 7032131227818722396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 724
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e581e704ac60870800000000000000
+      internalID: 8648822512753860137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soil
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49455e87523de9cf0800000000000000
+      internalID: -243525171935882092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc8dd74e25851540800000000000000
+      internalID: 4978031396948643067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f5dba7a379dab70800000000000000
+      internalID: 8911945515059208021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carrot2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6590c157e46749df0800000000000000
+      internalID: -174384406216308394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radish0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d8fb9c9ba039550800000000000000
+      internalID: 6166284107870342428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radish1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 484
+        width: 256
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b158677488d15cef0800000000000000
+      internalID: -88632146512149221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radish2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa0fe45ad74ddfa0800000000000000
+      internalID: -5774380144165713242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd11649931401ee0800000000000000
+      internalID: -1292461377496998411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86baa679248f6a210800000000000000
+      internalID: 1344034503708552040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 988e322733c1473f0800000000000000
+      internalID: -904066617910761335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7ed68038e2c3a30800000000000000
+      internalID: 4196280093119473595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 249
+        width: 256
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8121bc99ee1781e70800000000000000
+      internalID: 9086137517816353304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764a0163d65de27d0800000000000000
+      internalID: -2941178841591143321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      carrot0: 4978031396948643067
+      carrot1: 8911945515059208021
+      carrot2: -174384406216308394
+      fire0: -1292461377496998411
+      fire1: 1344034503708552040
+      fire2: -904066617910761335
+      frost0: 4196280093119473595
+      frost1: 9086137517816353304
+      frost2: -2941178841591143321
+      garden-art-polished-v1_0: 5169872500343965406
+      garden-art-polished-v1_1: -4244689430714532724
+      garden-art-polished-v1_10: 8291188892206681163
+      garden-art-polished-v1_11: -6745679754766713883
+      garden-art-polished-v1_12: 1674702323251124168
+      garden-art-polished-v1_13: -8904863511107828668
+      garden-art-polished-v1_14: -2690721406300009995
+      garden-art-polished-v1_15: -2640990029000338101
+      garden-art-polished-v1_16: -5938524517964835818
+      garden-art-polished-v1_17: -4437871879004135912
+      garden-art-polished-v1_18: -6262931256635040960
+      garden-art-polished-v1_19: -1575910046944229435
+      garden-art-polished-v1_2: 2761126539632905678
+      garden-art-polished-v1_20: 37530863181737824
+      garden-art-polished-v1_21: 853996796439685790
+      garden-art-polished-v1_22: -8451271467927068186
+      garden-art-polished-v1_23: 4955166245259746015
+      garden-art-polished-v1_3: 7770662954528412913
+      garden-art-polished-v1_4: -9112234809790230155
+      garden-art-polished-v1_5: 8695728694740294741
+      garden-art-polished-v1_6: -1320145861858324378
+      garden-art-polished-v1_7: -5461305832621592137
+      garden-art-polished-v1_8: 6865506604429558967
+      garden-art-polished-v1_9: 2716369239815590114
+      grass: 8648822512753860137
+      radish0: 6166284107870342428
+      radish1: -88632146512149221
+      radish2: -5774380144165713242
+      soil: -243525171935882092
+      well: 7032131227818722396
+      worker0: -782699516307597908
+      worker1: -7112616183496871129
+      worker2: -4621786969421247497
+      worker3: 7003672890920608587
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

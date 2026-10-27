@@ -22,6 +22,6 @@ MonoBehaviour:
   yield: 2
   sellPrice: 8
   stages:
-  - {fileID: 962516142, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
-  - {fileID: 1439909922, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
-  - {fileID: 431314238, guid: b91ab9542cf04544ea279785ad2947af, type: 3}
+  - {fileID: 6166284107870342428, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  - {fileID: -88632146512149221, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  - {fileID: -5774380144165713242, guid: 1ff804707905cf748b258f25955248ef, type: 3}

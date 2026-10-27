@@ -10,11 +10,13 @@ Bộ art này là placeholder để tiếp tục sửa. Sprite hiện dùng pixe
 | Đất | `#45362E` `#755139` `#A07B4F` |
 | Nước/thu hoạch/hoa | `#7098A0` `#CD7D3D` `#BE6C7A` `#DCD0B0` `#E5B85C` `#F3E9C9` |
 
-Atlas đang dùng là [garden-placeholder-atlas.png](../Assets/Game/Textures/Palette/garden-placeholder-atlas.png); ảnh nguồn trước khi chuẩn hóa là [garden-placeholder-atlas-source.png](../Assets/Game/Textures/Palette/garden-placeholder-atlas-source.png). Bản nhập giữ pixel cứng: alpha dưới 192 được làm trong suốt, pixel còn lại được snap về màu gần nhất trong palette. Importer dùng Point, không mipmap, không compression, PPU 170.
+Atlas đang dùng là [garden-art-polished-v1.png](../Assets/Game/Textures/Palette/garden-art-polished-v1.png). Atlas ban đầu vẫn được giữ tại [garden-placeholder-atlas.png](../Assets/Game/Textures/Palette/garden-placeholder-atlas.png), cùng ảnh nguồn [garden-placeholder-atlas-source.png](../Assets/Game/Textures/Palette/garden-placeholder-atlas-source.png).
+
+F09 tạo bản art ứng viên 1536×1024 rồi chuẩn hóa trong Unity Editor: giữ alpha/silhouette của atlas cũ, snap pixel nhìn thấy về 22 màu `GardenUiPalette.SharedColors`, sao chép 19 custom slices và giữ importer Point, không mipmap, không compression, PPU 170. Bản raw có glow/nền và màu ngoài palette nên không được nhập trực tiếp. Atlas mới vẫn là placeholder có thể thay tiếp, không phải art cuối.
 
 Sprite names trong atlas được tham chiếu trực tiếp bởi ScriptableObject: hàng 1 `worker0` idle, `worker1`/`worker2` walk, `worker3` work, `well`, `grass`; hàng 2 `soil`, `carrot0`–`carrot2`, `radish0`–`radish1`; hàng 3 `radish2`, `fire0`–`fire2`, `frost0`–`frost1`; hàng 4 `frost2`. Sprite rectangles là custom vì nội dung atlas tràn khỏi hàng lưới đều; giữ nguyên tên/slice IDs khi sửa sheet. Player sortingOrder 4, soil 2, crop 5.
 
-Nguồn ảnh: built-in Imagegen, tạo ngày 2026-10-20; phiên bản model không được công cụ trả về. Không dùng ảnh tham chiếu hay asset bên ngoài. File nguồn là kết quả của một yêu cầu tạo atlas pixel art và một lượt chỉnh giữ silhouette, bỏ glow/nền, ép palette. Có thể thay placeholder bằng cách chỉnh sheet đã nhập và giữ kích thước 1536×1024, tên sprite cùng custom slices để không đứt các reference.
+Nguồn atlas gốc: built-in Imagegen ngày 2026-10-20, không dùng ảnh tham chiếu hay asset bên ngoài. Bản polished v1 tạo ngày 2026-10-27 từ atlas đó làm reference; alpha gốc và custom slices được giữ để bảo toàn reference. Khi thay tiếp, giữ kích thước 1536×1024, 19 tên sprite, custom rectangles, alpha trong suốt và palette chung.
 
 ## Prompt tạo atlas
 
