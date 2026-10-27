@@ -21,6 +21,7 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f10-gold-feedback` | Pulse nhẹ nhãn vàng sau khi số vàng tăng | Play Mode self-check: vàng 30→158, label scale 1→1.12→1; trở về scale nghỉ, không tạo object runtime |
 | `checkpoint/f11-compact-menu` | Rút gọn 5 hàng menu để Cosmetics dùng được trên cửa sổ compact | Standalone 920×180 hiển thị Cosmetics; mở/đóng Cosmetics, Shop/Upgrades và Inventory pass |
 | `checkpoint/f12-release-qa` | QA standalone cuối sau khi sửa menu compact | Windows QA build và F01–F06 Editor verifications pass; menu 920×180, Cosmetics, Shop/Upgrades và save v3 sau restart xác nhận; Inventory/Gear đã smoke-test trước |
+| `checkpoint/f13-art-assets` | Thay art theo palette 8×8, texture tĩnh tách riêng, animation sheet riêng theo asset | Raster assert, compile, profile validation, Game View 920×180 và runtime sway check pass; chưa chạy Windows build/test suite |
 
 Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). F01–F12 đã có checkpoint; checkpoint tiếp theo chưa được chọn.
 

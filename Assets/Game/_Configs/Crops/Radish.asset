@@ -22,6 +22,11 @@ MonoBehaviour:
   yield: 2
   sellPrice: 8
   stages:
-  - {fileID: 6166284107870342428, guid: 1ff804707905cf748b258f25955248ef, type: 3}
-  - {fileID: -88632146512149221, guid: 1ff804707905cf748b258f25955248ef, type: 3}
-  - {fileID: -5774380144165713242, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  - {fileID: -1367897427, guid: a969096b0c21623438f1088e98abb35d, type: 3}
+  - {fileID: 1490220955, guid: a969096b0c21623438f1088e98abb35d, type: 3}
+  - {fileID: 1611326773, guid: a969096b0c21623438f1088e98abb35d, type: 3}
+  swayStages:
+  - {fileID: -1865214012, guid: a969096b0c21623438f1088e98abb35d, type: 3}
+  - {fileID: -1084019363, guid: a969096b0c21623438f1088e98abb35d, type: 3}
+  - {fileID: -815131778, guid: a969096b0c21623438f1088e98abb35d, type: 3}
+  animationFps: 2

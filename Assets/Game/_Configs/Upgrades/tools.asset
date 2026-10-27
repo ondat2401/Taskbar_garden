@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tools
   displayName: Better tools
   description: All action speeds +20% of base per rank.
-  icon: {fileID: 2133484799, guid: e8bc00fdff262c048a06352c8c986ff5, type: 3}
+  icon: {fileID: 21300000, guid: fc62de0b1a49751489b1f30430980d9c, type: 3}
   stat: 3
   targetCrop: {fileID: 0}
   bonusPerLevel: 0.2

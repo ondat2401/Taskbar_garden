@@ -60,7 +60,7 @@ namespace IdleGarden
             var frames = Simulation.Moving ? config.walkFrames : Simulation.Job == GardenJob.Idle ? config.idleFrames : config.workFrames;
             if (frames != null && frames.Length > 0)
                 workerRenderer.sprite = frames[(int)(animationTime * config.animationFps) % frames.Length];
-            for (int i = 0; i < plots.Length; i++) plots[i].Render(Simulation.Plots[i]);
+            for (int i = 0; i < plots.Length; i++) plots[i].Render(Simulation.Plots[i], animationTime);
             if (Mouse.current != null)
             {
                 Vector2 pointer = Mouse.current.position.ReadValue();

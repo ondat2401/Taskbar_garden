@@ -16,6 +16,8 @@ namespace IdleGarden
         [Min(1)] public int yield = 1;
         [Min(1)] public int sellPrice = 8;
         public Sprite[] stages;
+        public Sprite[] swayStages;
+        [Min(1)] public float animationFps = 2;
     }
 }
 

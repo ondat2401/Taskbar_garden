@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using UnityEditor.U2D.Sprites;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,7 +10,7 @@ namespace IdleGarden.Editor
 {
     public static class GardenProgressionSetup
     {
-        private const string AtlasPath = "Assets/Game/Textures/UI/garden-icons-ai.png";
+        private const string IconPath = "Assets/Game/Textures/UI/icon-";
 
         [MenuItem("Tools/Idle Garden/Apply Compact Garden and Progression")]
         public static void Apply()
@@ -111,33 +110,11 @@ namespace IdleGarden.Editor
         public static Dictionary<string, Sprite> ImportIcons()
         {
             var icons = new Dictionary<string, Sprite>();
-            if (!File.Exists(AtlasPath)) return icons;
-            AssetDatabase.ImportAsset(AtlasPath, ImportAssetOptions.ForceSynchronousImport);
-            var importer = (TextureImporter)AssetImporter.GetAtPath(AtlasPath);
-            importer.textureType = TextureImporterType.Sprite; importer.spriteImportMode = SpriteImportMode.Multiple;
-            importer.filterMode = FilterMode.Point; importer.mipmapEnabled = false; importer.alphaIsTransparency = true;
-            importer.textureCompression = TextureImporterCompression.Uncompressed; importer.maxTextureSize = 2048;
-            importer.SaveAndReimport();
-            var factories = new SpriteDataProviderFactories(); factories.Init();
-            var provider = factories.GetSpriteEditorDataProviderFromObject(importer); provider.InitSpriteEditorDataProvider();
-            var old = provider.GetSpriteRects();
-            if (old.Length != 4)
+            foreach (string name in new[] { "watering", "seeds", "harvest", "rebirth" })
             {
-                importer.GetSourceTextureWidthAndHeight(out int width, out int height);
-                string[] names = { "watering", "seeds", "harvest", "rebirth" };
-                var rects = new SpriteRect[4];
-                var pairs = new List<SpriteNameFileIdPair>();
-                for (int i = 0; i < 4; i++)
-                {
-                    rects[i] = new SpriteRect { name = names[i], rect = new Rect(i % 2 * width / 2f, i < 2 ? height / 2f : 0, width / 2f, height / 2f),
-                        pivot = new Vector2(.5f,.5f), alignment = SpriteAlignment.Center, spriteID = GUID.Generate() };
-                    pairs.Add(new SpriteNameFileIdPair(rects[i].name, rects[i].spriteID));
-                }
-                provider.SetSpriteRects(rects);
-                provider.GetDataProvider<ISpriteNameFileIdDataProvider>().SetNameFileIdPairs(pairs);
-                provider.Apply(); importer.SaveAndReimport();
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(IconPath + name + ".png");
+                if (sprite) icons.Add(name, sprite);
             }
-            foreach (var asset in AssetDatabase.LoadAllAssetsAtPath(AtlasPath)) if (asset is Sprite sprite) icons[sprite.name] = sprite;
             return icons;
         }
 

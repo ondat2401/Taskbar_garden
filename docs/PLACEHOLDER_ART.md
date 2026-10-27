@@ -18,10 +18,12 @@ Bộ art đang là placeholder. Rule mới cho asset pixel art dùng palette 8×
 - Chọn màu trực tiếp từ đúng một ô trong palette; không thêm màu trung gian. Alpha chỉ được trong suốt hoàn toàn hoặc đục hoàn toàn.
 - Vẽ trên grid pixel logic rồi phóng bằng nearest-neighbor hệ số nguyên 8. Kích thước texture chia hết cho 8; không kéo méo, blur, anti-alias, gradient, glow, hạt/nhiễu hoặc lem màu.
 - Mỗi khối 8×8 texel phải phẳng một màu. Nếu có nguồn Imagegen, xem đó là draft rồi lượng tử hóa về grid và 64 màu trước khi nhập Unity.
+- Mỗi asset tĩnh dùng một PNG riêng; không gom nhiều asset vào atlas. Chỉ asset có animation mới dùng sheet riêng của chính nó (worker hoặc một loài cây).
+- Sheet animation chỉ chứa frame của một asset; các frame giữ cùng rect, baseline, pivot và kích thước để không giật hoặc méo khi đổi frame.
 - Import sprite bằng Point, không mipmap, không compression; giữ aspect ratio và chỉ scale theo bội số nguyên.
 - Trước khi duyệt, xác nhận kích thước, alpha, tập màu con của 64 swatch và tính đồng nhất từng khối 8×8.
 
-Texture mẫu chờ đánh giá: [garden-flower-palette8-preview.png](../Assets/Game/Textures/Palette/garden-flower-palette8-preview.png), 256×256 px, canvas logic 32×32, mỗi điểm 8×8 px. Đây là sibling asset chưa nối vào scene/config. Atlas đang chạy vẫn là [garden-art-polished-v1.png](../Assets/Game/Textures/Palette/garden-art-polished-v1.png); chưa rebuild atlas hoặc thay sprite trước khi duyệt mẫu. Palette mới giữ nguyên đủ 22 màu RGB cũ của atlas và UI, đồng thời thêm màu tươi sáng hơn. Editor fallback cũng snap màu về palette, xuất block 8×8 và nhân PPU lên 8× để giữ nguyên kích thước world.
+Texture mẫu đã duyệt: [garden-flower-palette8-preview.png](../Assets/Game/Textures/Palette/garden-flower-palette8-preview.png), 256×256 px, canvas logic 32×32, mỗi điểm 8×8 px. Art active được tách theo rule: PNG tĩnh trong `Textures/Environment/` và `Textures/UI/`; worker sheet trong `Textures/Worker/worker-animation.png`; mỗi crop có sheet riêng trong `Textures/Crops/`. Palette mới giữ nguyên đủ 22 màu RGB cũ và thêm màu tươi sáng hơn.
 
 Nguồn mẫu: built-in Imagegen ngày 2026-10-27, không dùng ảnh tham chiếu; draft 1254×1254 được alpha-crop, snap màu và upscale nearest-neighbor. Prompt: “one small, readable, cheerful flowering garden crop with leaves and one bright orange flower, side-view/front-facing orthographic; transparent background, centered, no ground or pot; chunky square pixel art, vivid greens/orange/cream; no anti-aliasing, gradients, shadows, texture, noise, grid, text, blur or glow.”
 
@@ -33,13 +35,15 @@ Nguồn mẫu: built-in Imagegen ngày 2026-10-27, không dùng ảnh tham chi�
 | Đất | `#45362E` `#755139` `#A07B4F` |
 | Nước/thu hoạch/hoa | `#7098A0` `#CD7D3D` `#BE6C7A` `#DCD0B0` `#E5B85C` `#F3E9C9` |
 
-Atlas đang dùng là [garden-art-polished-v1.png](../Assets/Game/Textures/Palette/garden-art-polished-v1.png). Atlas ban đầu vẫn được giữ tại [garden-placeholder-atlas.png](../Assets/Game/Textures/Palette/garden-placeholder-atlas.png), cùng ảnh nguồn [garden-placeholder-atlas-source.png](../Assets/Game/Textures/Palette/garden-placeholder-atlas-source.png).
+Atlas F09 và nguồn của nó được lưu để đối chiếu trong `Textures/Legacy/Palette/`; chúng không còn là art active.
+
+F13 tạo draft Imagegen riêng cho worker, bốn loài cây, môi trường và icon. Draft được cắt theo alpha, lượng tử hóa ở grid logic, snap về palette 64 màu rồi phóng nearest-neighbor ×8. Mỗi PNG active đã qua kiểm tra alpha nhị phân và block màu 8×8. Môi trường/icon là texture đơn; crop giữ sáu frame theo từng loài; worker giữ bốn pose trong sheet riêng.
 
 F09 tạo bản art ứng viên 1536×1024 rồi chuẩn hóa trong Unity Editor: giữ alpha/silhouette của atlas cũ, snap pixel nhìn thấy về 22 màu `GardenUiPalette.SharedColors`, sao chép 19 custom slices và giữ importer Point, không mipmap, không compression, PPU 170. Bản raw có glow/nền và màu ngoài palette nên không được nhập trực tiếp. Atlas mới vẫn là placeholder có thể thay tiếp, không phải art cuối.
 
-Sprite names trong atlas được tham chiếu trực tiếp bởi ScriptableObject: hàng 1 `worker0` idle, `worker1`/`worker2` walk, `worker3` work, `well`, `grass`; hàng 2 `soil`, `carrot0`–`carrot2`, `radish0`–`radish1`; hàng 3 `radish2`, `fire0`–`fire2`, `frost0`–`frost1`; hàng 4 `frost2`. Sprite rectangles là custom vì nội dung atlas tràn khỏi hàng lưới đều; giữ nguyên tên/slice IDs khi sửa sheet. Player sortingOrder 4, soil 2, crop 5.
+Mapping sprite trong atlas F09 được ghi ở đây để tra lịch sử: hàng 1 `worker0` idle, `worker1`/`worker2` walk, `worker3` work, `well`, `grass`; các hàng sau chứa soil và ba stage của carrot/radish/fire/frost. Atlas đã chuyển sang Legacy; runtime hiện load sprite riêng và sheet frame theo tên. Player sortingOrder 4, soil 2, crop 5.
 
-Nguồn atlas gốc: built-in Imagegen ngày 2026-10-20, không dùng ảnh tham chiếu hay asset bên ngoài. Bản polished v1 tạo ngày 2026-10-27 từ atlas đó làm reference; alpha gốc và custom slices được giữ để bảo toàn reference. Khi thay tiếp, giữ kích thước 1536×1024, 19 tên sprite, custom rectangles, alpha trong suốt và palette chung.
+Nguồn atlas F09: built-in Imagegen ngày 2026-10-20; polished v1 được tạo ngày 2026-10-27 và hiện lưu ở `Textures/Legacy/Palette/`.
 
 ## Prompt F09 tạo atlas (lưu lịch sử; không dùng cho asset mới)
 

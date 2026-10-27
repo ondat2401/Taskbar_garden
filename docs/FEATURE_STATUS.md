@@ -17,9 +17,9 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F10 game feel | Đã kiểm tra | Nhãn vàng pulse 12% trong 0.24 giây khi vàng tăng, rồi về scale ban đầu. Play Mode self-check: 30→158 vàng, scale 1→1.12→1; không thêm object hay allocation mỗi frame. |
 | F11 final UI | Đã kiểm tra | Năm mục menu (Always on top, Position lock, Pause, Exit, Cosmetics) co về 24px trong panel cao 140px; Cosmetics không còn nằm dưới mép ở cửa sổ 920×180. Standalone mở/đóng Cosmetics, Shop/Upgrades và Inventory. |
 | F12 standalone QA | Đã kiểm tra | Windows QA build thành công; F01–F06 Editor verifications pass. Standalone 920×180 hiển thị đủ menu, mở/đóng Cosmetics và mở Shop/Upgrades; Inventory/Gear đã smoke-test trước. Save v3 trong profile QA riêng còn sau restart (gold 86). |
-| F13 pixel-art rules | Chờ đánh giá mẫu | `checkpoint/f13-art-review`; palette 8×8/64 màu, preview hoa 256×256 với block 8×8 và 19 màu opaque; helper Editor fallback snap palette và xuất đúng block. Unity compile pass; importer Point/no mipmaps/uncompressed. Chưa thay atlas/scene. |
+| F13 art assets | Đã tích hợp | `checkpoint/f13-art-assets`; palette 8×8/64 màu; texture tĩnh tách riêng, worker 4 frame và bốn crop sheet 6 frame; scene/prefab/config đã remap. Raster assert, compile, profile validation, Game View 920×180 và runtime sway pass. |
 | F14 weather sync | Phase kế tiếp | Sau khi chốt asset: xác minh app/nguồn thời tiết đang dùng trên máy (Google/Microsoft), các điều kiện/API có sẵn, rồi map điều kiện vào game. Chưa chọn provider hoặc triển khai. |
 
-F01–F12 đã được tích hợp và kiểm tra theo phạm vi ghi ở đây. F13 đang chờ đánh giá hình; F14 weather sync là phase sau asset. DPI, multi-monitor và gamepad chưa được kiểm tra.
+F01–F13 đã được tích hợp và kiểm tra theo phạm vi ghi ở đây. F14 weather sync là phase kế tiếp sau art. DPI, multi-monitor và gamepad chưa được kiểm tra.
 
-AI assets: `theme-growth-ai.png` còn trong project; prototype dùng `Textures/Palette/garden-art-polished-v1.png`, còn atlas cũ được giữ để đối chiếu. Nguồn, chuẩn hóa và prompt ở [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md). `garden-icons-ai.png` được remap về tập màu chung.
+AI draft/source texture cũ được giữ trong `Textures/Legacy/`; runtime/config hiện dùng từng PNG tĩnh riêng hoặc sheet animation riêng cho từng asset có chuyển động. Nguồn, chuẩn hóa và prompt ở [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md).

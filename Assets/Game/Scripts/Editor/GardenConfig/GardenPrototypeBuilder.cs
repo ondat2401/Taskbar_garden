@@ -137,10 +137,12 @@ namespace IdleGarden.Editor
             AssetDatabase.CreateAsset(worker, "Assets/Game/_Configs/Worker/Gardener.asset");
             var carrot = ScriptableObject.CreateInstance<CropDefinition>();
             carrot.stages = new[] { art["carrot0"], art["carrot1"], art["carrot2"] };
+            carrot.swayStages = new[] { art["carrot0-sway"], art["carrot1-sway"], art["carrot2-sway"] };
             AssetDatabase.CreateAsset(carrot, "Assets/Game/_Configs/Crops/Carrot.asset");
             var radish = ScriptableObject.CreateInstance<CropDefinition>(); radish.id = "radish"; radish.displayName = "Radish";
             radish.growSeconds = 30; radish.waterCapacity = 16; radish.yield = 2;
             radish.stages = new[] { art["radish0"], art["radish1"], art["radish2"] };
+            radish.swayStages = new[] { art["radish0-sway"], art["radish1-sway"], art["radish2-sway"] };
             AssetDatabase.CreateAsset(radish, "Assets/Game/_Configs/Crops/Radish.asset");
             var profile = ScriptableObject.CreateInstance<GardenProfile>(); profile.worker = worker;
             profile.soilSprite = art["soil"]; profile.wellSprite = art["well"]; profile.grassSprite = art["grass"];

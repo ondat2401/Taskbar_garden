@@ -1,14 +1,13 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-27. F01–F12 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window; F12 xác nhận Windows QA build, UI compact và save v3 qua restart trong profile QA riêng. F13 chuẩn hóa rule pixel art và có texture mẫu đang chờ đánh giá; F14 weather sync là phase tiếp theo sau asset. Người dùng cho phép tự làm, test và commit từng giai đoạn.
+Cập nhật 2026-10-27. F01–F12 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window; F12 xác nhận Windows QA build và save v3 qua restart trong profile QA riêng. F13 đã thay art đang dùng bằng texture riêng theo palette 8×8/64 màu; worker và từng loài cây có animation sheet riêng. F14 weather sync là phase tiếp theo sau asset. Người dùng cho phép tự làm, kiểm tra và commit từng giai đoạn.
 
-## Phase hiện tại — F13 art rule (chờ đánh giá)
+## Phase hiện tại — F14 đồng bộ thời tiết (kế tiếp)
 
-- Mốc lưu: `checkpoint/f13-art-review`.
-- Palette 8×8/64 màu ở `Assets/Game/Textures/Palette/garden-art-palette-8x8.png`; sample hoa ở `garden-flower-palette8-preview.png`, 256×256 px, pixel block 8×8, chưa tích hợp.
-- `GardenUiPalette.SharedColors` giữ đủ 22 màu hiện tại và thêm màu sáng; helper fallback Editor upscale grid 8×8, PPU tăng tương ứng để không đổi kích thước world.
-- Đã kiểm raster palette/block/màu; Unity compile pass, importer Point/no mipmaps/uncompressed xác nhận. Atlas F09 vẫn là art active đến khi sample được duyệt.
-- Phase kế tiếp sau asset: F14 khảo sát nguồn thời tiết đang dùng trên máy, điều kiện/API và ánh xạ sang game; chưa chọn provider.
+- Palette board: `Assets/Game/Textures/Palette/garden-art-palette-8x8.png`; texture hoa mẫu đã được duyệt và giữ làm chuẩn.
+- Texture tĩnh tách PNG riêng; `worker-animation.png` là sheet 4 frame; mỗi loài cây có sheet 6 frame (3 stage + 3 sway). Atlas cũ và sprite trùng được lưu ở `Assets/Game/Textures/Legacy/`.
+- Raster check xác nhận palette, alpha 0/255 và block 8×8 phẳng trên texture mới. Unity compile/profile validation pass; Game View 920×180 đã xem; runtime kiểm tra sway đổi từ `carrot1` sang `carrot1-sway`.
+- F14: khảo sát app/nguồn thời tiết khả dụng trên máy, loại điều kiện/API và ánh xạ vào game; chưa chọn provider hoặc bắt đầu triển khai.
 
 ## Đã chốt
 

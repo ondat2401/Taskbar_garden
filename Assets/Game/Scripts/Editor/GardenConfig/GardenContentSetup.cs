@@ -26,6 +26,7 @@ namespace IdleGarden.Editor
             var ice = Crop("frost-bloom", "Frost bloom", frost, 35, 20, .6f, config.crops[0].stages);
             foreach (var crop in new[] { fire, ice }) if (!crops.Contains(crop)) crops.Add(crop);
             config.crops = crops.ToArray(); EditorUtility.SetDirty(config); AssetDatabase.SaveAssetIfDirty(config);
+            GardenThemeArt.Apply();
         }
         private static GardenTheme Theme(string id, string title, double cost, Color tint)
         {

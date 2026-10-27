@@ -15,7 +15,7 @@ MonoBehaviour:
   id: mulch
   displayName: Water-saving mulch
   description: Water efficiency +20% of base per rank.
-  icon: {fileID: 1708697024, guid: e8bc00fdff262c048a06352c8c986ff5, type: 3}
+  icon: {fileID: 21300000, guid: 2efd55f694d51d440b20ac7522eb0713, type: 3}
   stat: 5
   targetCrop: {fileID: 0}
   bonusPerLevel: 0.2

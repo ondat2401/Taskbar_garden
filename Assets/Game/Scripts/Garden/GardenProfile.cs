@@ -62,8 +62,9 @@ namespace IdleGarden
             if (!worker || !HasFrames(worker.idleFrames) || !HasFrames(worker.walkFrames) || !HasFrames(worker.workFrames))
             { error = "Worker requires non-empty Idle / Walk / Work sprite arrays."; return false; }
             for (int i = 0; i < plots.Count; i++)
-                if (plots[i] == null || !plots[i].crop || !HasFrames(plots[i].crop.stages))
-                { error = $"Plot {i + 1}: assign crop stage sprites before applying layout."; return false; }
+                if (plots[i] == null || !plots[i].crop || !HasFrames(plots[i].crop.stages) ||
+                    plots[i].crop.swayStages == null || plots[i].crop.swayStages.Length != plots[i].crop.stages.Length || !HasFrames(plots[i].crop.swayStages))
+                { error = $"Plot {i + 1}: assign matching crop stage and sway sprites before applying layout."; return false; }
             if (minimumWindowSize.x < 400 || minimumWindowSize.y < 140 || windowSize.x < minimumWindowSize.x || windowSize.y < minimumWindowSize.y)
             { error = "Window size must fit minimum size (at least 400 × 140)."; return false; }
             error = null; return true;

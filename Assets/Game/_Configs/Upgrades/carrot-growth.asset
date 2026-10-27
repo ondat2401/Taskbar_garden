@@ -15,7 +15,7 @@ MonoBehaviour:
   id: carrot-growth
   displayName: Seed selection
   description: Carrot growth speed +25% of base per rank.
-  icon: {fileID: -609968656, guid: e8bc00fdff262c048a06352c8c986ff5, type: 3}
+  icon: {fileID: 21300000, guid: 184bd2a8c157f14408c39b0f7f66504a, type: 3}
   stat: 0
   targetCrop: {fileID: 11400000, guid: 553d7976175bd424bbd159380ce99d78, type: 2}
   bonusPerLevel: 0.25

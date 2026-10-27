@@ -20,11 +20,11 @@ MonoBehaviour:
   tankCapacity: 24
   waterPerAction: 10
   idleFrames:
-  - {fileID: -782699516307597908, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  - {fileID: -1946205258, guid: e014fa9e71ef2e741a21d07c0c9cd6bc, type: 3}
   walkFrames:
-  - {fileID: -7112616183496871129, guid: 1ff804707905cf748b258f25955248ef, type: 3}
-  - {fileID: -4621786969421247497, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  - {fileID: -1784340252, guid: e014fa9e71ef2e741a21d07c0c9cd6bc, type: 3}
+  - {fileID: -2042110818, guid: e014fa9e71ef2e741a21d07c0c9cd6bc, type: 3}
   workFrames:
-  - {fileID: 7003672890920608587, guid: 1ff804707905cf748b258f25955248ef, type: 3}
-  - {fileID: -782699516307597908, guid: 1ff804707905cf748b258f25955248ef, type: 3}
+  - {fileID: 709217871, guid: e014fa9e71ef2e741a21d07c0c9cd6bc, type: 3}
+  - {fileID: -1946205258, guid: e014fa9e71ef2e741a21d07c0c9cd6bc, type: 3}
   animationFps: 5
