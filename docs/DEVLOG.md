@@ -136,6 +136,16 @@ Play Mode self-check dùng thu hoạch tăng vàng 30→158; scale nhãn 1→1.1
 
 **Cảnh quay:** mở Shop, chờ thu hoạch tự động bán; nhìn số vàng nảy nhẹ một lần khi số tăng.
 
+### F11 — menu vừa cửa sổ compact
+
+**2026-10-27 · `checkpoint/f11-compact-menu`**
+
+Standalone QA phát hiện Cosmetics nằm dưới mép menu khi game ở 920×180: bốn hàng đầu chiếm hết chiều cao nhìn thấy. Rút cả năm hàng về 24px với khe 4px trong panel 140px, cập nhật layout generator và scene đang dùng.
+
+Windows build mới hiển thị đủ năm mục; nhấn Cosmetics mở panel đủ sáu offer và đóng lại được. Shop/Upgrades và Inventory cũng mở được. Gear đã được xác nhận mở trong standalone smoke trước đó. Chưa kiểm DPI/multi-monitor/gamepad.
+
+**Cảnh quay:** ở 920×180 mở dấu `:`; xác nhận Cosmetics hiện dưới Exit rồi mở panel.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.

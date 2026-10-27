@@ -164,10 +164,10 @@ namespace IdleGarden.Editor
             var handle = grip.gameObject.AddComponent<WindowHandle>(); handle.window = desktop; handle.resize = true;
             var menu = Box("Window Menu", canvas.transform, Vector2.one, Vector2.one, new Vector2(-210,-176), new Vector2(-8,-36), GardenUiPalette.Panel);
             hud.menuPanel = menu.gameObject;
-            hud.pinLabel = Button("Pin", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-32), new Vector2(-6,-5), "Always on top", hud.TogglePin);
-            hud.lockLabel = Button("Lock", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-66), new Vector2(-6,-36), "Position lock", hud.ToggleLock);
-            hud.pauseLabel = Button("Pause", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-100), new Vector2(-6,-70), "Pause garden", hud.TogglePause);
-            Button("Exit", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-134), new Vector2(-6,-104), "Exit", desktop.Quit);
+            hud.pinLabel = Button("Pin", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-28), new Vector2(-6,-4), "Always on top", hud.TogglePin);
+            hud.lockLabel = Button("Lock", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-56), new Vector2(-6,-32), "Position lock", hud.ToggleLock);
+            hud.pauseLabel = Button("Pause", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-84), new Vector2(-6,-60), "Pause garden", hud.TogglePause);
+            Button("Exit", menu, new Vector2(0,1), Vector2.one, new Vector2(6,-112), new Vector2(-6,-88), "Exit", desktop.Quit);
             menu.gameObject.SetActive(false);
             var gearRoot = Box("Gear Inventory Window", canvas.transform, new Vector2(.5f,.5f), new Vector2(.5f,.5f), new Vector2(-330,-220), new Vector2(330,220), GardenUiPalette.Panel);
             var header = Box("Gear Window Header", gearRoot, new Vector2(0,1), Vector2.one, new Vector2(0,-32), Vector2.zero, GardenUiPalette.Header);

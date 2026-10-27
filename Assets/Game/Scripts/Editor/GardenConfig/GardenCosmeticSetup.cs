@@ -36,7 +36,7 @@ namespace IdleGarden.Editor
             if (oldButton) Undo.DestroyObjectImmediate(oldButton.gameObject);
 
             MakeButton("Cosmetics", hud.menuPanel.transform, new Vector2(0, 1), Vector2.one,
-                new Vector2(6, -170), new Vector2(-6, -140), "Cosmetics", hud.ToggleCosmetics);
+                new Vector2(6, -140), new Vector2(-6, -116), "Cosmetics", hud.ToggleCosmetics);
             BuildWindow(canvas, canvasRect, garden, hud);
 
             EditorUtility.SetDirty(garden);
