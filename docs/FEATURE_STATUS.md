@@ -16,7 +16,8 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F09 art pass | Đã tích hợp | `checkpoint/f09-art-pass`; sibling atlas polished v1, 19 slice, 22 màu và alpha/silhouette gốc; config/prefab/scene và Garden Config lookup đã trỏ art mới. Profile validation, F01–F06 verifications, Game View 920×180 và Windows build pass. Vẫn là placeholder. |
 | F10 game feel | Đã kiểm tra | Nhãn vàng pulse 12% trong 0.24 giây khi vàng tăng, rồi về scale ban đầu. Play Mode self-check: 30→158 vàng, scale 1→1.12→1; không thêm object hay allocation mỗi frame. |
 | F11 final UI | Đã kiểm tra | Năm mục menu (Always on top, Position lock, Pause, Exit, Cosmetics) co về 24px trong panel cao 140px; Cosmetics không còn nằm dưới mép ở cửa sổ 920×180. Standalone mở/đóng Cosmetics, Shop/Upgrades và Inventory. |
+| F12 standalone QA | Đã kiểm tra | Windows QA build thành công; F01–F06 Editor verifications pass. Standalone 920×180 hiển thị đủ menu, mở/đóng Cosmetics và mở Shop/Upgrades; Inventory/Gear đã smoke-test trước. Save v3 trong profile QA riêng còn sau restart (gold 86). |
 
-Checkpoint tiếp theo chưa được chọn.
+F01–F12 đã được tích hợp và kiểm tra theo phạm vi ghi ở đây. DPI, multi-monitor và gamepad chưa được kiểm tra.
 
 AI assets: `theme-growth-ai.png` còn trong project; prototype dùng `Textures/Palette/garden-art-polished-v1.png`, còn atlas cũ được giữ để đối chiếu. Nguồn, chuẩn hóa và prompt ở [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md). `garden-icons-ai.png` được remap về tập màu chung.

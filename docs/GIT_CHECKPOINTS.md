@@ -20,8 +20,9 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f09-art-pass` | Polish atlas pixel art, giữ silhouette/alpha và palette chung; nối lại toàn bộ reference | 19 slices, 22 màu, profile/config/prefab/scene mapping, F01–F06 verifications, Game View và Windows build pass; placeholder tiếp tục thay được |
 | `checkpoint/f10-gold-feedback` | Pulse nhẹ nhãn vàng sau khi số vàng tăng | Play Mode self-check: vàng 30→158, label scale 1→1.12→1; trở về scale nghỉ, không tạo object runtime |
 | `checkpoint/f11-compact-menu` | Rút gọn 5 hàng menu để Cosmetics dùng được trên cửa sổ compact | Standalone 920×180 hiển thị Cosmetics; mở/đóng Cosmetics, Shop/Upgrades và Inventory pass |
+| `checkpoint/f12-release-qa` | QA standalone cuối sau khi sửa menu compact | Windows QA build và F01–F06 Editor verifications pass; menu 920×180, Cosmetics, Shop/Upgrades và save v3 sau restart xác nhận; Inventory/Gear đã smoke-test trước |
 
-Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). Checkpoint tiếp theo chưa được chọn.
+Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). F01–F12 đã có checkpoint; checkpoint tiếp theo chưa được chọn.
 
 ## Mở checkpoint để quay mà không đụng thư mục đang làm
 

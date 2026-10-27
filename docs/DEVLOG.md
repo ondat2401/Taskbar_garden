@@ -146,8 +146,18 @@ Windows build mới hiển thị đủ năm mục; nhấn Cosmetics mở panel �
 
 **Cảnh quay:** ở 920×180 mở dấu `:`; xác nhận Cosmetics hiện dưới Exit rồi mở panel.
 
+### F12 — QA standalone cuối
+
+**2026-10-27 · `checkpoint/f12-release-qa`**
+
+QA phát hiện menu Cosmetics bị khuất ở cửa sổ 920×180; sửa layout ở F11 rồi dựng lại Windows QA build. Kiểm tra standalone xác nhận đủ năm mục menu, mở/đóng Cosmetics và mở Shop/Upgrades. Inventory và Gear đã mở được trong smoke test standalone trước đó.
+
+F01–F06 Editor verifications pass. Save schema v3 trong profile QA cô lập còn sau khi đóng/mở lại game; lần đọc sau restart có 86 vàng. Profile QA riêng, không chạm save người chơi. Chưa kiểm DPI, nhiều màn hình hoặc gamepad.
+
+**Cảnh quay:** ở 920×180 mở menu rồi Cosmetics, sau đó mở Shop/Upgrades; có thể xác nhận save còn sau khi khởi động lại.
+
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-Tiếp theo: F10 feedback nhỏ khi vàng tăng; rồi chốt menu/UI compact và kiểm standalone/save.
+F01–F12 đã có checkpoint. Bước tiếp theo chưa được chốt; art hiện tại vẫn là placeholder v1.

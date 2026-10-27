@@ -1,6 +1,6 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-27. F01–F11 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window. F12 standalone QA đã chạy, đang ghi checkpoint cuối. User cho phép tự làm, test và commit từng giai đoạn.
+Cập nhật 2026-10-27. F01–F12 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab, giữ 22 màu và silhouette; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window; F12 xác nhận Windows QA build, UI compact và save v3 qua restart trong profile QA riêng. Người dùng cho phép tự làm, test và commit từng giai đoạn.
 
 ## Đã chốt
 
@@ -16,6 +16,7 @@ Cập nhật 2026-10-27. F01–F11 và follow-up đã tích hợp/kiểm tra. F0
 - F09 art pass: `checkpoint/f09-art-pass`. Atlas polished v1 được chuẩn hóa bằng alpha/slice gốc và palette 22 màu; 19 sprite mới đã nối vào worker/crop/garden config, prefab và scene. `GardenPlaceholderArt.Generate()` trỏ vào atlas mới để Apply Layout không quay lại art cũ. Profile validation, F01–F06 verifications, Game View và Windows build pass; atlas vẫn là placeholder.
 - F10 game feel: nhãn vàng scale lên 12% trong 0.24 giây khi currency tăng, sau đó trả về scale gốc. Play Mode self-check tạo thu hoạch, xác nhận vàng 30→158 và scale 1→1.12→1; không tạo object runtime.
 - F11 final UI: menu gọn 5 hàng 24px trong panel 140px, Cosmetics nằm trọn trong 920×180. Standalone mở/đóng Cosmetics, Shop/Upgrades và Inventory; Gear đã mở thành công trong standalone smoke trước đó.
+- F12 final QA: Windows QA build thành công; F01–F06 Editor verifications pass. Standalone 920×180 hiển thị đủ 5 mục, mở/đóng Cosmetics và mở Shop/Upgrades; Inventory/Gear đã smoke-test trong các lượt standalone trước. Save schema v3 trong profile QA riêng còn sau restart (gold 86), không dùng save người chơi. Chưa kiểm DPI, multi-monitor hoặc gamepad.
 - Follow-up QA F07: tag `checkpoint/f07-cosmetic-label-fix`. Sáu tên offer bị vô hình do RectTransform cao 0px; sửa cấu hình Editor và scene thành 40px. Play Mode xác nhận đủ tên, chọn offer/đóng cửa sổ, 78 nút đúng palette; F01–F06 Editor verifications pass. Chưa build standalone hoặc kiểm DPI/multi-monitor/gamepad.
 - Thiết kế mới: `docs/GAME_DESIGN.md`. Tiến độ: `docs/FEATURE_STATUS.md`. Hành trình để dựng video: `docs/DEVLOG.md`; quy trình tag: `docs/GIT_CHECKPOINTS.md`.
 
