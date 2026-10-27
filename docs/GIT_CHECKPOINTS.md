@@ -22,8 +22,9 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f11-compact-menu` | Rút gọn 5 hàng menu để Cosmetics dùng được trên cửa sổ compact | Standalone 920×180 hiển thị Cosmetics; mở/đóng Cosmetics, Shop/Upgrades và Inventory pass |
 | `checkpoint/f12-release-qa` | QA standalone cuối sau khi sửa menu compact | Windows QA build và F01–F06 Editor verifications pass; menu 920×180, Cosmetics, Shop/Upgrades và save v3 sau restart xác nhận; Inventory/Gear đã smoke-test trước |
 | `checkpoint/f13-art-assets` | Thay art theo palette 8×8, texture tĩnh tách riêng, animation sheet riêng theo asset | Raster assert, compile, profile validation, Game View 920×180 và runtime sway check pass; chưa chạy Windows build/test suite |
+| `checkpoint/f14-weather-sync` | Đồng bộ thời tiết hiện tại Open-Meteo lên HUD, HCMC configurable, 15 phút/lần | WMO/parser/URL self-check, Play Mode API thật, Game View, Windows QA build và isolated schema-v3 profile pass; không có gameplay effects; free API chỉ phi thương mại |
 
-Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). F01–F12 đã có checkpoint; checkpoint tiếp theo chưa được chọn.
+Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). F01–F14 đã có checkpoint; checkpoint tiếp theo chưa được chọn.
 
 ## Mở checkpoint để quay mà không đụng thư mục đang làm
 

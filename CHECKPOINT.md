@@ -1,13 +1,18 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-27. F01–F12 và follow-up đã tích hợp/kiểm tra. F09 polished placeholder art đã nối vào scene/config/prefab; F10 thêm phản hồi pulse khi vàng tăng; F11 sửa menu Cosmetics bị tràn trong compact window; F12 xác nhận Windows QA build và save v3 qua restart trong profile QA riêng. F13 đã thay art đang dùng bằng texture riêng theo palette 8×8/64 màu; worker và từng loài cây có animation sheet riêng. F14 weather sync là phase tiếp theo sau asset. Người dùng cho phép tự làm, kiểm tra và commit từng giai đoạn.
+Cập nhật 2026-10-27. F01–F14 và follow-up đã tích hợp/kiểm tra theo checkpoint. F13 art palette 8×8/64 màu và animation sheet vẫn là placeholder, chờ đánh giá. F14 đồng bộ thời tiết hiện tại lên HUD, chưa ảnh hưởng tưới/trồng; Play Mode lấy được thời tiết thật và Windows QA build hiển thị trạng thái. Người dùng cho phép tự làm, kiểm tra và commit từng giai đoạn.
 
-## Phase hiện tại — F14 đồng bộ thời tiết (kế tiếp)
+## F14 — đồng bộ thời tiết (đã tích hợp)
 
 - Palette board: `Assets/Game/Textures/Palette/garden-art-palette-8x8.png`; texture hoa mẫu đã được duyệt và giữ làm chuẩn.
 - Texture tĩnh tách PNG riêng; `worker-animation.png` là sheet 4 frame; mỗi loài cây có sheet 6 frame (3 stage + 3 sway). Atlas cũ và sprite trùng được lưu ở `Assets/Game/Textures/Legacy/`.
 - Raster check xác nhận palette, alpha 0/255 và block 8×8 phẳng trên texture mới. Unity compile/profile validation pass; Game View 920×180 đã xem; runtime kiểm tra sway đổi từ `carrot1` sang `carrot1-sway`.
-- F14: khảo sát app/nguồn thời tiết khả dụng trên máy, loại điều kiện/API và ánh xạ vào game; chưa chọn provider hoặc bắt đầu triển khai.
+- Dùng Open-Meteo Forecast API với current temperature/weather code; không cần API key. `Weather.asset` mặc định Ho Chi Minh City (10.8231, 106.6297), có thể đổi tọa độ; đồng bộ lần đầu khi chạy rồi mỗi 15 phút, timeout 8 giây.
+- Máy có Microsoft Weather; phần tài liệu Windows tìm được chỉ chỉ cách mở app bằng URI `msnweather:` và API Geolocator lấy vị trí riêng, không thấy API công khai đọc report đã chọn trong app. Google Weather API có current conditions nhưng cần API key/billing cho dùng production; chọn Open-Meteo cho prototype.
+- HUD hiển thị trạng thái + °C + attribution. WMO được ánh xạ thành nắng, mây rải rác, âm u, sương mù, mưa, tuyết, giông hoặc không rõ; lỗi đầu tiên hiện unavailable, lỗi sau giữ dữ liệu gần nhất và đánh dấu stale.
+- Không yêu cầu GPS và không thay đổi gameplay/tưới cây. Mưa/nắng, VFX, dự báo và chọn vị trí trong game chưa làm; F13 vẫn là placeholder chờ đánh giá.
+- Unity mapping/parser/URL self-check pass; Play Mode nhận API thật, Game View hiển thị trạng thái, Windows QA build `IdleGarden-QA-F14` thành công. QA dùng profile riêng, save schema v3 đọc được; Player.log không ghi lỗi.
+- Open-Meteo attribution: [Forecast API](https://open-meteo.com/en/docs). Free tier chỉ cho mục đích phi thương mại, yêu cầu attribution CC BY 4.0 và không cam kết uptime; dùng license/provider thương mại trước khi phát hành có doanh thu: [pricing/usage](https://open-meteo.com/en/pricing).
 
 ## Đã chốt
 

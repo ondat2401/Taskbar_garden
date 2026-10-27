@@ -166,12 +166,20 @@ Raster assert xác nhận mọi texture mới chỉ dùng màu trong palette, al
 
 **Cảnh quay:** chạy vườn ở 920×180, so sánh cây ở ba stage và hai pose sway; mở upgrade panel để thấy icon riêng.
 
-### F14 — đồng bộ thời tiết (phase kế tiếp, đã lên kế hoạch)
+### F14 — đồng bộ thời tiết hiện tại
 
-Sau khi asset được chốt, xác minh nguồn thời tiết đang dùng trên máy (Google/Microsoft hoặc API khả dụng), liệt kê điều kiện mà nguồn trả về và lập bảng ánh xạ sang thời tiết trong game. Chưa triển khai hoặc chọn provider.
+**2026-10-27 · `checkpoint/f14-weather-sync`**
+
+Dùng Open-Meteo Forecast API để đọc nhiệt độ và WMO weather code tại tọa độ cấu hình; mặc định HCMC, sửa trong `Assets/Game/_Configs/Garden/Weather.asset`. Request HTTPS đầu tiên chạy khi game mở, sau đó mỗi 15 phút; UI hiện trạng thái, nhiệt độ Celsius và nguồn. Mã WMO được gom thành Clear, Partly cloudy, Overcast, Fog, Rain, Snow, Storm hoặc Unknown. Lỗi đầu tiên hiện unavailable; lỗi sau giữ kết quả gần nhất và đánh dấu stale. Không xin GPS. Microsoft Weather có cài trên máy; tài liệu Windows tìm được chỉ công khai URI mở app và Geolocator riêng, không thấy API đọc report của app. Google Weather API cung cấp current conditions nhưng production cần API key/billing, nên prototype chọn Open-Meteo.
+
+F14 chỉ đồng bộ/trình bày thời tiết, không đổi cây, nước hay scheduler. VFX mưa/nắng và tác động gameplay để sau khi thống nhất thiết kế, đồng thời F13 art vẫn chờ đánh giá. API miễn phí của Open-Meteo dành cho phi thương mại, cần attribution CC BY 4.0 và không có cam kết uptime; bản thương mại cần gói/provider được cấp phép ([API](https://open-meteo.com/en/docs), [điều khoản/giá](https://open-meteo.com/en/pricing)).
+
+Unity self-check cho WMO mapping, URL, JSON hợp lệ/lỗi/NaN pass. Play Mode nhận được thời tiết thật; Game View và standalone Windows QA 920×180 hiển thị `WEATHER Clear 27°C · Open-Meteo`. Build thành công (142,107,003 bytes); profile QA riêng có save schema v3 và Player.log không ghi lỗi. Chưa thử offline, giới hạn mạng, DPI, multi-monitor hoặc gamepad.
+
+**Cảnh quay:** mở Garden ở 920×180, cho nhãn HUD nhận dữ liệu, rồi đổi tọa độ trong `Weather.asset` để kiểm tra cấu hình vị trí.
 
 ## Cách ghi tiếp
 
 Mỗi mốc bổ sung: thay đổi người chơi nhìn thấy, lý do chọn thiết kế, vấn đề thật đã gặp và cách sửa, kiểm chứng đã chạy, commit/tag, gợi ý cảnh quay. Giữ lỗi và giới hạn đúng sự thật; không biến kế hoạch thành thành quả.
 
-F01–F13 đã có checkpoint. F14 weather sync là phase tiếp theo sau khi hoàn tất asset. Art active vẫn là placeholder có thể thay bằng art sản xuất sau này.
+F01–F14 đã có checkpoint. Art active vẫn là placeholder có thể thay bằng art sản xuất sau này.

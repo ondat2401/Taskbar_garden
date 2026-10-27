@@ -18,8 +18,8 @@ Thiết kế chuẩn: [GAME_DESIGN.md](GAME_DESIGN.md). Kế hoạch cũ trong C
 | F11 final UI | Đã kiểm tra | Năm mục menu (Always on top, Position lock, Pause, Exit, Cosmetics) co về 24px trong panel cao 140px; Cosmetics không còn nằm dưới mép ở cửa sổ 920×180. Standalone mở/đóng Cosmetics, Shop/Upgrades và Inventory. |
 | F12 standalone QA | Đã kiểm tra | Windows QA build thành công; F01–F06 Editor verifications pass. Standalone 920×180 hiển thị đủ menu, mở/đóng Cosmetics và mở Shop/Upgrades; Inventory/Gear đã smoke-test trước. Save v3 trong profile QA riêng còn sau restart (gold 86). |
 | F13 art assets | Đã tích hợp | `checkpoint/f13-art-assets`; palette 8×8/64 màu; texture tĩnh tách riêng, worker 4 frame và bốn crop sheet 6 frame; scene/prefab/config đã remap. Raster assert, compile, profile validation, Game View 920×180 và runtime sway pass. |
-| F14 weather sync | Phase kế tiếp | Sau khi chốt asset: xác minh app/nguồn thời tiết đang dùng trên máy (Google/Microsoft), các điều kiện/API có sẵn, rồi map điều kiện vào game. Chưa chọn provider hoặc triển khai. |
+| F14 weather sync | Đã tích hợp, kiểm tra | Open-Meteo current temperature + WMO weather code; cấu hình tọa độ trong `Assets/Game/_Configs/Garden/Weather.asset` (mặc định HCMC), refresh 15 phút, attribution trên HUD. Mapper/parser/URL self-check, Play Mode API thật, Game View và Windows QA build pass. Chỉ hiển thị trạng thái; chưa ảnh hưởng gameplay. API miễn phí phi thương mại, cần license cho bản thương mại. |
 
-F01–F13 đã được tích hợp và kiểm tra theo phạm vi ghi ở đây. F14 weather sync là phase kế tiếp sau art. DPI, multi-monitor và gamepad chưa được kiểm tra.
+F01–F14 đã được tích hợp và kiểm tra theo phạm vi ghi ở đây. F13 art vẫn là placeholder chờ đánh giá; weather chưa có hiệu ứng hay ảnh hưởng gameplay. DPI, multi-monitor và gamepad chưa được kiểm tra.
 
 AI draft/source texture cũ được giữ trong `Textures/Legacy/`; runtime/config hiện dùng từng PNG tĩnh riêng hoặc sheet animation riêng cho từng asset có chuyển động. Nguồn, chuẩn hóa và prompt ở [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md).
