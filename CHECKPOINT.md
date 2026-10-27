@@ -16,9 +16,9 @@ Cập nhật 2026-10-27. F01–F15 và follow-up đã tích hợp/kiểm tra the
 
 ## F15 — cân lại tỉ lệ và vị trí asset (đã tích hợp)
 
-- Crop uniform scale 2/3; đáy alpha đặt trên mép trên soil theo pivot của texture hiện tại. Giếng scale 2/3 và dịch trái 1 unit để đứng cạnh worker.
+- Crop uniform scale 2/3; QA follow-up neo theo alpha ở tâm luống và lấn xuống 1/32 unit (local Y≈0.44286767) để che khe do lấy mẫu ở mép đất không phẳng. Giếng scale 2/3 và dịch trái 1 unit để đứng cạnh worker.
 - Builder và prefab giữ cùng thông số; camera/grass chừa đủ mép trái. Thứ tự render: grass 0, soil 2, well 3, worker 4, crop 5.
-- Unity compile pass. Play Mode kiểm tra 4 PlotView, cây tiến stage/sway, worker di chuyển; Game View 382×215 đã xem. Scene sạch sau khi dừng Play. Chưa chạy Windows build hoặc test suite.
+- Unity compile pass. Play Mode kiểm tra 4 PlotView, cây tiến stage/sway, worker di chuyển; Game View 382×215 xác nhận crop chạm soil sau follow-up `checkpoint/f15-crop-grounding-fix`. Scene sạch sau khi dừng Play. Chưa chạy Windows build hoặc test suite.
 
 ## Đã chốt
 

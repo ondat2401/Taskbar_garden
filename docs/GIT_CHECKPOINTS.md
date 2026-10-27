@@ -24,6 +24,7 @@ Mỗi feature được kiểm tra và chốt bằng một commit cùng annotated
 | `checkpoint/f13-art-assets` | Thay art theo palette 8×8, texture tĩnh tách riêng, animation sheet riêng theo asset | Raster assert, compile, profile validation, Game View 920×180 và runtime sway check pass; chưa chạy Windows build/test suite |
 | `checkpoint/f14-weather-sync` | Đồng bộ thời tiết hiện tại Open-Meteo lên HUD, HCMC configurable, 15 phút/lần | WMO/parser/URL self-check, Play Mode API thật, Game View, Windows QA build và isolated schema-v3 profile pass; không có gameplay effects; free API chỉ phi thương mại |
 | `checkpoint/f15-art-layout` | Cân tỉ lệ và vị trí crop/giếng; giữ player giữa soil và crop | Compile, Play Mode 4 luống và Game View pass; chưa build Windows riêng hoặc chạy test suite |
+| `checkpoint/f15-crop-grounding-fix` | QA follow-up: căn đáy alpha của cả bốn crop sheet sát mép đất | Compile, Play Mode 4 luống, Game View 382×215 xác nhận không còn khe; chưa build Windows riêng hoặc chạy test suite |
 
 Thiết kế hiện tại: `docs/GAME_DESIGN.md`; palette/provenance art: [PLACEHOLDER_ART.md](PLACEHOLDER_ART.md); tư liệu kể hành trình và gợi ý cảnh quay: [DEVLOG.md](DEVLOG.md). F01–F15 đã có checkpoint; checkpoint tiếp theo chưa được chọn.
 

@@ -14,10 +14,10 @@ namespace IdleGarden
     [CreateAssetMenu(menuName = "Idle Garden/Garden Profile")]
     public sealed class GardenProfile : ScriptableObject
     {
-        // The crop's lower alpha edge sits on the upper alpha edge of soil.png.
+        // Overlap one 1/32-unit pixel step to hide seams from sampling on the soil's uneven top edge.
         public const float GroundY = -.2f;
-        public const float CropSurfaceY = .53125f;
         public const float CropScale = 2f / 3f;
+        public const float CropSurfaceY = .4929412f - (4.8f / 170f * CropScale) - (1f / 32f);
         public const float WellVisualOffset = 1f;
         public const float WellVisualScale = 2f / 3f;
 

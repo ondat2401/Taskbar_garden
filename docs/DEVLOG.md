@@ -184,7 +184,9 @@ Unity self-check cho WMO mapping, URL, JSON hợp lệ/lỗi/NaN pass. Play Mode
 
 Crop giảm còn 2/3 và neo đáy theo mặt đất của soil; giếng giảm còn 2/3, dịch sang cạnh worker để hai silhouette không chồng nhau. Builder, prefab và scene cùng dùng thông số này; camera chừa mép cho giếng. Giữ sorting grass 0, soil 2, well 3, worker 4, crop 5 để worker nằm trên đất và sau tán cây.
 
-Unity compile pass. Play Mode xác nhận bốn luống và crop stage/sway hoạt động; Game View 382×215 cho thấy crop bám đất và giếng tách khỏi worker. Chưa chạy Windows build hoặc test suite.
+Game View ban đầu vẫn có khe; đỉnh alpha tổng thể của soil là y=0.54 nhưng tại tâm luống là y=0.4929412. Một số pose sway có alpha đáy lệch khỏi tâm và mặt đất không phẳng, nên QA follow-up `checkpoint/f15-crop-grounding-fix` cho crop lấn thêm 1/32 unit (local Y≈0.44286767) để không lộ seam do lấy mẫu pixel.
+
+Unity compile pass. Play Mode xác nhận bốn luống và crop stage/sway hoạt động; Game View 382×215 sau chỉnh sửa xác nhận crop chạm soil và giếng tách khỏi worker. Chưa chạy Windows build hoặc test suite.
 
 **Cảnh quay:** chạy Garden, xem worker đi giữa các luống; so sánh đáy crop với mặt soil và khoảng cách giếng.
 
