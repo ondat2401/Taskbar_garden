@@ -46,7 +46,9 @@ namespace IdleGarden.Editor
             // Native window properties are only changed by DesktopWindow in Windows standalone.
             var worker = SpriteObject("Worker", root.transform, profile.worker.idleFrames[0], new Vector3(-1.5f, GardenProfile.GroundY, 0), 4);
             controller.workerTransform = worker.transform; controller.workerRenderer = worker;
-            SpriteObject("Well", root.transform, profile.wellSprite, new Vector3(-profile.wellDistance, GardenProfile.GroundY, 0), 3);
+            var wellRenderer = SpriteObject("Well", root.transform, profile.wellSprite,
+                new Vector3(-profile.wellDistance - GardenProfile.WellVisualOffset, GardenProfile.GroundY, 0), 3);
+            wellRenderer.transform.localScale = Vector3.one * GardenProfile.WellVisualScale;
             var events = new GameObject("EventSystem", typeof(EventSystem), typeof(InputSystemUIInputModule)); events.transform.SetParent(root.transform);
             BuildHud(root.transform, controller, desktop);
             ApplyLayout(profile);
@@ -82,6 +84,7 @@ namespace IdleGarden.Editor
                 var view = template.AddComponent<PlotView>();
                 view.soilRenderer = SpriteObject("Soil", template.transform, profile.soilSprite, Vector3.zero, 2);
                 view.cropRenderer = SpriteObject("Crop", template.transform, profile.plots[0].crop.stages[0], new Vector3(0, GardenProfile.CropSurfaceY, 0), 5);
+                view.cropRenderer.transform.localScale = Vector3.one * GardenProfile.CropScale;
                 for (int i = 0; i < 2; i++)
                 {
                     float y = -.48f - i * .13f;
@@ -103,6 +106,7 @@ namespace IdleGarden.Editor
                 var view = instance.GetComponent<PlotView>(); view.soilRenderer.sprite = profile.soilSprite;
                 view.cropRenderer.sprite = profile.plots[i].crop.stages[0]; controller.plots[i] = view;
                 view.cropRenderer.transform.localPosition = new Vector3(0, GardenProfile.CropSurfaceY, 0);
+                view.cropRenderer.transform.localScale = Vector3.one * GardenProfile.CropScale;
                 view.garden=controller; view.plotIndex=i;
                 var collider=instance.GetComponent<BoxCollider2D>(); if(!collider) collider=instance.AddComponent<BoxCollider2D>();
                 collider.offset=new Vector2(0,.35f); collider.size=new Vector2(1.2f,1.5f);
@@ -111,12 +115,17 @@ namespace IdleGarden.Editor
                 var growthTrack = instance.transform.Find("Growth Track"); if (growthTrack) growthTrack.gameObject.SetActive(profile.showPlotMeters);
                 var waterTrack = instance.transform.Find("Water Track"); if (waterTrack) waterTrack.gameObject.SetActive(profile.showPlotMeters);
             }
-            float left = -profile.wellDistance - 1;
+            float left = -profile.wellDistance - GardenProfile.WellVisualOffset - .5f;
             float right = (profile.plots.Count - 1) * profile.plotSpacing + 1;
             for (float x = left; x < right; x += 1)
                 SpriteObject("Grass", layout.transform, profile.grassSprite, new Vector3(x, GardenProfile.GroundY, 0), 0).sharedMaterial = material;
             var well = controller.transform.Find("Well");
-            if (well) { Undo.RecordObject(well, "Ground well"); well.localPosition = new Vector3(-profile.wellDistance, GardenProfile.GroundY, 0); }
+            if (well)
+            {
+                Undo.RecordObject(well, "Place well beside worker");
+                well.localPosition = new Vector3(-profile.wellDistance - GardenProfile.WellVisualOffset, GardenProfile.GroundY, 0);
+                well.localScale = Vector3.one * GardenProfile.WellVisualScale;
+            }
             Undo.RecordObject(controller.workerTransform, "Move worker");
             Undo.RecordObject(controller.gardenCamera.transform, "Move garden camera");
             controller.workerTransform.localPosition = new Vector3(-profile.wellDistance, GardenProfile.GroundY, 0);

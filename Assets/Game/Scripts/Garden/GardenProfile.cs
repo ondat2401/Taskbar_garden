@@ -14,9 +14,12 @@ namespace IdleGarden
     [CreateAssetMenu(menuName = "Idle Garden/Garden Profile")]
     public sealed class GardenProfile : ScriptableObject
     {
-        // Sprite baselines for the current authored ground and soil pivots.
+        // The crop's lower alpha edge sits on the upper alpha edge of soil.png.
         public const float GroundY = -.2f;
-        public const float CropSurfaceY = -.04f;
+        public const float CropSurfaceY = .53125f;
+        public const float CropScale = 2f / 3f;
+        public const float WellVisualOffset = 1f;
+        public const float WellVisualScale = 2f / 3f;
 
         public WorkerConfig worker;
         public ProgressionConfig progression;

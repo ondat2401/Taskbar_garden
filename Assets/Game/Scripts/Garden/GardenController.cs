@@ -72,7 +72,7 @@ namespace IdleGarden
             int pixelScale = Mathf.Max(1, Mathf.FloorToInt(Screen.width / 450f));
             gardenCamera.orthographicSize = gardenHeight / (64f * pixelScale);
             float halfWidth = gardenCamera.orthographicSize * gardenCamera.aspect;
-            float left = Simulation.WellX - 1, right = Simulation.RightEdge;
+            float left = Simulation.WellX - GardenProfile.WellVisualOffset - .5f, right = Simulation.RightEdge;
             viewX = right - left <= halfWidth * 2 ? (left + right) * .5f : Mathf.Clamp(viewX, left + halfWidth, right - halfWidth);
             float cameraY = gardenCamera.orthographicSize - .375f;
             gardenCamera.transform.position = new Vector3(Mathf.Round(viewX * 32) / 32, Mathf.Round(cameraY * 32) / 32, -10);

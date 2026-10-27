@@ -1,6 +1,6 @@
 # Checkpoint — Idle Garden
 
-Cập nhật 2026-10-27. F01–F14 và follow-up đã tích hợp/kiểm tra theo checkpoint. F13 art palette 8×8/64 màu và animation sheet vẫn là placeholder, chờ đánh giá. F14 đồng bộ thời tiết hiện tại lên HUD, chưa ảnh hưởng tưới/trồng; Play Mode lấy được thời tiết thật và Windows QA build hiển thị trạng thái. Người dùng cho phép tự làm, kiểm tra và commit từng giai đoạn.
+Cập nhật 2026-10-27. F01–F15 và follow-up đã tích hợp/kiểm tra theo checkpoint. F13 art palette 8×8/64 màu và animation sheet là placeholder pixel đã được duyệt. F14 đồng bộ thời tiết hiện tại lên HUD, chưa ảnh hưởng tưới/trồng. F15 cân lại scale và vị trí asset trong scene, giữ sorting đất < worker < cây. Người dùng cho phép tự làm, kiểm tra và commit từng giai đoạn.
 
 ## F14 — đồng bộ thời tiết (đã tích hợp)
 
@@ -13,6 +13,12 @@ Cập nhật 2026-10-27. F01–F14 và follow-up đã tích hợp/kiểm tra the
 - Không yêu cầu GPS và không thay đổi gameplay/tưới cây. Mưa/nắng, VFX, dự báo và chọn vị trí trong game chưa làm; F13 vẫn là placeholder chờ đánh giá.
 - Unity mapping/parser/URL self-check pass; Play Mode nhận API thật, Game View hiển thị trạng thái, Windows QA build `IdleGarden-QA-F14` thành công. QA dùng profile riêng, save schema v3 đọc được; Player.log không ghi lỗi.
 - Open-Meteo attribution: [Forecast API](https://open-meteo.com/en/docs). Free tier chỉ cho mục đích phi thương mại, yêu cầu attribution CC BY 4.0 và không cam kết uptime; dùng license/provider thương mại trước khi phát hành có doanh thu: [pricing/usage](https://open-meteo.com/en/pricing).
+
+## F15 — cân lại tỉ lệ và vị trí asset (đã tích hợp)
+
+- Crop uniform scale 2/3; đáy alpha đặt trên mép trên soil theo pivot của texture hiện tại. Giếng scale 2/3 và dịch trái 1 unit để đứng cạnh worker.
+- Builder và prefab giữ cùng thông số; camera/grass chừa đủ mép trái. Thứ tự render: grass 0, soil 2, well 3, worker 4, crop 5.
+- Unity compile pass. Play Mode kiểm tra 4 PlotView, cây tiến stage/sway, worker di chuyển; Game View 382×215 đã xem. Scene sạch sau khi dừng Play. Chưa chạy Windows build hoặc test suite.
 
 ## Đã chốt
 
